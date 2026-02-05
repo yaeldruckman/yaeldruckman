@@ -1,0 +1,27 @@
+{
+  "name": "fulo-template",
+  "version": "1.0.0",
+  "description": "Fulo template — lightweight landing page with theme toggle",
+  "main": "script.js",
+  "type": "module",
+  "scripts": {
+    "build": "npm run build:js && npm run build:css",
+    "build:js": "esbuild script.js --bundle --minify --sourcemap --target=es2015 --outfile=script.min.js",
+    "build:css": "esbuild styles.css --minify --outfile=styles.min.css",
+    "watch:js": "esbuild script.js --bundle --sourcemap --target=es2015 --outfile=script.min.js --watch",
+    "watch:css": "esbuild styles.css --outfile=styles.min.css --watch",
+    "serve": "npx serve -l 3000"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.1"
+  },
+  "dependencies": {
+    "serve": "^14.2.3"
+  },
+  "author": "Nadav Sella",
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
