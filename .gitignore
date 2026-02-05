@@ -3,6 +3,7 @@ node_modules/
 *.min.js
 *.min.css
 *.min.js.map
+
 .vercel/
 dist/
 build/
