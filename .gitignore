@@ -1,0 +1,8 @@
+node_modules/
+.DS_Store
+*.min.js
+*.min.css
+*.min.js.map
+.vercel/
+dist/
+build/
