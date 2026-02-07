@@ -260,6 +260,7 @@ html[dir="rtl"] .logo {
     display: flex;
     flex-direction: column;
     line-height: 1.15;
+    gap: 0.5rem;
 }
 
 .logo-name {
@@ -474,20 +475,18 @@ html[dir="rtl"] .logo-title {
     position: absolute;
     inset: 0;
     z-index: 0;
-}
-
-.hero-bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 30%;
+    background: linear-gradient(
+        135deg,
+        rgba(8, 13, 26, 0.95) 0%,
+        rgba(23, 58, 119, 0.5) 100%
+    );
 }
 
 .hero-bg::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: var(--hero-overlay);
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .hero-content {
@@ -502,18 +501,20 @@ html[dir="rtl"] .logo-title {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
     align-items: center;
+    justify-content: space-evenly;
 }
 
 @media (min-width: 900px) {
     .hero-grid {
-        grid-template-columns: 280px 1fr;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         gap: var(--space-xl);
     }
 }
 
 @media (min-width: 1100px) {
     .hero-grid {
-        grid-template-columns: 320px 1fr;
         gap: var(--space-2xl);
     }
 }
@@ -838,6 +839,8 @@ section:nth-child(even) {
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
     position: relative;
     background: var(--card-gradient);
     border: 1px solid var(--border);
@@ -911,6 +914,7 @@ html[dir="rtl"] .card h3 {
     color: var(--text-muted);
     font-size: 0.925rem;
     line-height: 1.7;
+    margin-bottom: 1.25rem;
 }
 
 .accent-divider {
@@ -918,7 +922,7 @@ html[dir="rtl"] .card h3 {
     height: 2px;
     background: var(--accent);
     border-radius: var(--radius-full);
-    margin-top: 1.25rem;
+    margin-top: auto;
     opacity: 0.6;
 }
 
@@ -1556,6 +1560,8 @@ html[dir="rtl"] .cta-banner h2 {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    padding: 2rem;
+    border: 1px solid transparent;
 }
 
 .contact-info-header .section-title {
@@ -1630,7 +1636,16 @@ html[dir="rtl"] .contact-detail-label {
 }
 
 .contact-whatsapp {
-    margin-top: 0.5rem;
+    margin-top: auto;
+    display: flex;
+    width: 100%;
+}
+
+.contact-whatsapp .cta {
+    width: 100% !important;
+    height: 52px;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* Contact Form */
@@ -1661,9 +1676,9 @@ html[dir="rtl"] .contact-detail-label {
 .contact-card textarea,
 .contact-card select {
     width: 100%;
-    border: 1px solid var(--border);
+    border: 1px solid rgba(155, 164, 184, 0.8);
     border-radius: var(--radius-md);
-    padding: 0.8rem 1rem;
+    padding: 0.85rem 1.25rem;
     background: var(--bg);
     color: var(--text);
     font-family: inherit;
@@ -1674,22 +1689,50 @@ html[dir="rtl"] .contact-detail-label {
     outline: none;
 }
 
+.contact-card input:hover,
+.contact-card textarea:hover,
+.contact-card select:hover {
+    border-color: var(--accent);
+}
+
 .contact-card input:focus,
 .contact-card textarea:focus,
 .contact-card select:focus {
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px var(--accent-subtle);
+    box-shadow: 0 0 0 4px var(--accent-subtle);
+    background: var(--surface);
 }
 
 .contact-card input::placeholder,
 .contact-card textarea::placeholder {
     color: var(--text-muted);
-    opacity: 0.5;
+    opacity: 1;
 }
 
 .contact-card textarea {
     resize: vertical;
     min-height: 120px;
+}
+
+.contact-card select {
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239ba4b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1.25rem center;
+    padding-right: 3.5rem;
+}
+
+html[dir="rtl"] .contact-card select {
+    background-position: left 1.25rem center;
+    padding-right: 1.25rem;
+    padding-left: 3.5rem;
+}
+
+:root[data-theme="light"] .contact-card select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
 }
 
 .form-row {
@@ -1705,21 +1748,25 @@ html[dir="rtl"] .contact-detail-label {
 }
 
 .contact-card button[type="submit"] {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
     border: none;
     background: var(--accent);
     color: #fff;
-    padding: 0.9rem 1.8rem;
+    width: 100%;
+    height: 52px;
+    padding: 0;
     border-radius: var(--radius-full);
     font-weight: 600;
     font-size: 0.95rem;
     cursor: pointer;
     transition: all var(--t-base) var(--ease);
     box-shadow: var(--shadow-sm);
-    width: 100%;
+    margin-top: auto;
+    white-space: nowrap;
+    letter-spacing: 0.01em;
 }
 
 .contact-card button[type="submit"]:hover {
@@ -1956,8 +2003,10 @@ html[dir="rtl"] .whatsapp-float {
         padding: 1.5rem;
     }
 
-    .contact-card {
+    .contact-card,
+    .contact-info {
         padding: 1.5rem;
+        width: 100%;
     }
 
     .about-stats {
