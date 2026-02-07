@@ -93,47 +93,38 @@ toggle?.addEventListener("click", () => {
 
 // ===== MOBILE NAV =====
 if (navToggle && mobileNav) {
-  navToggle.addEventListener("click", () => {
-    const isOpen = mobileNav.classList.toggle("open");
-    navToggle.setAttribute("aria-expanded", String(isOpen));
+  const hamburger = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>`;
+  const close = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>`;
 
-    // Toggle hamburger icon to X
-    if (isOpen) {
-      navToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>`;
-    } else {
-      navToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>`;
-    }
+  const setNavState = (open) => {
+    mobileNav.classList.toggle("open", open);
+    navToggle.setAttribute("aria-expanded", String(open));
+    navToggle.innerHTML = open ? close : hamburger;
+  };
+
+  navToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    setNavState(!mobileNav.classList.contains("open"));
   });
 
-  // Close mobile nav when clicking a link
-  mobileNav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      mobileNav.classList.remove("open");
-      navToggle.setAttribute("aria-expanded", "false");
-      navToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>`;
-    });
+  mobileNav.addEventListener("click", (e) => {
+    if (e.target.closest("a")) setNavState(false);
   });
 
-  // Close mobile nav on Escape
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && mobileNav.classList.contains("open")) {
-      mobileNav.classList.remove("open");
-      navToggle.setAttribute("aria-expanded", "false");
-      navToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>`;
-      navToggle.focus();
-    }
-  });
-
-  // Close mobile nav when clicking outside
   document.addEventListener("click", (e) => {
     if (
       mobileNav.classList.contains("open") &&
       !mobileNav.contains(e.target) &&
       !navToggle.contains(e.target)
     ) {
-      mobileNav.classList.remove("open");
-      navToggle.setAttribute("aria-expanded", "false");
-      navToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>`;
+      setNavState(false);
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && mobileNav.classList.contains("open")) {
+      setNavState(false);
+      navToggle.focus();
     }
   });
 }
