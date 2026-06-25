@@ -10,7 +10,7 @@
     "build:css": "esbuild styles.css --minify --outfile=styles.min.css",
     "watch:js": "esbuild script.js --bundle --sourcemap --target=es2015 --outfile=script.min.js --watch",
     "watch:css": "esbuild styles.css --outfile=styles.min.css --watch",
-    "serve": "npx serve -l 3000"
+    "serve": "npm run build && npx serve -l 3000"
   },
   "devDependencies": {
     "esbuild": "^0.20.1"

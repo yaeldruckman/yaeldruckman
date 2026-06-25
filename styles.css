@@ -66,31 +66,92 @@
 
 /* ── Light Theme ── */
 :root[data-theme="light"] {
-    --bg: #faf8f5;
-    --bg-alt: #f3efe8;
-    --surface: #ffffff;
-    --surface-hover: #f9f7f4;
-    --text: #1a1a2e;
-    --text-muted: #6b7280;
-    --text-heading: #0d0d1a;
-    --border: #e5e1d8;
-    --border-light: #ede9e0;
-    --accent: #b8942e;
-    --accent-hover: #a07e1f;
-    --accent-subtle: rgba(184, 148, 46, 0.08);
-    --accent-glow: rgba(184, 148, 46, 0.15);
+    --bg: #f9f7f4;
+    --bg-alt: #f0ede8;
+    --surface: #fdfcfb;
+    --surface-hover: #f3efe8;
+    --text: #1a1a18;
+    --text-muted: #4a4a47;
+    --text-heading: #1a1a18;
+    --border: #e8d5b0;
+    --border-light: #f0ede8;
+    --accent: #c8a96e;
+    --accent-hover: #b89158;
+    --accent-subtle: rgba(200, 169, 110, 0.08);
+    --accent-glow: rgba(200, 169, 110, 0.15);
     --hero-overlay: linear-gradient(
         160deg,
-        rgba(13, 13, 26, 0.8) 0%,
-        rgba(13, 13, 26, 0.55) 50%,
-        rgba(13, 13, 26, 0.75) 100%
+        rgba(26, 26, 24, 0.8) 0%,
+        rgba(26, 26, 24, 0.55) 50%,
+        rgba(26, 26, 24, 0.75) 100%
     );
-    --card-gradient: linear-gradient(145deg, #ffffff 0%, #faf8f5 100%);
+    --card-gradient: linear-gradient(145deg, #ffffff 0%, #f9f7f4 100%);
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
     --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.1);
     --shadow-glow: 0 0 40px rgba(184, 148, 46, 0.06);
     --theme-color: #faf8f5;
+}
+
+/* ===== HEBREW LIGHT THEME SPECIFIC ===== */
+html[lang="he"][data-theme="light"] {
+    --bg: #f9f7f4;
+    --bg-alt: #f0ede8;
+    --surface: #fdfcfb;
+    --surface-hover: #f3efe8;
+    --text: #141412;
+    --text-muted: #3d3d3a;
+    --text-heading: #141412;
+    --border: #d4c19c;
+    --border-light: #e8e4db;
+    --accent: #a68144;
+    --accent-hover: #8f6e3a;
+    --hero-overlay: linear-gradient(
+        160deg,
+        rgba(249, 247, 244, 0.95) 0%,
+        rgba(249, 247, 244, 0.8) 100%
+    );
+    --card-gradient: linear-gradient(145deg, #fdfcfb 0%, #f9f7f4 100%);
+}
+
+html[lang="he"][data-theme="light"] .hero {
+    background: var(--bg);
+}
+
+html[lang="he"][data-theme="light"] .hero-bg {
+    background: var(--bg);
+}
+
+html[lang="he"][data-theme="light"] .hero-bg::after {
+    background: rgba(200, 169, 110, 0.03);
+}
+
+html[lang="he"][data-theme="light"] .hero h1 {
+    color: var(--text-heading);
+}
+
+html[lang="he"][data-theme="light"] .hero-subtitle {
+    color: var(--text-muted);
+}
+
+html[lang="he"][data-theme="light"] .cta-outline {
+    border-color: var(--border);
+    color: var(--text);
+}
+
+html[lang="he"][data-theme="light"] .cta-outline:hover {
+    background: var(--surface-hover);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* Fix for profile image overlay in light hero */
+html[lang="he"][data-theme="light"] .profile-image-wrapper::after {
+    background: linear-gradient(
+        to top,
+        rgba(200, 169, 110, 0.1) 0%,
+        transparent 40%
+    );
 }
 
 /* ===== RESET & BASE ===== */
