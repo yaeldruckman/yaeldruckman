@@ -225,7 +225,6 @@
             /* View Transitions */
             ::view-transition-group(morph-card),
             ::view-transition-group(morph-stars),
-            ::view-transition-group(morph-text),
             ::view-transition-group(morph-author) {
                 animation-duration: 500ms;
                 animation-timing-function: cubic-bezier(
@@ -522,11 +521,8 @@
                             </p>
                             <h1>עריכת דין<br />גישור<br />ביטוח ופיננסים</h1>
                             <p class="hero-subtitle">
-                                משרד משפחתי הרואה את התמונה המלאה של חייכם.
-                                חיבור מדויק בין ייעוץ משפטי, גישור, והגנה
-                                ביטוחית ופיננסית — הכל כדי לבנות עבורכם מעטפת
-                                הגנה חכמה, המעניקה שקט נפשי וביטחון אמיתי בכל
-                                החלטה משמעותית.
+                                מעל עשרים שנות ניסיון במתן ייעוץ וייצוג במשפטים,
+                                גישור, ביטוח ופיננסים.
                             </p>
                             <div class="hero-cta-group">
                                 <a class="cta" href="#contact">
@@ -757,14 +753,15 @@
                             </p>
                         </div>
                         <p class="about-text fade-up">
-                            מקצוענית רב תחומית המגשרת ומקשרת בין עולמות המשפט
-                            והביטוח, העולם העסקי והרגשי. חיה ונושמת את עולם
-                            הפרקטיקה, דרך ניסיון חיים אישי עשיר, הכרת ומיצוי
-                            הזכויות, הזכאויות וליווי ארוך טווח בלתי מתפשר.
-                        </p>
-                        <p class="about-text fade-up">
                             בוגרת המרכז הבינתחומי הרצליה במשפטים ומנהל עסקים
-                            (2004).
+                            (2004).<br />
+                            מגשרת מוסמכת (מוסד ושנה).<br />
+                            סוכנת ביטוח מורשית (מוסד ושנה, או מה שרלוונטי ומקובל
+                            בתחום).<br />
+                            מגשרת בין עולמות המשפט והביטוח ובין העולם העסקי
+                            והרגשי. חיה ונושמת את עולם הפרקטיקה, דרך ניסיון חיים
+                            אישי עשיר, הכרת ומיצוי הזכויות, הזכאויות וליווי ארוך
+                            טווח בלתי מתפשר.
                         </p>
                         <div class="credentials fade-up">
                             <span class="credential-badge">
@@ -1427,10 +1424,12 @@
                 <div class="container">
                     <div class="cta-banner fade-up">
                         <div class="cta-banner-content">
-                            <h2 style="font-size: 2rem; margin-bottom: 1.5rem">
+                            <h3
+                                style="font-size: 1.5rem; margin-bottom: 1.5rem"
+                            >
                                 רווק/ה, נשוי/אה, גרוש/ה, אלמן/ה, יחידני/ת, עם
                                 ילדים/ללא, פרק ב‘ —
-                            </h2>
+                            </h3>
                             <p>
                                 לכל אחד מהסטטוסים האלה צרכים כלכליים וביטוחיים
                                 שונים ומשמעויות משפטיות שונות.
@@ -1502,11 +1501,8 @@
                     <div class="contact-layout">
                         <div class="contact-info fade-up">
                             <div class="contact-info-header">
-                                <h2
-                                    class="section-title"
-                                    style="font-size: 3rem; margin-top: 0"
-                                >
-                                    צור קשר
+                                <h2 class="section-title" style="margin-top: 0">
+                                    יצירת קשר
                                 </h2>
                                 <p
                                     class="section-subtitle"
@@ -1606,7 +1602,7 @@
                                 <div class="contact-detail-text">
                                     <div class="contact-detail-label">משרד</div>
                                     <div class="contact-detail-value">
-                                        העצמאות 51ב', הרצליה
+                                        העצמאות 51 ב', הרצליה
                                     </div>
                                 </div>
                             </div>
@@ -1838,13 +1834,11 @@
 
                     activeCard = card;
                     const stars = card.querySelector(".testimonial-stars");
-                    const text = card.querySelector(".testimonial-text");
                     const author = card.querySelector(".testimonial-author");
 
                     // Set transition names on the clicked card
                     card.style.viewTransitionName = "morph-card";
                     if (stars) stars.style.viewTransitionName = "morph-stars";
-                    if (text) text.style.viewTransitionName = "morph-text";
                     if (author)
                         author.style.viewTransitionName = "morph-author";
 
@@ -1852,7 +1846,6 @@
                         // Remove transition names from the original card to avoid conflict
                         card.style.viewTransitionName = "none";
                         if (stars) stars.style.viewTransitionName = "none";
-                        if (text) text.style.viewTransitionName = "none";
                         if (author) author.style.viewTransitionName = "none";
 
                         // Inject content into dialog
@@ -1862,16 +1855,12 @@
                         modalCard.style.viewTransitionName = "morph-card";
                         const modalStars =
                             modalContent.querySelector(".testimonial-stars");
-                        const modalText =
-                            modalContent.querySelector(".testimonial-text");
                         const modalAuthor = modalContent.querySelector(
                             ".testimonial-author",
                         );
 
                         if (modalStars)
                             modalStars.style.viewTransitionName = "morph-stars";
-                        if (modalText)
-                            modalText.style.viewTransitionName = "morph-text";
                         if (modalAuthor)
                             modalAuthor.style.viewTransitionName =
                                 "morph-author";
@@ -1899,8 +1888,6 @@
 
                     const modalStars =
                         modalContent.querySelector(".testimonial-stars");
-                    const modalText =
-                        modalContent.querySelector(".testimonial-text");
                     const modalAuthor = modalContent.querySelector(
                         ".testimonial-author",
                     );
@@ -1910,8 +1897,6 @@
                         modalCard.style.viewTransitionName = "none";
                         if (modalStars)
                             modalStars.style.viewTransitionName = "none";
-                        if (modalText)
-                            modalText.style.viewTransitionName = "none";
                         if (modalAuthor)
                             modalAuthor.style.viewTransitionName = "none";
 
@@ -1920,16 +1905,12 @@
                             activeCard.style.viewTransitionName = "morph-card";
                             const stars =
                                 activeCard.querySelector(".testimonial-stars");
-                            const text =
-                                activeCard.querySelector(".testimonial-text");
                             const author = activeCard.querySelector(
                                 ".testimonial-author",
                             );
 
                             if (stars)
                                 stars.style.viewTransitionName = "morph-stars";
-                            if (text)
-                                text.style.viewTransitionName = "morph-text";
                             if (author)
                                 author.style.viewTransitionName =
                                     "morph-author";
@@ -1946,13 +1927,10 @@
                             activeCard.style.viewTransitionName = "none";
                             const stars =
                                 activeCard.querySelector(".testimonial-stars");
-                            const text =
-                                activeCard.querySelector(".testimonial-text");
                             const author = activeCard.querySelector(
                                 ".testimonial-author",
                             );
                             if (stars) stars.style.viewTransitionName = "none";
-                            if (text) text.style.viewTransitionName = "none";
                             if (author)
                                 author.style.viewTransitionName = "none";
                             activeCard = null;
