@@ -83,6 +83,34 @@
                 flex-grow: 1;
                 position: relative;
                 z-index: 1;
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                transition: all 0.3s ease;
+            }
+
+            .testimonial-card.expanded .testimonial-text {
+                -webkit-line-clamp: unset;
+                display: block;
+            }
+
+            .read-more-btn {
+                background: none;
+                border: none;
+                color: var(--accent);
+                font-weight: 600;
+                cursor: pointer;
+                padding: 0;
+                margin-top: -1.5rem;
+                margin-bottom: 1.5rem;
+                font-size: 0.95rem;
+                display: block;
+                font-family: inherit;
+            }
+
+            .testimonial-card.expanded .read-more-btn {
+                display: block;
             }
 
             .testimonial-author {
@@ -91,16 +119,6 @@
                 padding-top: 2rem !important;
                 gap: 1rem !important;
                 margin-top: auto;
-            }
-
-            .testimonial-avatar {
-                margin: 0 auto;
-                width: 60px !important;
-                height: 60px !important;
-                border: 2px solid var(--accent) !important;
-                padding: 3px;
-                background: var(--bg);
-                border-radius: 50% !important;
             }
 
             .testimonial-name {
@@ -830,13 +848,13 @@
                                 litigation. I couldn't recommend her more
                                 highly."
                             </p>
+                            <button
+                                class="read-more-btn"
+                                onclick="toggleTestimonial(this)"
+                            >
+                                Read More...
+                            </button>
                             <div class="testimonial-author">
-                                <img
-                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&h=100&q=80"
-                                    alt="David M."
-                                    class="testimonial-avatar"
-                                    loading="lazy"
-                                />
                                 <div class="testimonial-info">
                                     <div class="testimonial-name">David M.</div>
                                     <div class="testimonial-role">
@@ -917,13 +935,13 @@
                                 unmatched, and she fought for every penny we
                                 were owed. A true professional."
                             </p>
+                            <button
+                                class="read-more-btn"
+                                onclick="toggleTestimonial(this)"
+                            >
+                                Read More...
+                            </button>
                             <div class="testimonial-author">
-                                <img
-                                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&h=100&q=80"
-                                    alt="Sarah K."
-                                    class="testimonial-avatar"
-                                    loading="lazy"
-                                />
                                 <div class="testimonial-info">
                                     <div class="testimonial-name">Sarah K.</div>
                                     <div class="testimonial-role">
@@ -1004,13 +1022,13 @@
                                 inheritance dispute with empathy and razor-sharp
                                 legal insight. We're so grateful."
                             </p>
+                            <button
+                                class="read-more-btn"
+                                onclick="toggleTestimonial(this)"
+                            >
+                                Read More...
+                            </button>
                             <div class="testimonial-author">
-                                <img
-                                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80"
-                                    alt="Michael R."
-                                    class="testimonial-avatar"
-                                    loading="lazy"
-                                />
                                 <div class="testimonial-info">
                                     <div class="testimonial-name">
                                         Michael R.

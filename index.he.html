@@ -9,7 +9,7 @@
             name="description"
             content="יעל דרוקמן — משפטים, גישור, ביטוח ופיננסים. משרד משפחתי לניהול סיכונים משפטיים, ביטוחיים וכלכליים."
         />
-        <title>יעל דרוקמן — משפטים, גישור, ביטוח ופיננסים</title>
+        <title>יעל דרוקמן - משרד עורכי דין, סוכנת ביטוח ופיננסים</title>
         <link rel="stylesheet" href="styles.min.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -83,6 +83,34 @@
                 flex-grow: 1;
                 position: relative;
                 z-index: 1;
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                transition: all 0.3s ease;
+            }
+
+            .testimonial-card.expanded .testimonial-text {
+                -webkit-line-clamp: unset;
+                display: block;
+            }
+
+            .read-more-btn {
+                background: none;
+                border: none;
+                color: var(--accent);
+                font-weight: 600;
+                cursor: pointer;
+                padding: 0;
+                margin-top: -1.5rem;
+                margin-bottom: 1.5rem;
+                font-size: 0.95rem;
+                display: block;
+                font-family: inherit;
+            }
+
+            .testimonial-card.expanded .read-more-btn {
+                display: block;
             }
 
             .testimonial-author {
@@ -91,16 +119,6 @@
                 padding-top: 2rem !important;
                 gap: 1rem !important;
                 margin-top: auto;
-            }
-
-            .testimonial-avatar {
-                margin: 0 auto;
-                width: 60px !important;
-                height: 60px !important;
-                border: 2px solid var(--accent) !important;
-                padding: 3px;
-                background: var(--bg);
-                border-radius: 50% !important;
             }
 
             .testimonial-name {
@@ -136,7 +154,8 @@
                     <span class="logo-text">
                         <span class="logo-name">יעל דרוקמן</span>
                         <span class="logo-title"
-                            >משפט &middot; גישור &middot; ביטוח ופיננסים</span
+                            >עריכת דין &middot; גישור &middot; ביטוח
+                            ופיננסים</span
                         >
                     </span>
                 </a>
@@ -375,7 +394,7 @@
                             <div class="profile-image-wrapper">
                                 <img
                                     src="assets/profile-pic.png"
-                                    alt="יעל דרוקמן — משפטים, גישור, ביטוח ופיננסים"
+                                    alt="יעל דרוקמן - משרד עורכי דין, סוכנת ביטוח ופיננסים"
                                     loading="eager"
                                     width="864"
                                     height="1184"
@@ -399,11 +418,9 @@
                                         d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"
                                     />
                                 </svg>
-                                משרד משפחתי
+                                עו״ד יעל דרוקמן
                             </p>
-                            <h1>
-                                ניהול סיכונים משפטיים<br />ביטוחיים ופיננסיים
-                            </h1>
+                            <h1>עריכת דין<br />גישור<br />ביטוח ופיננסים</h1>
                             <p class="hero-subtitle">
                                 משרד משפחתי הרואה את התמונה המלאה של חייכם.
                                 חיבור מדויק בין ייעוץ משפטי, גישור, והגנה
@@ -528,13 +545,13 @@
                                 </svg>
                             </div>
                             <h3>שירותים משפטיים וגישור</h3>
-                            <p>
+                            <p style="font-size: 1.05rem">
                                 ייעוץ וליווי משפטי המותאם למבנה המשפחתי
                                 והאישי.<br /><br />
                                 • ייפוי כוח מתמשך ליחידים ובעלי חברות<br />
                                 • צוואות והעברה בינדורית משפחתית<br />
-                                • גישורים וסכסוכים משפחתיים<br />
-                                • הסכמי גירושין, ממון וחיים משותפים
+                                • הסכם חיים משותפים, הסכם ממון והסכם גירושין<br />
+                                • גישורים וסכסוכים משפחתיים
                             </p>
                             <div class="accent-divider"></div>
                         </article>
@@ -563,10 +580,11 @@
                             </div>
                             <h3>ביטוח, פנסיה ופיננסים</h3>
                             <p>
-                                בניית רשת ביטחון כלכלית ומיצוי זכויות.<br /><br />
+                                בניית רשת בטחון כלכלית ותכנון פיננסי עתידי.<br /><br />
                                 • ביטוחי חיים, בריאות, מחלות קשות ותאונות
                                 אישיות<br />
-                                • פוליסות פיננסיות וקרנות פנסיה והשתלמות<br />
+                                • קרנות פנסיה והשתלמות<br />
+                                • פוליסות פיננסיות<br />
                                 • הלוואות מקופות גמל
                             </p>
                             <div class="accent-divider"></div>
@@ -595,10 +613,12 @@
                             <p>
                                 טיפול במורכבויות משפטיות ופיננסיות
                                 רב-מערכתיות.<br /><br />
-                                • תביעות למימוש זכאויות מכל הפוליסות<br />
                                 • העברת זכויות פנסיוניות אגב גירושין<br />
                                 • ניהול נכסים למתגוררים בארץ ובחו"ל<br />
-                                • ייעוץ משפטי וביטוחי עקב רילוקיישן
+                                • ייעוץ משפטי וביטוחי עקב רילוקיישן<br />
+                                • תביעות למימוש זכאויות מפוליסות הביטוח
+                                השונות<br />
+                                • תביעות פוליסות סיעוד של קופת חולים
                             </p>
                             <div class="accent-divider"></div>
                         </article>
@@ -637,19 +657,14 @@
                             </p>
                         </div>
                         <p class="about-text fade-up">
-                            משפחות ועסקים מוצאים את עצמם לא פעם מתמרנים בין אנשי
-                            מקצוע שונים — כשכל אחד רואה רק זווית אחת של המציאות.
-                            מתוך הניסיון הזה יצרתי משרד שפועל כבית אחד: כתובת
-                            אישית המשלבת את כל הידע, הכלים והסמכויות כדי להגן
-                            עליכם ועל הנכסים שלכם בצורה הוליסטית וחכמה.
+                            מקצוענית רב תחומית המגשרת ומקשרת בין עולמות המשפט
+                            והביטוח, העולם העסקי והרגשי. חיה ונושמת את עולם
+                            הפרקטיקה, דרך ניסיון חיים אישי עשיר, הכרת ומיצוי
+                            הזכויות, הזכאויות וליווי ארוך טווח בלתי מתפשר.
                         </p>
                         <p class="about-text fade-up">
-                            כעורכת דין, סוכנת ביטוח ומגשרת, אני לא מסתכלת רק על
-                            הסעיף היבש. אני כאן כדי לתרגם מורכבות משפטית וכלכלית
-                            לפתרונות מעשיים ברגעים החשובים בחיים — החל מהעברה
-                            בין־דורית ומיצוי זכויות, ועד ניהול משברים משפחתיים.
-                            הלקוחות שלי מקבלים ליווי קרוב, דיסקרטי וחסר פשרות,
-                            שנועד לתת דבר אחד: שקט נפשי אמיתי.
+                            בוגרת המרכז הבינתחומי הרצליה במשפטים ומנהל עסקים
+                            (2004).
                         </p>
                         <div class="credentials fade-up">
                             <span class="credential-badge">
@@ -836,18 +851,29 @@
                             </div>
 
                             <p class="testimonial-text">
-                                "יעל מלווה אותי ברגעים הכי לא פשוטים עבורי עם
-                                שקט נפשי, אחריות ותחושת ביטחון מלאה, ותמיד דואגת
-                                שאמצה את כל הזכויות והאפשרויות בצורה הטובה
-                                ביותר."
+                                "ממליץ מכל הלב על יעל. מעבר למקצועיות יוצאת
+                                הדופן, הידע הרחב והיכולת להסביר כל דבר בצורה
+                                ברורה ומרגיעה - יעל היא קודם כל אדם נדיר. לאורך
+                                השנים, ובמיוחד בתקופה המורכבת שבה אבא שלי היה
+                                חולה, היא הייתה שם עבורנו הרבה מעבר למה שמצופה
+                                מאשת מקצוע. זמינה, רגישה, סבלנית ואכפתית באמת,
+                                כאילו הייתה חלק מהמשפחה. יעל מלווה אותי ברגעים
+                                הכי לא פשוטים עבורי עם שקט נפשי, אחריות ותחושת
+                                ביטחון מלאה, ותמיד דואגת שאמצה את כל הזכויות
+                                והאפשרויות בצורה הטובה ביותר. התחושה היא שיש
+                                מישהו שנלחם עבורך, דואג לך ורואה אותך באמת - וזה
+                                דבר שלא מובן מאליו בכלל. אני ממליץ עליה בלב שלם
+                                לכל מי שמחפש לא רק סוכנת ביטוח מקצועית ואמינה,
+                                אלא גם אדם שאפשר לסמוך עליו בעיניים עצומות
+                                ברגעים החשובים באמת."
                             </p>
+                            <button
+                                class="read-more-btn"
+                                onclick="toggleTestimonial(this)"
+                            >
+                                ...קרא עוד
+                            </button>
                             <div class="testimonial-author">
-                                <img
-                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&h=100&q=80"
-                                    alt="מני הורוביץ"
-                                    class="testimonial-avatar"
-                                    loading="lazy"
-                                />
                                 <div class="testimonial-info">
                                     <div class="testimonial-name">
                                         מני הורוביץ
@@ -922,18 +948,38 @@
                             </div>
 
                             <p class="testimonial-text">
-                                "לא הייתי מצליחה לעשות את זה לבד! יעל מקצועית,
-                                תילחם בשבילכם מול מי שצריך ותעשה את עבודתה
-                                ביסודיות, אך היא גם בעלת לב ענק ומרגישים את
-                                האיכפתיות והאנושיות שלה בכל צעד."
+                                "הגעתי ליעל כדי לפנות לחברת הביטוח לקבלת קיצבה
+                                עבור אובדן כושר עבודה מקרן הפנסיה בעקבות
+                                התדרדרות במצבי הנפשי. הייתי אחרי מספר אישפוזים
+                                ומצבי היה רע, לא יכלתי להתעסק עם שומדבר בירוקרטי
+                                ולהתנהל מול המסמכים של חברת הביטוח הרגיש כמו
+                                לנסות לקרוא סינית. לא הבנתי כלום ולא ידעתי מה
+                                לעשות. בפגישתינו הראשונה יעל שאלה שאלות ברגישות
+                                והקשיבה בהכלה, היתה יסודית ונטעה בי תקווה. כל
+                                התהליך היה מהיר, יסודי ובעיקר פשוט עבורי, הרגשתי
+                                שאני בידיים טובות. יעל כיוונה אותי אילו מסמכים
+                                להעביר לה, ענתה בסבלנות ובצורה מובנת על כל שאלה
+                                שלי, היתה זמינה עבורי ועשתה הכל ביעילות וקלות
+                                מעוררים השתאות. תוך מספר ימים קיבלתי אישור
+                                והתחלתי לקבל את הקיצבה כולל סכום לא קטן שקיבלתי
+                                רטרואקטיבית. התוצאה הטובה ביותר שיכלתי לקוות לה.
+                                לאחר סיום הטיפול היא גם בדקה איתי מה שלומי והיתה
+                                שם עבורי לשאלות נוספות שהיו לי. לא הייתי מצליחה
+                                לעשות את זה לבד! יעל מקצועית, תילחם בשבילכם מול
+                                מי שצריך ותעשה את עבודתה ביסודיות, אך היא גם
+                                בעלת לב ענק ומרגישים את האיכפתיות והאנושיות שלה
+                                בכל צעד. המלצתי עליה מאז להרבה מחבריי ואני
+                                ממליצה עליה בעיניים עצומות ולב שקט. שמחה שזכיתי
+                                להגיע אליה ואפנה אליה בהחלט בעתיד אם אצטרך. תודה
+                                יעל!"
                             </p>
+                            <button
+                                class="read-more-btn"
+                                onclick="toggleTestimonial(this)"
+                            >
+                                ...קרא עוד
+                            </button>
                             <div class="testimonial-author">
-                                <img
-                                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&h=100&q=80"
-                                    alt="ליטל דוד"
-                                    class="testimonial-avatar"
-                                    loading="lazy"
-                                />
                                 <div class="testimonial-info">
                                     <div class="testimonial-name">ליטל דוד</div>
                                     <div class="testimonial-role">לקוחה</div>
@@ -1006,23 +1052,23 @@
                             </div>
 
                             <p class="testimonial-text">
-                                "כמגשרת, ליעל יש כישרון למצוא מכנה משותף גם היכן
-                                שנראה שאין. היא הנחתה את המשפחה שלנו דרך סכסוך
-                                ירושה קשה עם אמפתיה ותובנה משפטית חדה. אנחנו כל
-                                כך אסירי תודה."
+                                יעל מנהלת את נכסיי בארץ למעלה מעשר שנים,
+                                במקצועיות רבה, אמון מלא ואנושיות על מלא. השקט
+                                הנפשי שיש לי שאני יודעת שיש מי שמטפל בי, דואג לי
+                                ושומר על נכסיי כאילו היו שלו, לא יסולא בפז.
                             </p>
+                            <button
+                                class="read-more-btn"
+                                onclick="toggleTestimonial(this)"
+                            >
+                                ...קרא עוד
+                            </button>
                             <div class="testimonial-author">
-                                <img
-                                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80"
-                                    alt="מיכאל ר."
-                                    class="testimonial-avatar"
-                                    loading="lazy"
-                                />
                                 <div class="testimonial-info">
-                                    <div class="testimonial-name">מיכאל ר.</div>
-                                    <div class="testimonial-role">
-                                        לקוח פרטי
+                                    <div class="testimonial-name">
+                                        ליאורה בוקופצר
                                     </div>
+                                    <div class="testimonial-role">קנדה</div>
                                 </div>
                             </div>
                         </div>
@@ -1281,12 +1327,23 @@
                 <div class="container">
                     <div class="cta-banner fade-up">
                         <div class="cta-banner-content">
-                            <h2>מוכנים לדון בתיק שלכם?</h2>
-                            <p>
+                            <h2 style="font-size: 2rem; margin-bottom: 1.5rem">
                                 רווק/ה, נשוי/אה, גרוש/ה, אלמן/ה, יחידני/ת, עם
-                                ילדים/ללא, פרק ב‘ —<br />
+                                ילדים/ללא, פרק ב‘ —
+                            </h2>
+                            <p>
                                 לכל אחד מהסטטוסים האלה צרכים כלכליים וביטוחיים
                                 שונים ומשמעויות משפטיות שונות.
+                            </p>
+                            <p
+                                style="
+                                    font-weight: 600;
+                                    margin-top: 1rem;
+                                    font-size: 1.2rem;
+                                "
+                            >
+                                מהימנעות לאחריות, כל שצריך הוא לעשות את הצעד
+                                הראשון
                             </p>
                             <div class="cta-banner-buttons">
                                 <a class="cta" href="#contact">
@@ -1345,32 +1402,12 @@
                     <div class="contact-layout">
                         <div class="contact-info fade-up">
                             <div class="contact-info-header">
-                                <p class="section-label">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="16"
-                                        height="16"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    >
-                                        <rect
-                                            width="20"
-                                            height="16"
-                                            x="2"
-                                            y="4"
-                                            rx="2"
-                                        />
-                                        <path
-                                            d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"
-                                        />
-                                    </svg>
-                                    צרו קשר
-                                </p>
-                                <h2 class="section-title">בואו נדבר</h2>
+                                <h2
+                                    class="section-title"
+                                    style="font-size: 3rem; margin-top: 0"
+                                >
+                                    צור קשר
+                                </h2>
                                 <p
                                     class="section-subtitle"
                                     style="line-height: 1.6"
@@ -1469,7 +1506,7 @@
                                 <div class="contact-detail-text">
                                     <div class="contact-detail-label">משרד</div>
                                     <div class="contact-detail-value">
-                                        הרצליה
+                                        העצמאות 51ב', הרצליה
                                     </div>
                                 </div>
                             </div>

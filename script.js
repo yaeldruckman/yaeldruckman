@@ -332,6 +332,19 @@ const spinStyle = document.createElement("style");
 spinStyle.textContent = `@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }`;
 document.head.appendChild(spinStyle);
 
+// ===== TESTIMONIALS =====
+window.toggleTestimonial = function (btn) {
+  const card = btn.closest(".testimonial-card");
+  const lang = document.documentElement.getAttribute("lang") || "en";
+  const isExpanded = card.classList.toggle("expanded");
+
+  if (lang === "he") {
+    btn.textContent = isExpanded ? "קרא פחות" : "...קרא עוד";
+  } else {
+    btn.textContent = isExpanded ? "Read Less" : "Read More...";
+  }
+};
+
 // ===== INIT =====
 document.addEventListener("DOMContentLoaded", () => {
   initScrollAnimations();
