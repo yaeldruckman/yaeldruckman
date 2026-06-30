@@ -141,6 +141,106 @@
                 --accent: #d4a840 !important;
                 --accent-hover: #e5b951 !important;
             }
+
+            /* Morphing Dialog Styles */
+            .dialog-modal {
+                border: none;
+                padding: 0;
+                background: transparent;
+                max-width: 100vw;
+                max-height: 100vh;
+                overflow: visible;
+                margin: auto;
+                outline: none;
+            }
+
+            .dialog-modal::backdrop {
+                background-color: rgba(0, 0, 0, 0.4);
+                backdrop-filter: blur(4px);
+                -webkit-backdrop-filter: blur(4px);
+            }
+
+            .modal-content {
+                position: relative;
+                width: 600px;
+                max-width: calc(100vw - 24px);
+                height: auto;
+                background: var(--card-gradient) !important;
+                border: 1px solid var(--accent) !important;
+                border-top: 3px solid var(--accent) !important;
+                border-radius: var(--radius-lg) !important;
+                box-shadow:
+                    var(--shadow-lg),
+                    0 0 30px var(--accent-subtle);
+                overflow: hidden;
+            }
+
+            .scroll-area {
+                max-height: 90vh;
+                overflow-y: auto;
+                padding: 3.5rem 2.25rem 2.5rem;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+
+            .scroll-area::-webkit-scrollbar {
+                display: none;
+            }
+
+            .modal-close-btn {
+                position: absolute;
+                top: 1rem;
+                left: 1rem;
+                background: none;
+                border: none;
+                color: var(--text-heading);
+                cursor: pointer;
+                padding: 0.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10;
+                border-radius: 50%;
+                transition: background-color 0.2s;
+            }
+
+            .modal-close-btn:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+
+            #modal-content-inner .testimonial-text {
+                -webkit-line-clamp: unset !important;
+                display: block !important;
+                overflow: visible !important;
+            }
+
+            #modal-content-inner .read-more-btn {
+                display: none !important;
+            }
+
+            .testimonial-card.is-ghost {
+                opacity: 0 !important;
+            }
+
+            /* View Transitions */
+            ::view-transition-group(morph-card),
+            ::view-transition-group(morph-stars),
+            ::view-transition-group(morph-text),
+            ::view-transition-group(morph-author) {
+                animation-duration: 500ms;
+                animation-timing-function: cubic-bezier(
+                    0.175,
+                    0.885,
+                    0.32,
+                    1.12
+                );
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                ::view-transition-group(*) {
+                    animation-duration: 0.01ms !important;
+                }
+            }
         </style>
     </head>
     <body>
@@ -869,7 +969,7 @@
                             </p>
                             <button
                                 class="read-more-btn"
-                                onclick="toggleTestimonial(this)"
+                                onclick="morphTestimonial(this)"
                             >
                                 ...קרא עוד
                             </button>
@@ -975,7 +1075,7 @@
                             </p>
                             <button
                                 class="read-more-btn"
-                                onclick="toggleTestimonial(this)"
+                                onclick="morphTestimonial(this)"
                             >
                                 ...קרא עוד
                             </button>
@@ -1059,7 +1159,7 @@
                             </p>
                             <button
                                 class="read-more-btn"
-                                onclick="toggleTestimonial(this)"
+                                onclick="morphTestimonial(this)"
                             >
                                 ...קרא עוד
                             </button>
@@ -1668,6 +1768,215 @@
                 />
             </svg>
         </a>
+
+        <!-- Morphing Dialog Elements -->
+        <dialog id="morph-dialog" class="dialog-modal" dir="rtl">
+            <div id="modal-card" class="modal-content">
+                <button
+                    id="modal-close"
+                    class="modal-close-btn"
+                    aria-label="סגור"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+                <div class="scroll-area">
+                    <div id="modal-content-inner">
+                        <!-- Content will be injected here -->
+                    </div>
+                </div>
+            </div>
+        </dialog>
+
+        <script>
+            (function () {
+                "use strict";
+
+                const dialog = document.getElementById("morph-dialog");
+                const modalCard = document.getElementById("modal-card");
+                const modalContent = document.getElementById(
+                    "modal-content-inner",
+                );
+                const closeBtn = document.getElementById("modal-close");
+
+                let activeCard = null;
+
+                function lockScroll(lock) {
+                    if (lock) {
+                        const scrollbarComp =
+                            window.innerWidth -
+                            document.documentElement.clientWidth;
+                        document.body.style.paddingInlineEnd =
+                            scrollbarComp > 0 ? scrollbarComp + "px" : "";
+                        document.body.style.overflow = "hidden";
+                    } else {
+                        document.body.style.overflow = "";
+                        document.body.style.paddingInlineEnd = "";
+                    }
+                }
+
+                function openMorphDialog(card) {
+                    if (!card || !document.startViewTransition) {
+                        // Fallback
+                        modalContent.innerHTML = card.innerHTML;
+                        dialog.showModal();
+                        lockScroll(true);
+                        return;
+                    }
+
+                    activeCard = card;
+                    const stars = card.querySelector(".testimonial-stars");
+                    const text = card.querySelector(".testimonial-text");
+                    const author = card.querySelector(".testimonial-author");
+
+                    // Set transition names on the clicked card
+                    card.style.viewTransitionName = "morph-card";
+                    if (stars) stars.style.viewTransitionName = "morph-stars";
+                    if (text) text.style.viewTransitionName = "morph-text";
+                    if (author)
+                        author.style.viewTransitionName = "morph-author";
+
+                    const transition = document.startViewTransition(() => {
+                        // Remove transition names from the original card to avoid conflict
+                        card.style.viewTransitionName = "none";
+                        if (stars) stars.style.viewTransitionName = "none";
+                        if (text) text.style.viewTransitionName = "none";
+                        if (author) author.style.viewTransitionName = "none";
+
+                        // Inject content into dialog
+                        modalContent.innerHTML = card.innerHTML;
+
+                        // Set transition names on the dialog elements
+                        modalCard.style.viewTransitionName = "morph-card";
+                        const modalStars =
+                            modalContent.querySelector(".testimonial-stars");
+                        const modalText =
+                            modalContent.querySelector(".testimonial-text");
+                        const modalAuthor = modalContent.querySelector(
+                            ".testimonial-author",
+                        );
+
+                        if (modalStars)
+                            modalStars.style.viewTransitionName = "morph-stars";
+                        if (modalText)
+                            modalText.style.viewTransitionName = "morph-text";
+                        if (modalAuthor)
+                            modalAuthor.style.viewTransitionName =
+                                "morph-author";
+
+                        dialog.showModal();
+                        lockScroll(true);
+                        card.classList.add("is-ghost");
+                    });
+
+                    transition.finished.finally(() => {
+                        // Cleanup: ensure names are cleared from card (already done in VT callback)
+                        // and we can clear from modal too if we want, but it's removed on close anyway
+                    });
+                }
+
+                function closeMorphDialog() {
+                    if (!dialog.open) return;
+
+                    if (!document.startViewTransition) {
+                        dialog.close();
+                        lockScroll(false);
+                        if (activeCard) activeCard.classList.remove("is-ghost");
+                        return;
+                    }
+
+                    const modalStars =
+                        modalContent.querySelector(".testimonial-stars");
+                    const modalText =
+                        modalContent.querySelector(".testimonial-text");
+                    const modalAuthor = modalContent.querySelector(
+                        ".testimonial-author",
+                    );
+
+                    const transition = document.startViewTransition(() => {
+                        // Remove transition names from modal
+                        modalCard.style.viewTransitionName = "none";
+                        if (modalStars)
+                            modalStars.style.viewTransitionName = "none";
+                        if (modalText)
+                            modalText.style.viewTransitionName = "none";
+                        if (modalAuthor)
+                            modalAuthor.style.viewTransitionName = "none";
+
+                        // Reassign to original card for reverse morph
+                        if (activeCard) {
+                            activeCard.style.viewTransitionName = "morph-card";
+                            const stars =
+                                activeCard.querySelector(".testimonial-stars");
+                            const text =
+                                activeCard.querySelector(".testimonial-text");
+                            const author = activeCard.querySelector(
+                                ".testimonial-author",
+                            );
+
+                            if (stars)
+                                stars.style.viewTransitionName = "morph-stars";
+                            if (text)
+                                text.style.viewTransitionName = "morph-text";
+                            if (author)
+                                author.style.viewTransitionName =
+                                    "morph-author";
+
+                            activeCard.classList.remove("is-ghost");
+                        }
+
+                        dialog.close();
+                        lockScroll(false);
+                    });
+
+                    transition.finished.finally(() => {
+                        if (activeCard) {
+                            activeCard.style.viewTransitionName = "none";
+                            const stars =
+                                activeCard.querySelector(".testimonial-stars");
+                            const text =
+                                activeCard.querySelector(".testimonial-text");
+                            const author = activeCard.querySelector(
+                                ".testimonial-author",
+                            );
+                            if (stars) stars.style.viewTransitionName = "none";
+                            if (text) text.style.viewTransitionName = "none";
+                            if (author)
+                                author.style.viewTransitionName = "none";
+                            activeCard = null;
+                        }
+                    });
+                }
+
+                window.morphTestimonial = function (btn) {
+                    const card = btn.closest(".testimonial-card");
+                    if (card) openMorphDialog(card);
+                };
+
+                closeBtn.addEventListener("click", closeMorphDialog);
+
+                dialog.addEventListener("click", (e) => {
+                    if (e.target === dialog) closeMorphDialog();
+                });
+
+                dialog.addEventListener("cancel", (e) => {
+                    e.preventDefault();
+                    closeMorphDialog();
+                });
+            })();
+        </script>
 
         <script src="script.min.js" defer></script>
     </body>
