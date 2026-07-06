@@ -140,6 +140,7 @@
             :root {
                 --accent: #d4a840 !important;
                 --accent-hover: #e5b951 !important;
+                view-transition-name: none;
             }
 
             /* Morphing Dialog Styles */
@@ -154,10 +155,54 @@
                 outline: none;
             }
 
+            .video-modal-content {
+                width: min(900px, 90vw) !important;
+                padding: 1rem !important;
+                aspect-ratio: 16/9;
+                display: flex;
+                flex-direction: column;
+                background: var(--surface);
+                border-radius: 20px;
+                position: relative;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            }
+
+            .video-container {
+                flex: 1;
+                width: 100%;
+                height: 100%;
+                border-radius: 12px;
+                overflow: hidden;
+            }
+
+            .video-container iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+
             .dialog-modal::backdrop {
-                background-color: rgba(0, 0, 0, 0.4);
-                backdrop-filter: blur(4px);
-                -webkit-backdrop-filter: blur(4px);
+                background-color: transparent;
+                backdrop-filter: blur(0px);
+                -webkit-backdrop-filter: blur(0px);
+            }
+
+            .dialog-modal[open]::backdrop {
+                animation: backdrop-blur-in 500ms
+                    cubic-bezier(0.175, 0.885, 0.32, 1.12) forwards;
+            }
+
+            @keyframes backdrop-blur-in {
+                from {
+                    background-color: transparent;
+                    backdrop-filter: blur(0px);
+                    -webkit-backdrop-filter: blur(0px);
+                }
+                to {
+                    background-color: rgba(0, 0, 0, 0.4);
+                    backdrop-filter: blur(4px);
+                    -webkit-backdrop-filter: blur(4px);
+                }
             }
 
             .modal-content {
@@ -1211,8 +1256,8 @@
                         <div class="media-grid">
                             <!-- Featured Video Card -->
                             <a
-                                href="https://drive.google.com/file/d/1GsFIs_QQx0fc_FgImYA8puqGwWytG1EE/view?usp=drivesdk"
-                                target="_blank"
+                                href="https://www.youtube.com/embed/PPfSPrZoMTc?autoplay=1"
+                                onclick="openVideoModal(event, this.href)"
                                 class="media-card featured fade-up"
                             >
                                 <div class="media-card-thumbnail">
@@ -1765,6 +1810,52 @@
             </svg>
         </a>
 
+        <!-- Video Dialog Elements -->
+        <dialog id="video-dialog" class="dialog-modal" dir="rtl">
+            <div
+                id="video-modal-card"
+                class="modal-content video-modal-content"
+            >
+                <button
+                    id="video-modal-close"
+                    class="modal-close-btn"
+                    aria-label="סגור"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+                <div class="video-container">
+                    <iframe
+                        id="video-iframe"
+                        src=""
+                        frameborder="0"
+                        allow="
+                            accelerometer;
+                            autoplay;
+                            clipboard-write;
+                            encrypted-media;
+                            gyroscope;
+                            picture-in-picture;
+                        "
+                        allowfullscreen
+                    >
+                    </iframe>
+                </div>
+            </div>
+        </dialog>
+
         <!-- Morphing Dialog Elements -->
         <dialog id="morph-dialog" class="dialog-modal" dir="rtl">
             <div id="modal-card" class="modal-content">
@@ -1952,6 +2043,36 @@
                 dialog.addEventListener("cancel", (e) => {
                     e.preventDefault();
                     closeMorphDialog();
+                });
+
+                // --- Video Modal Logic ---
+                const videoDialog = document.getElementById("video-dialog");
+                const videoCloseBtn =
+                    document.getElementById("video-modal-close");
+                const videoIframe = document.getElementById("video-iframe");
+
+                window.openVideoModal = function (e, url) {
+                    e.preventDefault();
+                    videoIframe.src = url;
+                    videoDialog.showModal();
+                    lockScroll(true);
+                };
+
+                function closeVideoDialog() {
+                    videoDialog.close();
+                    videoIframe.src = ""; // Stop video playback
+                    lockScroll(false);
+                }
+
+                videoCloseBtn.addEventListener("click", closeVideoDialog);
+
+                videoDialog.addEventListener("click", (e) => {
+                    if (e.target === videoDialog) closeVideoDialog();
+                });
+
+                videoDialog.addEventListener("cancel", (e) => {
+                    e.preventDefault();
+                    closeVideoDialog();
                 });
             })();
         </script>
