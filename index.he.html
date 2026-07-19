@@ -138,8 +138,43 @@
             }
 
             :root {
-                --accent: #d4a840 !important;
-                --accent-hover: #e5b951 !important;
+                /* Tuner Variables */
+                --bg-main: oklch(12.72% 0.021 262.25);
+                --surface: oklch(16.59% 0.035 264.1);
+                --border: oklch(22.82% 0.046 261.27);
+                --text-main: oklch(91.78% 0.007 81.33);
+                --text-muted: oklch(69.21% 0.028 253.2);
+                --accent: oklch(71.49% 0.122 86.8);
+                --accent-hover: oklch(78.53% 0.119 86.82);
+                --accent-text: oklch(100% 0 0);
+
+                /* Aliases to override styles.min.css with tuner variables */
+                --bg: var(--bg-main);
+                --bg-alt: color-mix(in oklch, var(--bg-main), white 2%);
+                --surface-hover: color-mix(in oklch, var(--surface), white 4%);
+                --text: var(--text-main);
+                --text-heading: color-mix(in oklch, var(--text-main), white 20%);
+                --border-light: color-mix(in oklch, var(--border), white 8%);
+                
+                /* Opacity variables */
+                --accent-subtle: color-mix(in oklch, var(--accent) 10%, transparent);
+                --accent-glow: color-mix(in oklch, var(--accent) 25%, transparent);
+                
+                /* Gradients relying on tuned variables */
+                --hero-overlay: linear-gradient(
+                    160deg, 
+                    color-mix(in oklch, var(--bg-main) 92%, transparent) 0%, 
+                    color-mix(in oklch, var(--bg-main) 70%, transparent) 50%, 
+                    color-mix(in oklch, var(--bg-main) 85%, transparent) 100%
+                );
+                --card-gradient: linear-gradient(
+                    145deg, 
+                    var(--surface) 0%, 
+                    color-mix(in oklch, var(--surface) 60%, transparent) 100%
+                );
+                
+                --theme-color: var(--bg-main);
+                
                 view-transition-name: none;
             }
 
@@ -164,7 +199,7 @@
                 background: var(--surface);
                 border-radius: 20px;
                 position: relative;
-                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+                box-shadow: 0 25px 50px -12px oklch(0% 0 0 / 0.25);
             }
 
             .video-container {
@@ -199,7 +234,7 @@
                     -webkit-backdrop-filter: blur(0px);
                 }
                 to {
-                    background-color: rgba(0, 0, 0, 0.4);
+                    background-color: oklch(0% 0 0 / 0.4);
                     backdrop-filter: blur(4px);
                     -webkit-backdrop-filter: blur(4px);
                 }
@@ -250,7 +285,7 @@
             }
 
             .modal-close-btn:hover {
-                background-color: rgba(255, 255, 255, 0.1);
+                background-color: oklch(100% 0 0 / 0.1);
             }
 
             #modal-content-inner .testimonial-text {
@@ -285,6 +320,14 @@
                     animation-duration: 0.01ms !important;
                 }
             }
+
+            /* Accent text and hero title overrides */
+            .hero h1 { color: var(--text-main) !important; }
+            .cta,
+            .contact-card button[type="submit"],
+            .media-tab.active,
+            .logo-icon,
+            .play-button { color: var(--accent-text) !important; }
 
             /* Font Size Overrides */
             body { font-size: 1.15rem; line-height: 1.7; }
@@ -1966,6 +2009,21 @@
             })();
         </script>
 
+        <script type="module">
+            import { initTuner } from 'https://unpkg.com/oklch-tuner/oklch-tuner.js';
+            initTuner({
+                variables: [
+                    '--bg-main',
+                    '--surface',
+                    '--border',
+                    '--text-main',
+                    '--text-muted',
+                    '--accent',
+                    '--accent-hover',
+                    '--accent-text'
+                ]
+            });
+        </script>
         <script src="script.min.js" defer></script>
     </body>
 </html>
