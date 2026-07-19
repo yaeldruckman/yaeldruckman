@@ -2312,3 +2312,428 @@ html[dir="rtl"] .whatsapp-float {
         transform: translateY(0);
     }
 }
+
+/* ===== OKLCH TUNER (HE) ===== */
+html[lang="he"] {
+    /* Tuner Variables */
+    --bg-main: oklch(12.72% 0.021 262.25);
+    --surface: oklch(16.59% 0.035 264.1);
+    --border: oklch(22.82% 0.046 261.27);
+    --text-main: oklch(91.78% 0.007 81.33);
+    --text-muted: oklch(69.21% 0.028 253.2);
+    --accent: oklch(71.49% 0.122 86.8);
+    --accent-hover: oklch(78.53% 0.119 86.82);
+    --accent-text: oklch(100% 0 0);
+
+    /* Core aliases */
+    --bg: var(--bg-main);
+    --bg-alt: color-mix(in oklch, var(--bg-main), var(--accent-text) 2%);
+    --surface-hover: color-mix(in oklch, var(--surface), var(--accent-text) 4%);
+    --text: var(--text-main);
+    --text-heading: color-mix(
+        in oklch,
+        var(--text-main),
+        var(--accent-text) 20%
+    );
+    --border-light: color-mix(
+        in oklch,
+        var(--border),
+        var(--accent-text) 8%
+    );
+
+    /* Derived tones */
+    --accent-subtle: color-mix(in oklch, var(--accent) 10%, transparent);
+    --accent-glow: color-mix(in oklch, var(--accent) 25%, transparent);
+    --shadow-color: color-mix(in oklch, var(--bg-main) 70%, transparent);
+    --overlay-strong: color-mix(in oklch, var(--bg-main) 60%, transparent);
+
+    /* Gradients relying on tuned variables */
+    --hero-overlay: linear-gradient(
+        160deg,
+        color-mix(in oklch, var(--bg-main) 92%, transparent) 0%,
+        color-mix(in oklch, var(--bg-main) 70%, transparent) 50%,
+        color-mix(in oklch, var(--bg-main) 85%, transparent) 100%
+    );
+    --card-gradient: linear-gradient(
+        145deg,
+        var(--surface) 0%,
+        color-mix(in oklch, var(--surface) 60%, transparent) 100%
+    );
+
+    --theme-color: var(--bg-main);
+
+    view-transition-name: none;
+}
+
+html[lang="he"] {
+    background: var(--bg-main);
+    color: var(--text-main);
+}
+
+html[lang="he"] body {
+    background: var(--surface);
+    color: var(--text-main);
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
+/* Enhanced Classy Testimonials */
+html[lang="he"] .testimonial-card {
+    padding: 3.5rem 2.25rem 2.5rem;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    background: var(--card-gradient);
+    border-radius: var(--radius-lg);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition:
+        transform 0.4s var(--ease-out),
+        box-shadow 0.4s var(--ease-out);
+}
+
+html[lang="he"] .testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg), 0 0 30px var(--accent-subtle);
+    border-color: var(--accent);
+}
+
+html[lang="he"] .testimonial-card::before {
+    content: "“";
+    position: absolute;
+    top: 0.5rem;
+    right: 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 8rem;
+    color: var(--accent);
+    opacity: 0.08;
+    line-height: 1;
+    pointer-events: none;
+}
+
+html[lang="he"] .testimonial-stars {
+    justify-content: center;
+    margin-bottom: 2rem;
+    gap: 6px;
+}
+
+html[lang="he"] .testimonial-stars svg {
+    width: 14px;
+    height: 14px;
+    color: var(--accent);
+}
+
+html[lang="he"] .testimonial-quote-icon {
+    display: none;
+}
+
+html[lang="he"] .testimonial-text {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--text-heading);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    flex-grow: 1;
+    position: relative;
+    z-index: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+html[lang="he"] .testimonial-card.expanded .testimonial-text {
+    -webkit-line-clamp: unset;
+    display: block;
+}
+
+html[lang="he"] .read-more-btn {
+    background: none;
+    border: none;
+    color: var(--accent);
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    margin-top: -1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    display: block;
+    font-family: inherit;
+}
+
+html[lang="he"] .testimonial-card.expanded .read-more-btn {
+    display: block;
+}
+
+html[lang="he"] .testimonial-author {
+    flex-direction: column;
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+html[lang="he"] .testimonial-name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text-heading);
+    margin-bottom: 0.25rem;
+}
+
+html[lang="he"] .testimonial-role {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* Morphing Dialog Styles */
+html[lang="he"] .dialog-modal {
+    border: none;
+    padding: 0;
+    background: transparent;
+    max-width: 100vw;
+    max-height: 100vh;
+    overflow: visible;
+    margin: auto;
+    outline: none;
+}
+
+html[lang="he"] .video-modal-content {
+    width: min(900px, 90vw);
+    padding: 1rem;
+    aspect-ratio: 16/9;
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 25px 50px -12px var(--shadow-color);
+}
+
+html[lang="he"] .video-container {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+html[lang="he"] .video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+html[lang="he"] .dialog-modal::backdrop {
+    background-color: transparent;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+}
+
+html[lang="he"] .dialog-modal[open]::backdrop {
+    animation: backdrop-blur-in 500ms
+        cubic-bezier(0.175, 0.885, 0.32, 1.12) forwards;
+}
+
+@keyframes backdrop-blur-in {
+    from {
+        background-color: transparent;
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+    }
+    to {
+        background-color: var(--overlay-strong);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+    }
+}
+
+html[lang="he"] .modal-content {
+    position: relative;
+    width: 600px;
+    max-width: calc(100vw - 24px);
+    height: auto;
+    background: var(--card-gradient);
+    border: 1px solid var(--accent);
+    border-top: 3px solid var(--accent);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg), 0 0 30px var(--accent-subtle);
+    overflow: hidden;
+}
+
+html[lang="he"] .scroll-area {
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 3.5rem 2.25rem 2.5rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html[lang="he"] .scroll-area::-webkit-scrollbar {
+    display: none;
+}
+
+html[lang="he"] .modal-close-btn {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: none;
+    border: none;
+    color: var(--text-heading);
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+html[lang="he"] .modal-close-btn:hover {
+    background-color: color-mix(
+        in oklch,
+        var(--accent-text) 10%,
+        transparent
+    );
+}
+
+html[lang="he"] #modal-content-inner .testimonial-text {
+    -webkit-line-clamp: unset;
+    display: block;
+    overflow: visible;
+}
+
+html[lang="he"] #modal-content-inner .read-more-btn {
+    display: none;
+}
+
+html[lang="he"] .testimonial-card.is-ghost {
+    opacity: 0;
+}
+
+/* View Transitions */
+html[lang="he"] ::view-transition-group(morph-card),
+html[lang="he"] ::view-transition-group(morph-stars),
+html[lang="he"] ::view-transition-group(morph-author) {
+    animation-duration: 500ms;
+    animation-timing-function: cubic-bezier(
+        0.175,
+        0.885,
+        0.32,
+        1.12
+    );
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html[lang="he"] ::view-transition-group(*) {
+        animation-duration: 0.01ms;
+    }
+}
+
+/* Accent text and hero title overrides */
+html[lang="he"] .hero h1 {
+    color: var(--text-main);
+}
+
+html[lang="he"] .cta,
+html[lang="he"] .contact-card button[type="submit"],
+html[lang="he"] .media-tab.active,
+html[lang="he"] .logo-icon,
+html[lang="he"] .play-button {
+    color: var(--accent-text);
+}
+
+html[lang="he"] .hero-cta-group {
+    margin-top: 2.5rem;
+}
+
+/* Font Size Overrides */
+html[lang="he"] p {
+    font-size: 1.15rem;
+}
+
+html[lang="he"] .hero-subtitle {
+    font-size: 1.35rem;
+}
+
+html[lang="he"] .about-text {
+    font-size: 1.25rem;
+}
+
+html[lang="he"] .testimonial-text {
+    font-size: 1.15rem;
+}
+
+html[lang="he"] .section-subtitle {
+    font-size: 1.25rem;
+}
+
+html[lang="he"] .card p {
+    font-size: 1.15rem;
+}
+
+html[lang="he"] h1 {
+    font-size: 4rem;
+}
+
+html[lang="he"] h2 {
+    font-size: 2.5rem;
+}
+
+html[lang="he"] h3 {
+    font-size: 1.75rem;
+}
+
+html[lang="he"] .icon-sun {
+    display: none;
+}
+
+html[lang="he"] .hero-description {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-top: 1.5rem;
+    color: var(--text-muted);
+}
+
+html[lang="he"] .about-visual--plain {
+    border: none;
+    box-shadow: none;
+    background: transparent;
+}
+
+html[lang="he"] .about-visual--plain .about-visual-image {
+    object-fit: contain;
+}
+
+html[lang="he"] #cta-section {
+    background: transparent;
+}
+
+html[lang="he"] .cta-banner-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+html[lang="he"] .cta-banner-emphasis {
+    font-weight: 600;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+html[lang="he"] .contact-title {
+    margin-top: 0;
+}
+
+html[lang="he"] .contact-subtitle {
+    line-height: 1.6;
+}
