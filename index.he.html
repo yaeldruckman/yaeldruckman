@@ -1333,6 +1333,10 @@
                                     required
                                 ></textarea>
                             </div>
+                            <div
+                                id="cf-turnstile"
+                                class="cf-turnstile-slot"
+                            ></div>
                             <button type="submit">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -1684,5 +1688,9 @@
             });
         </script>
         <script src="script.min.js" defer></script>
+        <script
+            src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&amp;onload=onTurnstileLoad"
+            defer
+        ></script>
     </body>
 </html>

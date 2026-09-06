@@ -2150,6 +2150,10 @@
                                     required
                                 ></textarea>
                             </div>
+                            <div
+                                id="cf-turnstile"
+                                class="cf-turnstile-slot"
+                            ></div>
                             <button type="submit">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -2218,6 +2222,25 @@
             </svg>
         </a>
 
+        <script type="module">
+            import { initTuner } from "https://unpkg.com/oklch-tuner/oklch-tuner.js";
+            initTuner({
+                variables: [
+                    "--bg-main",
+                    "--surface",
+                    "--border",
+                    "--text-main",
+                    "--text-muted",
+                    "--accent",
+                    "--accent-hover",
+                    "--accent-text",
+                ],
+            });
+        </script>
         <script src="script.min.js" defer></script>
+        <script
+            src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&amp;onload=onTurnstileLoad"
+            defer
+        ></script>
     </body>
 </html>

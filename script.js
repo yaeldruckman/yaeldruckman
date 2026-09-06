@@ -17,22 +17,24 @@ const i18n = {
     light: "Light",
     sending: "Sending...",
     sent: "Message Sent!",
+    sendError: "Send failed. Try again.",
   },
   he: {
     dark: "כהה",
     light: "בהיר",
     sending: "שולח...",
     sent: "ההודעה נשלחה!",
+    sendError: "השליחה נכשלה. נסו שוב.",
   },
 };
 
 const t = i18n[lang] || i18n.en;
 
-// ===== THEME COLORS =====
-const themeColors = {
-  dark: "#080d1a",
-  light: "#faf8f5",
-};
+function syncThemeColor() {
+  if (!themeMeta) return;
+  const bg = getComputedStyle(root).getPropertyValue("--bg-main").trim();
+  if (bg) themeMeta.setAttribute("content", bg);
+}
 
 // ===== THEME TOGGLE =====
 function setTheme(theme) {
@@ -47,7 +49,7 @@ function setTheme(theme) {
     iconSun.style.display = theme === "light" ? "block" : "none";
   }
 
-  if (themeMeta) themeMeta.setAttribute("content", themeColors[theme]);
+  syncThemeColor();
 
   try {
     localStorage.setItem("theme", theme);
@@ -288,38 +290,107 @@ function initHeaderScroll() {
 }
 
 // ===== FORM HANDLING =====
+// Deploy Apps Script as web app (Anyone) and paste the /exec URL here.
+const scriptURL = "https://script.google.com/macros/s/REPLACE_ME/exec";
+const TURNSTILE_SITEKEY = "0x4AAAAAAEqThupzZW7KG05P";
+const TURNSTILE_ACTION = "contact";
+
+let turnstileWidgetId = null;
+let contactFormBound = false;
+
+window.onTurnstileLoad = function () {
+  const container = document.getElementById("cf-turnstile");
+  if (!container || !window.turnstile || turnstileWidgetId !== null) return;
+  turnstileWidgetId = window.turnstile.render(container, {
+    sitekey: TURNSTILE_SITEKEY,
+    action: TURNSTILE_ACTION,
+    theme:
+      document.documentElement.getAttribute("data-theme") === "light"
+        ? "light"
+        : "dark",
+    language: lang === "he" ? "he" : "auto",
+    size: "flexible",
+  });
+};
+
+function resetTurnstile() {
+  if (window.turnstile && turnstileWidgetId !== null) {
+    window.turnstile.reset(turnstileWidgetId);
+  }
+}
+
+function getTurnstileToken() {
+  if (!window.turnstile || turnstileWidgetId === null) return "";
+  return window.turnstile.getResponse(turnstileWidgetId) || "";
+}
+
 function initContactForm() {
   const form = document.querySelector(".contact-card");
-  if (!form || form.tagName !== "FORM") return;
+  if (!form || form.tagName !== "FORM" || contactFormBound) return;
+  contactFormBound = true;
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const button = form.querySelector('button[type="submit"]');
     const originalContent = button.innerHTML;
 
-    // Show loading state
-    button.innerHTML = `
+    const setButton = (html, { disabled = true, background = "" } = {}) => {
+      button.innerHTML = html;
+      button.disabled = disabled;
+      button.style.background = background;
+    };
+
+    const token = getTurnstileToken();
+    if (!token || token.length > 2048) {
+      setButton(`<span>${t.sendError}</span>`, {
+        background: "oklch(54.33% 0.174 29.7)",
+      });
+      resetTurnstile();
+      setTimeout(() => {
+        setButton(originalContent, { disabled: false });
+      }, 3000);
+      return;
+    }
+
+    setButton(
+      `
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="animation: spin 1s linear infinite"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
       ${t.sending}
-    `;
-    button.disabled = true;
+    `,
+    );
 
-    // Simulate form submission (replace with actual form handler)
-    setTimeout(() => {
-      button.innerHTML = `
+    try {
+      const res = await fetch(scriptURL, {
+        method: "POST",
+        body: new FormData(form),
+      });
+      const payload = await res.json().catch(() => ({}));
+      if (!res.ok || !payload.success) throw new Error("submit failed");
+
+      setButton(
+        `
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
         ${t.sent}
-      `;
-      button.style.background = "#25d366";
+      `,
+        { background: "oklch(76.10% 0.201 149.7)" },
+      );
+      form.reset();
 
       setTimeout(() => {
-        button.innerHTML = originalContent;
-        button.disabled = false;
-        button.style.background = "";
-        form.reset();
+        setButton(originalContent, { disabled: false });
       }, 3000);
-    }, 1500);
+    } catch (err) {
+      console.error("Form submit failed:", err);
+      setButton(`<span>${t.sendError}</span>`, {
+        background: "oklch(54.33% 0.174 29.7)",
+      });
+      setTimeout(() => {
+        setButton(originalContent, { disabled: false });
+      }, 3000);
+    } finally {
+      resetTurnstile();
+    }
   });
 }
 
