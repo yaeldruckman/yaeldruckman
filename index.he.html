@@ -267,13 +267,24 @@
                     <div class="hero-grid">
                         <div class="profile-pic">
                             <div class="profile-image-wrapper">
-                                <img
-                                    src="assets/profile-pic.png"
-                                    alt="יעל דרוקמן - משרד עורכי דין, סוכנת ביטוח ופיננסים"
-                                    loading="eager"
-                                    width="864"
-                                    height="1184"
-                                />
+                                <picture>
+                                    <source
+                                        srcset="assets/profile-pic.avif"
+                                        type="image/avif"
+                                    />
+                                    <source
+                                        srcset="assets/profile-pic.webp"
+                                        type="image/webp"
+                                    />
+                                    <img
+                                        src="assets/profile-pic.jpg"
+                                        alt="יעל דרוקמן - משרד עורכי דין, סוכנת ביטוח ופיננסים"
+                                        width="1200"
+                                        height="1800"
+                                        loading="eager"
+                                        fetchpriority="high"
+                                    />
+                                </picture>
                             </div>
                         </div>
                         <div class="hero-text">
@@ -543,6 +554,8 @@
                             class="about-visual-image"
                             src="assets/stones.png"
                             alt="לוגו"
+                            width="992"
+                            height="992"
                             loading="lazy"
                         />
                     </div>

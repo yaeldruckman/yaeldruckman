@@ -391,11 +391,24 @@
                     <div class="hero-grid">
                         <div class="profile-pic">
                             <div class="profile-image-wrapper">
-                                <img
-                                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=640&q=80"
-                                    alt="Yael Druckman — Attorney at Law, Mediator & Insurance Agent"
-                                    loading="eager"
-                                />
+                                <picture>
+                                    <source
+                                        srcset="assets/profile-pic.avif"
+                                        type="image/avif"
+                                    />
+                                    <source
+                                        srcset="assets/profile-pic.webp"
+                                        type="image/webp"
+                                    />
+                                    <img
+                                        src="assets/profile-pic.jpg"
+                                        alt="Yael Druckman — Attorney at Law, Mediator & Insurance Agent"
+                                        width="1200"
+                                        height="1800"
+                                        loading="eager"
+                                        fetchpriority="high"
+                                    />
+                                </picture>
                             </div>
                         </div>
                         <div class="hero-text">
@@ -736,13 +749,16 @@
                         </div>
                     </div>
                     <div
-                        class="about-visual fade-up"
+                        class="about-visual about-visual--plain fade-up"
                         role="img"
-                        aria-label="Professional legal office environment"
+                        aria-label="Office emblem"
                     >
                         <img
-                            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80"
-                            alt="Professional handshake in a modern office"
+                            class="about-visual-image"
+                            src="assets/stones.png"
+                            alt="Office emblem"
+                            width="992"
+                            height="992"
                             loading="lazy"
                         />
                     </div>

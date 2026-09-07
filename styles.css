@@ -544,10 +544,14 @@ html[dir="rtl"] .logo-title {
     }
 }
 
+.profile-image-wrapper picture,
 .profile-image-wrapper img {
     width: 100%;
     height: auto;
     display: block;
+}
+
+.profile-image-wrapper img {
     transition: transform 0.6s var(--ease);
 }
 
@@ -2577,13 +2581,13 @@ html[lang="he"] .hero-description {
     color: var(--text-muted);
 }
 
-html[lang="he"] .about-visual--plain {
+.about-visual--plain {
     border: none;
     box-shadow: none;
     background: transparent;
 }
 
-html[lang="he"] .about-visual--plain .about-visual-image {
+.about-visual--plain .about-visual-image {
     object-fit: contain;
 }
 
