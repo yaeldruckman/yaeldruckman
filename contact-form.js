@@ -5,18 +5,33 @@
  *
  * Script Properties:
  *   TURNSTILE_SECRET — widget secret (from local .env SECRET)
- *   TURNSTILE_HOSTNAMES — optional comma list; default yaeldruckman.com,www.yaeldruckman.com
+ *   TURNSTILE_HOSTNAMES — optional comma list; default includes apex, www, and the Vercel preview host
  *
  * Deploy: Apps Script web app, Execute as Me, Who has access: Anyone.
  * Paste the /exec URL into script.js as scriptURL.
+ *
+ * Gmail: create this project while logged in as yaeldruckman@gmail.com
+ * (office@yaeldruckman.com is a Send-as alias on that same mailbox).
+ * The "website" label is applied there.
  */
 const TURNSTILE_ACTION = "contact";
-const DEFAULT_HOSTNAMES = "yaeldruckman.com,www.yaeldruckman.com";
+const DEFAULT_HOSTNAMES =
+  "yaeldruckman.com,www.yaeldruckman.com,yael-druckman-website-7p9k.vercel.app";
+const RECIPIENT = "office@yaeldruckman.com";
+const GMAIL_LABEL = "website";
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function json_(obj) {
   return ContentService.createTextOutput(JSON.stringify(obj)).setMimeType(
     ContentService.MimeType.JSON,
   );
+}
+
+function str_(value, max) {
+  return String(value == null ? "" : value)
+    .replace(/[\r\n]+/g, " ")
+    .trim()
+    .slice(0, max);
 }
 
 function getPayload_(e) {
@@ -81,6 +96,20 @@ function verifyTurnstile_(token) {
   );
 }
 
+function applyWebsiteLabel_(subject) {
+  const label =
+    GmailApp.getUserLabelByName(GMAIL_LABEL) ||
+    GmailApp.createLabel(GMAIL_LABEL);
+  const safeSubject = String(subject || "").replace(/"/g, "");
+  Utilities.sleep(2000);
+  const threads = GmailApp.search(
+    'newer_than:1d subject:"' + safeSubject + '"',
+    0,
+    1,
+  );
+  if (threads.length) threads[0].addLabel(label);
+}
+
 function doPost(e) {
   const data = getPayload_(e);
   const token = data["cf-turnstile-response"] || "";
@@ -89,15 +118,36 @@ function doPost(e) {
     return json_({ success: false });
   }
 
-  GmailApp.sendEmail(
-    "you@gmail.com",
-    `Contact form: ${data.subject || "New message"}`,
-    data.message,
-    {
-      replyTo: data.email,
-      name: data.name || "Website visitor",
-    },
-  );
+  const name = str_(data.name, 120);
+  const email = str_(data.email, 254);
+  const phone = str_(data.phone, 40);
+  const service = str_(data.service, 80);
+  const message = String(data.message == null ? "" : data.message)
+    .trim()
+    .slice(0, 5000);
+
+  const subject = "Website contact: " + (service || "New message");
+  const body = [
+    "Name: " + name,
+    "Email: " + email,
+    "Phone: " + phone,
+    "Interest: " + service,
+    "",
+    message,
+  ].join("\n");
+
+  const options = { name: "Yael Druckman website" };
+  if (EMAIL_RE.test(email)) options.replyTo = email;
+  const aliases = GmailApp.getAliases() || [];
+  if (aliases.indexOf(RECIPIENT) !== -1) options.from = RECIPIENT;
+
+  GmailApp.sendEmail(RECIPIENT, subject, body, options);
+
+  try {
+    applyWebsiteLabel_(subject);
+  } catch (err) {
+    // Email already sent; label is best-effort (Gmail index lag).
+  }
 
   return json_({ success: true });
 }

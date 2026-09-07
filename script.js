@@ -291,7 +291,7 @@ function initHeaderScroll() {
 
 // ===== FORM HANDLING =====
 // Deploy Apps Script as web app (Anyone) and paste the /exec URL here.
-const scriptURL = "https://script.google.com/macros/s/REPLACE_ME/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbwj3FYzJraC9rN9r-SI84CLkE-7s71GRA_n4gzhQMlT_gvUojjFem3jK0reMfhO3Be2/exec";
 const TURNSTILE_SITEKEY = "0x4AAAAAAEqThupzZW7KG05P";
 const TURNSTILE_ACTION = "contact";
 
