@@ -906,6 +906,11 @@ html[dir="rtl"] .card::before {
     border: 1px solid color-mix(in oklch, var(--accent) 12%, transparent);
 }
 
+html[lang="he"] .card-icon {
+    background: transparent;
+    border: none;
+}
+
 .card-icon svg {
     width: 24px;
     height: 24px;
@@ -953,6 +958,19 @@ html[dir="rtl"] .card h3 {
     .about {
         grid-template-columns: 1fr 1fr;
         gap: var(--space-xl);
+    }
+
+    html[lang="he"] .about {
+        direction: ltr;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    html[lang="he"] .about-visual {
+        order: -1;
+    }
+
+    html[lang="he"] .about-content {
+        direction: rtl;
     }
 }
 
@@ -1048,7 +1066,6 @@ html[dir="rtl"] .stat-label {
     position: relative;
     border-radius: var(--radius-xl);
     overflow: hidden;
-    aspect-ratio: 4/3;
     box-shadow: var(--shadow-lg);
     border: 1px solid var(--border);
 }
@@ -1725,6 +1742,18 @@ html[dir="rtl"] .contact-detail-label {
     opacity: 1;
 }
 
+html[lang="he"] .contact-card input,
+html[lang="he"] .contact-card textarea,
+html[lang="he"] .contact-card select {
+    border: 1.5px solid color-mix(in oklch, var(--border) 55%, var(--text-muted));
+}
+
+html[lang="he"] .contact-card input::placeholder,
+html[lang="he"] .contact-card textarea::placeholder {
+    color: var(--text-muted);
+    opacity: 0.42;
+}
+
 .contact-card textarea {
     resize: vertical;
     min-height: 120px;
@@ -1766,6 +1795,47 @@ html[dir="rtl"] .contact-card select {
 .cf-turnstile-slot {
     margin: 0.25rem 0 1rem;
     min-height: 65px;
+}
+
+html[lang="he"] .cf-turnstile-slot {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+    min-height: 0;
+    clip: rect(0, 0, 0, 0);
+}
+
+.cf-protected {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    margin: 0.15rem 0 1rem;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    opacity: 0.85;
+}
+
+.cf-protected:hover {
+    opacity: 1;
+    color: var(--text-muted);
+}
+
+.cf-protected svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+html[lang="he"][data-theme="dark"] .cf-protected-logo {
+    width: 40px;
+    height: 19px;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
 .contact-card button[type="submit"] {
@@ -1894,6 +1964,12 @@ html[dir="rtl"] .footer-brand-name {
 html[dir="rtl"] .whatsapp-float {
     right: auto;
     left: 1.5rem;
+}
+
+html[lang="he"] .whatsapp-float.is-hidden-over-hero {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
 
 .whatsapp-float:hover {
@@ -2362,13 +2438,14 @@ html[lang="he"] .read-more-btn {
     border: none;
     color: var(--accent);
     font-weight: 600;
+    font-style: italic;
     cursor: pointer;
     padding: 0;
     margin-top: -1.5rem;
     margin-bottom: 1.5rem;
     font-size: 0.95rem;
-    display: block;
     font-family: inherit;
+    unicode-bidi: isolate;
 }
 
 html[lang="he"] .testimonial-card.expanded .read-more-btn {
@@ -2571,6 +2648,15 @@ html[lang="he"][data-theme="light"] .hero-bg::after {
     background: transparent;
 }
 
+html[lang="he"][data-theme="dark"] .hero,
+html[lang="he"][data-theme="dark"] .hero-bg {
+    background: var(--bg);
+}
+
+html[lang="he"][data-theme="dark"] .hero-bg::after {
+    background: none;
+}
+
 html[lang="he"] .profile-image-wrapper {
     width: min(78vw, 20rem);
     border: none;
@@ -2600,6 +2686,13 @@ html[lang="he"] .mobile-nav a {
 html[lang="he"] .nav-links a,
 html[lang="he"] .mobile-nav a {
     color: var(--text-heading);
+}
+
+html[lang="he"] .nav-links a:hover,
+html[lang="he"] .nav-links a:focus-visible {
+    color: var(--text-muted);
+    background: transparent;
+    opacity: 0.62;
 }
 
 html[lang="he"] .logo-title {
@@ -2645,6 +2738,34 @@ html[lang="he"] .hero h1 {
     font-style: italic;
     line-height: 1.45;
     max-width: 36rem;
+}
+
+@media (max-width: 899px) {
+    html[lang="he"] .hero-grid,
+    html[lang="he"] .hero-text {
+        min-width: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    html[lang="he"] .hero h1 {
+        min-width: 0;
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        overflow-wrap: break-word;
+    }
+
+    /* .hero-content { width: 100% } overrides .container gutters; restore on dark mobile */
+    html[lang="he"][data-theme="dark"] .hero .container.hero-content {
+        width: min(100% - 2rem, var(--max-width));
+    }
+}
+
+@media (min-width: 768px) and (max-width: 899px) {
+    html[lang="he"][data-theme="dark"] .hero .container.hero-content {
+        width: min(100% - 3rem, var(--max-width));
+    }
 }
 
 html[lang="he"] .hero-cta-group {
@@ -2762,8 +2883,10 @@ html[lang="he"] #services .card h3 {
     margin-bottom: 0;
 }
 
-html[lang="he"] h1 {
-    font-size: 4rem;
+@media (min-width: 900px) {
+    html[lang="he"] h1 {
+        font-size: 4rem;
+    }
 }
 
 html[lang="he"] h2 {
@@ -2802,21 +2925,6 @@ html[lang="he"][data-theme="dark"] .about-visual-image--light {
 
 html[lang="he"][data-theme="dark"] .about-visual-image--dark {
     display: block;
-}
-
-html[lang="he"] #cta-section {
-    background: transparent;
-}
-
-html[lang="he"] .cta-banner-title {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-html[lang="he"] .cta-banner-emphasis {
-    font-weight: 600;
-    margin-top: 1rem;
-    font-size: 1.2rem;
 }
 
 html[lang="he"] .contact-title {

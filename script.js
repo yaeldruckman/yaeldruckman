@@ -312,6 +312,7 @@ window.onTurnstileLoad = function () {
         : "dark",
     language: lang === "he" ? "he" : "auto",
     size: "flexible",
+    appearance: lang === "he" ? "interaction-only" : "always",
   });
 };
 
@@ -412,11 +413,34 @@ window.toggleTestimonial = function (btn) {
   const isExpanded = card.classList.toggle("expanded");
 
   if (lang === "he") {
-    btn.textContent = isExpanded ? "קרא פחות" : "...קרא עוד";
+    btn.textContent = isExpanded ? "קרא פחות" : "קרא עוד...";
   } else {
     btn.textContent = isExpanded ? "Read Less" : "Read More...";
   }
 };
+
+// Hide floating WhatsApp while the Hebrew hero is in view
+function initWhatsappHeroHide() {
+  if (lang !== "he") return;
+  const fab = document.querySelector(".whatsapp-float");
+  const hero = document.getElementById("home");
+  if (!fab || !hero || fab.dataset.heroHideInit === "1") return;
+  fab.dataset.heroHideInit = "1";
+
+  const setHidden = (hidden) => {
+    fab.classList.toggle("is-hidden-over-hero", hidden);
+  };
+
+  // threshold 0 fires when hero enters/leaves the viewport (0.35 never
+  // fired at 0, so the button stayed hidden after scroll).
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => setHidden(entry.isIntersecting));
+    },
+    { threshold: 0 },
+  );
+  io.observe(hero);
+}
 
 // ===== INIT =====
 document.addEventListener("DOMContentLoaded", () => {
@@ -426,6 +450,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initSmoothScroll();
   initHeaderScroll();
   initContactForm();
+  initWhatsappHeroHide();
 });
 
 // Re-run scroll animations if content was loaded dynamically
@@ -436,4 +461,5 @@ if (document.readyState === "complete") {
   initSmoothScroll();
   initHeaderScroll();
   initContactForm();
+  initWhatsappHeroHide();
 }
