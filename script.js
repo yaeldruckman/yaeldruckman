@@ -67,9 +67,11 @@ const storedTheme =
       return null;
     }
   })() ||
-  (window.matchMedia("(prefers-color-scheme: light)").matches
+  (lang === "he"
     ? "light"
-    : "dark");
+    : window.matchMedia("(prefers-color-scheme: light)").matches
+      ? "light"
+      : "dark");
 
 setTheme(storedTheme);
 
