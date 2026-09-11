@@ -5,6 +5,7 @@
     <loc>https://yaeldruckman.com/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://yaeldruckman.com/"/>
     <xhtml:link rel="alternate" hreflang="he" href="https://yaeldruckman.com/index.he.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yaeldruckman.com/"/>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,6 +13,7 @@
     <loc>https://yaeldruckman.com/index.he.html</loc>
     <xhtml:link rel="alternate" hreflang="he" href="https://yaeldruckman.com/index.he.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://yaeldruckman.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yaeldruckman.com/"/>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
