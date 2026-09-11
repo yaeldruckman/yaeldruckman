@@ -1,7 +1,7 @@
 {
-  "name": "fulo-template",
+  "name": "yael-druckman",
   "version": "1.0.0",
-  "description": "Fulo template — lightweight landing page with theme toggle",
+  "description": "Yael Druckman — advocate, mediator, insurance and finance",
   "main": "script.js",
   "type": "module",
   "scripts": {

@@ -12,7 +12,7 @@ function calculateHash(filePath) {
 
 // Function to update file references in HTML
 function updateHtmlReferences() {
-    const htmlFiles = ['index.html', 'index.ja.html'];
+    const htmlFiles = ['index.html', 'index.he.html'];
     const cssHash = calculateHash('index.min.css');
     const jsHash = calculateHash('index.min.js');
 
