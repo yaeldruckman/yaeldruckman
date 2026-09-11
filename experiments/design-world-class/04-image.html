@@ -1,0 +1,45 @@
+<!doctype html>
+<!-- Technique 4: enrich with a generated still-life (wax, paper, brass) instead of CSS blobs. -->
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>04 · תמונה · יעל דרוקמן</title>
+  <style>
+    @font-face{font-family:"VR";src:url("../../fonts/VarelaRound-hebrew.woff2") format("woff2");unicode-range:U+0590-05FF,U+FB1D-FB4F;font-display:swap}
+    *{box-sizing:border-box} html,body{margin:0;background:#0c0a08;color:#f3eadc;font:16px/1.45 VR,Georgia,serif}
+    .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr}
+    .still{position:relative;overflow:hidden;background:#000}
+    .still img{width:100%;height:100%;object-fit:cover;filter:contrast(1.05)}
+    .still:after{content:"";position:absolute;inset:0;background:linear-gradient(270deg,#0c0a08 0%,transparent 40%);pointer-events:none}
+    .copy{padding:10vh 6vw;display:flex;flex-direction:column;justify-content:center;background:#0c0a08}
+    .k{font-size:.72rem;letter-spacing:.2em;color:#c9a24a;margin:0 0 1rem}
+    h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:400;margin:0 0 1rem;max-width:16ch}
+    p{margin:0 0 1.6rem;color:#cfc3b0;max-width:32ch}
+    .row{display:flex;gap:2rem;font-size:.85rem;border-top:1px solid #ffffff18;padding-top:1rem}
+    .row b{display:block;color:#c9a24a;font-weight:400;margin-bottom:.2rem}
+    .portrait{margin-top:2rem;width:7.5rem;height:10rem;object-fit:cover;object-position:top;border:1px solid #c9a24a55}
+    a{color:#f3eadc}
+    @media(max-width:800px){.hero{grid-template-columns:1fr}.still{height:42vh}.still:after{background:linear-gradient(#0000,#0c0a08)}}
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="copy">
+      <p class="k">חותמת · נייר · פליז</p>
+      <h1>המסמך הוא האהבה, אחרי שהמילים נגמרות.</h1>
+      <p>עריכת דין, גישור, ביטוח ופיננסים. משרד משפחתי לניהול סיכונים.</p>
+      <div class="row">
+        <div><b>עריכת דין</b>צוואות · ייפוי כוח</div>
+        <div><b>גישור</b>שולחן, לא אולם</div>
+        <div><b>ביטוח</b>בריאות · פנסיה</div>
+      </div>
+      <img class="portrait" src="../../assets/profile-pic-dark-theme-400.webp" alt="יעל דרוקמן" width="120" height="160" />
+      <p style="margin-top:1rem;font-size:.85rem"><a href="https://wa.me/972586306460">058-6306460</a></p>
+    </div>
+    <figure class="still">
+      <img src="still-life.jpg" alt="שולחן עבודה: נייר, חותמת שעווה, פותחן מכתבים" />
+    </figure>
+  </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<!-- Technique 8: rewrite copy by hand. Layout from 07. Words are not the site quote. -->
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>08 · טקסט ידני · יעל דרוקמן</title>
+  <style>
+    @font-face{font-family:"VR";src:url("../../fonts/VarelaRound-hebrew.woff2") format("woff2");unicode-range:U+0590-05FF,U+FB1D-FB4F;font-display:swap}
+    *{box-sizing:border-box} html,body{margin:0;background:#f7f4ee;color:#171512;font:17px/1.55 VR,"Times New Roman",serif}
+    body{display:grid;grid-template-columns:42vw 1fr;min-height:100vh}
+    .crop{overflow:hidden;background:#222}
+    .crop img{width:100%;height:100%;object-fit:cover;object-position:20% top;filter:grayscale(1) contrast(1.12)}
+    .col{padding:3.5rem 3rem 4rem;max-width:36rem}
+    .mast{font-size:.7rem;letter-spacing:.18em;border-bottom:1px solid #171512;padding-bottom:.5rem;margin:0 0 2rem;display:flex;justify-content:space-between}
+    h1{font-size:clamp(1.9rem,3.6vw,2.6rem);font-weight:400;line-height:1.15;margin:0 0 1rem}
+    .lede{margin:0 0 2rem}
+    ul{margin:0;padding:0;list-style:none;border-top:1px solid #171512}
+    li{padding:.85rem 0;border-bottom:1px solid #171512}
+    li em{font-style:normal;display:block;font-size:.72rem;letter-spacing:.06em;margin-bottom:.15rem;opacity:.65}
+    a.line{display:inline-block;margin-top:1.8rem;color:#171512;text-decoration:none;border-bottom:1px solid #171512}
+    @media(max-width:800px){body{grid-template-columns:1fr}.crop{height:38vh}.col{padding:2rem 1.4rem}}
+  </style>
+</head>
+<body>
+  <div class="crop">
+    <img src="../../assets/profile-pic-dark-theme-560.webp" alt="יעל דרוקמן" width="560" height="840" />
+  </div>
+  <article class="col">
+    <p class="mast"><span>עו״ד יעל דרוקמן</span><span>שיחה, לא טפסים</span></p>
+    <h1>לסדר את מה שקשה להגיד.</h1>
+    <p class="lede">צוואה. ייפוי כוח. גישור. לא בשביל המגירה — בשביל המשפחה, ביום שלא תהיו בחדר.</p>
+    <ul>
+      <li><em>משפטים</em>ייפוי כוח מתמשך, צוואות, הסכמי ממון וחיים משותפים.</li>
+      <li><em>גישור</em>כשהבית כבר לא מכיל את השיחה.</li>
+      <li><em>כסף וביטוח</em>פנסיה, בריאות, מה שנשאר אחרי פרידה או רילוקיישן.</li>
+    </ul>
+    <a class="line" href="https://wa.me/972586306460">רבע שעה בטלפון · 058-6306460</a>
+  </article>
+</body>
+</html>

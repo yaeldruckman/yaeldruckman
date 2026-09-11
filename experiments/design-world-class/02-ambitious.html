@@ -1,0 +1,57 @@
+<!doctype html>
+<!-- Technique 2: ambitious brief.
+     The homepage is the dining table at 21:00. Kids asleep. Documents as place settings.
+     Uncomfortable empty chairs. Family law as a domestic room, not a firm. -->
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>02 · שאפתני · יעל דרוקמן</title>
+  <style>
+    @font-face{font-family:"VR";src:url("../../fonts/VarelaRound-hebrew.woff2") format("woff2");unicode-range:U+0590-05FF,U+FB1D-FB4F;font-display:swap}
+    *{box-sizing:border-box} html,body{margin:0;background:#120e0b;color:#f0e6d6;font:16px/1.45 VR,Georgia,serif}
+    body{min-height:100vh;overflow-x:hidden}
+    .room{min-height:100vh;display:grid;grid-template-rows:auto 1fr auto;background:
+      radial-gradient(ellipse 70% 50% at 70% 0%,#3a2a18 0%,transparent 55%),
+      linear-gradient(#1a1410,#0d0b09)}
+    header{padding:1rem 1.4rem;font-size:.8rem;opacity:.7;display:flex;justify-content:space-between}
+    .table{position:relative;padding:8vh 6vw 4vh;display:grid;grid-template-columns:1.1fr .9fr;gap:3vw;align-items:end}
+    .lamp{position:absolute;top:-2vh;left:18%;width:2px;height:18vh;background:#c9a24a;opacity:.5}
+    .lamp:after{content:"";position:absolute;bottom:-40px;left:-70px;width:140px;height:90px;background:radial-gradient(ellipse,#f5d48a55,#0000 70%);pointer-events:none}
+    h1{font-size:clamp(1.6rem,4.2vw,2.8rem);font-weight:400;margin:0 0 1rem;max-width:16ch;text-shadow:0 8px 40px #000}
+    .empty{font-size:.85rem;color:#c4b8a4;max-width:28ch;margin:0 0 1.5rem;border-right:2px solid #c9a24a;padding-right:.8rem}
+    .across img{width:min(280px,40vw);height:auto;object-fit:cover;filter:saturate(.7) brightness(.85);box-shadow:40px 20px 80px #000a;transform:rotate(-2deg)}
+    .places{display:flex;gap:1.2rem;padding:0 6vw 8vh;align-items:flex-end}
+    .place{flex:1;background:#1e1813;border:1px solid #3a3228;padding:1rem .9rem 2.4rem;min-height:9rem;transform:rotate(var(--r,0deg));box-shadow:0 12px 30px #0006}
+    .place:nth-child(1){--r:-3deg} .place:nth-child(2){--r:1.5deg;margin-bottom:1.5rem} .place:nth-child(3){--r:2.5deg}
+    .place small{display:block;opacity:.5;font-size:.7rem;margin-bottom:.4rem}
+    .place b{display:block;font-size:1.05rem;font-weight:400;margin-bottom:.35rem}
+    .place p{margin:0;font-size:.8rem;color:#c4b8a4}
+    .chair{width:18%;align-self:flex-start;height:7rem;border:1px dashed #3a3228;opacity:.35;display:grid;place-items:center;font-size:.7rem}
+    a.talk{position:fixed;bottom:1.2rem;left:1.2rem;background:#c9a24a;color:#1a1208;text-decoration:none;padding:.7rem 1rem;font-size:.85rem}
+    @media(max-width:700px){.table{grid-template-columns:1fr;padding-top:4vh}.places{flex-wrap:wrap}.chair{display:none}}
+  </style>
+</head>
+<body>
+  <div class="room">
+    <header><span>יעל דרוקמן</span><span>שעה עשרים ואחת · השולחן אחרי שהילדים ישנים</span></header>
+    <section class="table">
+      <div class="lamp" aria-hidden="true"></div>
+      <div>
+        <h1>מישהו צריך להישאר ליד השולחן.</h1>
+        <p class="empty">ייפוי כוח, צוואה, גישור — לא בשביל הניירת. בשביל האנשים שלא יהיו בחדר.</p>
+      </div>
+      <figure class="across">
+        <img src="../../assets/profile-pic-dark-theme-400.webp" alt="יעל דרוקמן ממול, מעבר לשולחן" width="400" height="600" />
+      </figure>
+    </section>
+    <div class="places">
+      <div class="place"><small>מקום 1</small><b>עריכת דין</b><p>צוואות, הסכמי ממון, ייפוי כוח מתמשך.</p></div>
+      <div class="place"><small>מקום 2</small><b>גישור</b><p>כשהשיחה בבית כבר לא מספיקה.</p></div>
+      <div class="place"><small>מקום 3</small><b>ביטוח ופיננסים</b><p>בריאות, פנסיה, מה שנשאר אחרי הפרידה.</p></div>
+      <div class="chair">כיסא ריק</div>
+    </div>
+  </div>
+  <a class="talk" href="https://wa.me/972586306460">לדבר · 058-6306460</a>
+</body>
+</html>

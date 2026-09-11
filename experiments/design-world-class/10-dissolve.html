@@ -1,0 +1,72 @@
+<!doctype html>
+<!-- Other ways than a halo: (1) page colour = studio grey, feather only.
+     (2) logo is not a picture — black knocks out (mix-blend screen), gold sits behind the copy. -->
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>10 · בלי מלבן · יעל דרוקמן</title>
+  <style>
+    @font-face{font-family:"VR";src:url("../../fonts/VarelaRound-hebrew.woff2") format("woff2");unicode-range:U+0590-05FF,U+FB1D-FB4F;font-display:swap}
+    *{box-sizing:border-box}
+    html,body{margin:0;color:#efe8dc;font:16px/1.45 VR,Georgia,serif}
+    a{color:#d4b36a}
+    .k{font-size:.72rem;letter-spacing:.18em;color:#d4b36a;margin:0 0 .8rem}
+    h1,h2{font-weight:400;margin:0 0 .8rem}
+    h1{font-size:clamp(1.6rem,4vw,2.5rem);max-width:16ch;line-height:1.2}
+    h2{font-size:clamp(1.3rem,3vw,1.8rem);max-width:18ch}
+    p{margin:0 0 1.2rem;color:#d2c6b4;max-width:34ch}
+    .hero{
+      min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;
+      background:#2a2d33;
+    }
+    .copy{padding:10vh 7vw;position:relative;z-index:1}
+    .portrait{position:relative;min-height:100vh;overflow:hidden;background:#2a2d33}
+    .portrait img{display:block;width:100%;height:100%;min-height:100vh;object-fit:cover;object-position:50% 12%}
+    .portrait:after{
+      content:"";position:absolute;inset:0;pointer-events:none;
+      background:
+        linear-gradient(to left,transparent 42%,#2a2d33 96%),
+        linear-gradient(to top,#2a2d33 0%,transparent 22%),
+        linear-gradient(to bottom,#2a2d33 0%,transparent 16%);
+    }
+    .about{position:relative;min-height:90vh;overflow:hidden;background:#0a0a0a;display:grid;align-items:center}
+    .about .copy{max-width:36rem;padding:12vh 8vw}
+    .watermark{
+      position:absolute;left:-8%;top:50%;width:min(46rem,92vw);
+      -webkit-transform:translateY(-50%);transform:translateY(-50%);
+      mix-blend-mode:screen;opacity:.88;pointer-events:none;
+      -webkit-mask-image:radial-gradient(circle at 50% 50%,#000 42%,transparent 78%);
+      mask-image:radial-gradient(circle at 50% 50%,#000 42%,transparent 78%);
+    }
+    @media(max-width:800px){
+      .hero{grid-template-columns:1fr;min-height:auto}
+      .portrait{min-height:58vh}
+      .portrait img{min-height:58vh}
+      .copy{padding:2.5rem 1.4rem 3rem}
+      .watermark{left:50%;width:120%;-webkit-transform:translate(-50%,-8%);transform:translate(-50%,-8%);opacity:.55}
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="portrait">
+      <img src="../../assets/profile-pic-dark-theme-560.webp" alt="יעל דרוקמן" width="560" height="840" />
+    </div>
+    <div class="copy">
+      <p class="k">ניסוי 10 · בלי מלבן</p>
+      <h1>לא מטשטשים. משנים את התפקיד.</h1>
+      <p>צבע העמוד לקוח מאפור הסטודיו. בלי מסגרת, בלי זוהר, בלי כרטיס. השוליים נמוגים לצד הטקסט — התמונה היא החדר, לא אובייקט עליו.</p>
+      <p><a href="https://wa.me/972586306460">058-6306460</a></p>
+    </div>
+  </section>
+  <section class="about">
+    <img class="watermark" src="../../assets/logo-black-800.webp" alt="" width="800" height="608" />
+    <div class="copy">
+      <p class="k">לוגו בלי תמונת לוגו</p>
+      <h2>השחור נעלם. הזהב נשאר מאחורי המילים.</h2>
+      <p>ערבוב מסך על רקע שחור: הריבוע של קובץ ה־JPG מתפרק. הסימן לא יושב בטור ליד הטקסט — הוא החותם של הפסקה.</p>
+    </div>
+  </section>
+</body>
+</html>

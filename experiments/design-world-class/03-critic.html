@@ -1,0 +1,61 @@
+<!doctype html>
+<!-- Technique 3: one critic pass on 02 (no 9/10 grind).
+     Critic (screenshot-only, this agent): 5/10.
+     Gaps vs a studio doing “dining table at 21:00”:
+     1. Place cards still read as SaaS feature cards.
+     2. Lamp is a CSS orb — cheap glow.
+     3. Photo is a floating rectangle, not a person across a table.
+     4. Too much copy in the hero; the empty chair is a caption, not a void.
+     5. Gold pill CTA is generic.
+     Fix: real wood plane, one setting, huge type, no cards, hard shadow, text CTA in the grain. -->
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>03 · מבקר · יעל דרוקמן</title>
+  <style>
+    @font-face{font-family:"VR";src:url("../../fonts/VarelaRound-hebrew.woff2") format("woff2");unicode-range:U+0590-05FF,U+FB1D-FB4F;font-display:swap}
+    *{box-sizing:border-box} html,body{margin:0;background:#0a0807;color:#eadfcf;font:16px/1.4 VR,Georgia,serif}
+    .wood{min-height:100vh;display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,32vw);
+      background:#2a1c12;
+      background-image:
+        repeating-linear-gradient(90deg,transparent 0 11px,#00000014 11px 12px),
+        linear-gradient(#3a281c,#1a120e)}
+    .copy{padding:12vh 7vw 8vh;display:flex;flex-direction:column;justify-content:space-between;min-height:100vh}
+    .name{font-size:.75rem;letter-spacing:.16em;opacity:.55;margin:0 0 auto}
+    h1{font-size:clamp(2rem,6vw,4.2rem);font-weight:400;line-height:.95;margin:0 0 1.2rem;max-width:9ch}
+    .meta{font-size:.95rem;max-width:22ch;color:#cbbba0;margin:0 0 2rem}
+    nav{display:flex;flex-direction:column;gap:.35rem;font-size:.9rem}
+    nav a{color:#eadfcf;text-decoration:none;border-bottom:1px solid #eadfcf22;padding:.2rem 0;width:max-content}
+    nav a:hover{border-color:#eadfcf}
+    .phone{margin-top:2rem;font-size:.8rem;opacity:.7}
+    .person{position:relative;overflow:hidden}
+    .person img{width:100%;height:100%;object-fit:cover;object-position:top;filter:saturate(.55) contrast(1.08) brightness(.78);
+      box-shadow:inset 40px 0 80px #1a120e}
+    .person:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#2a1c12 0%,transparent 28%);pointer-events:none}
+    .void{position:absolute;bottom:8%;right:8%;width:28%;aspect-ratio:1/1.15;border:1px solid #eadfcf33;background:#0a080740}
+    @media(max-width:700px){.wood{grid-template-columns:1fr}.person{height:42vh}.copy{min-height:auto;padding:8vh 7vw}}
+  </style>
+</head>
+<body>
+  <div class="wood">
+    <div class="copy">
+      <p class="name">יעל דרוקמן</p>
+      <div>
+        <h1>הכיסא ממול ריק.</h1>
+        <p class="meta">צוואה, ייפוי כוח, גישור. שיחה אחת ליד השולחן.</p>
+        <nav>
+          <a href="#">עריכת דין</a>
+          <a href="#">גישור</a>
+          <a href="#">ביטוח ופיננסים</a>
+        </nav>
+        <p class="phone"><a href="https://wa.me/972586306460" style="color:inherit">058-6306460</a></p>
+      </div>
+    </div>
+    <aside class="person">
+      <img src="../../assets/profile-pic-dark-theme-560.webp" alt="יעל דרוקמן" width="560" height="840" />
+      <div class="void" title="כיסא ריק"></div>
+    </aside>
+  </div>
+</body>
+</html>
