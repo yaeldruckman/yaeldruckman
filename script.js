@@ -58,42 +58,8 @@ function setTheme(theme) {
   }
 }
 
-// Initialize theme
-const storedTheme =
-  (function () {
-    try {
-      return localStorage.getItem("theme");
-    } catch (e) {
-      return null;
-    }
-  })() ||
-  (lang === "he"
-    ? "light"
-    : window.matchMedia("(prefers-color-scheme: light)").matches
-      ? "light"
-      : "dark");
-
-setTheme(storedTheme);
-
-// Listen for system theme changes
-window
-  .matchMedia("(prefers-color-scheme: dark)")
-  .addEventListener("change", (e) => {
-    let current;
-    try {
-      current = localStorage.getItem("theme");
-    } catch (err) {
-      current = null;
-    }
-    if (!current) {
-      setTheme(e.matches ? "dark" : "light");
-    }
-  });
-
-toggle?.addEventListener("click", () => {
-  const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-  setTheme(next);
-});
+// Initialize theme (dark theme only)
+setTheme("dark");
 
 // ===== MOBILE NAV =====
 if (navToggle && mobileNav) {
@@ -306,10 +272,7 @@ window.onTurnstileLoad = function () {
   turnstileWidgetId = window.turnstile.render(container, {
     sitekey: TURNSTILE_SITEKEY,
     action: TURNSTILE_ACTION,
-    theme:
-      document.documentElement.getAttribute("data-theme") === "light"
-        ? "light"
-        : "dark",
+    theme: "dark",
     language: lang === "he" ? "he" : "auto",
     size: "flexible",
     appearance: lang === "he" ? "interaction-only" : "always",
