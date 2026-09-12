@@ -2999,9 +2999,7 @@ html[lang="he"] .hero-cta-group .cta-whatsapp {
         direction: ltr;
         align-items: stretch;
         justify-content: center;
-        gap: clamp(3rem, 6vw, 5.5rem);
         width: 100%;
-        --hero-pic-h: min(72vh, 38rem);
     }
 
     html[lang="he"] .profile-pic {
@@ -3012,9 +3010,9 @@ html[lang="he"] .hero-cta-group .cta-whatsapp {
 
     html[lang="he"] .profile-image-wrapper {
         position: relative;
-        height: var(--hero-pic-h);
-        width: calc(var(--hero-pic-h) * 2 / 3);
         flex-shrink: 0;
+        width: 26.25rem;
+        aspect-ratio: 2 / 3;
     }
 
     html[lang="he"] .profile-image-wrapper picture,
@@ -3035,9 +3033,8 @@ html[lang="he"] .hero-cta-group .cta-whatsapp {
         max-width: 36rem;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-evenly;
         gap: 2.5rem;
-        min-height: var(--hero-pic-h);
     }
 
     html[lang="he"] .hero-text .section-label {
@@ -3173,6 +3170,14 @@ html[lang="he"] .footer-copy {
 
 html[lang="he"] .about-visual-image--dark {
     display: block;
+}
+
+html[lang="he"] .about-visual img {
+    transform: scale(1.2);
+}
+
+html[lang="he"] .about-visual:hover img {
+    transform: scale(1.236);
 }
 
 /* Stacked: mark, not full-bleed. Tablet 2-col: cap inside the 1fr slot. */
