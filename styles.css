@@ -3206,3 +3206,28 @@ html[lang="he"] .contact-subtitle {
     color: var(--text-muted);
     max-width: 28rem;
 }
+
+html[lang="he"] #contact .section-header {
+    max-width: 40rem;
+}
+
+html[lang="he"] .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    html[lang="he"] .contact-heading-break {
+        display: none;
+    }
+
+    html[lang="he"] .contact-info {
+        align-self: stretch;
+    }
+
+    html[lang="he"] .contact-details {
+        flex: 1;
+        justify-content: center;
+    }
+}
