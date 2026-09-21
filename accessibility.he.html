@@ -1,0 +1,190 @@
+<!doctype html>
+<!-- xFeinschmecker https://www.feinschmecker.dev/ contact@feinschmecker.dev -->
+<html lang="he" dir="rtl" data-theme="dark">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="color-scheme" content="dark" />
+        <meta name="theme-color" content="#1c202a" id="theme-color" />
+        <meta
+            name="description"
+            content="הצהרת הנגישות של אתר יעל דרוקמן: התאמות באתר, חריגים, ודרכי פנייה."
+        />
+        <title>הצהרת נגישות | יעל דרוקמן</title>
+        <link
+            rel="canonical"
+            href="https://yaeldruckman.com/accessibility.he.html"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="he_IL" />
+        <meta
+            property="og:url"
+            content="https://yaeldruckman.com/accessibility.he.html"
+        />
+        <meta property="og:title" content="הצהרת נגישות | יעל דרוקמן" />
+        <meta
+            property="og:description"
+            content="הצהרת הנגישות של אתר יעל דרוקמן: התאמות באתר, חריגים, ודרכי פנייה."
+        />
+        <meta
+            property="og:image"
+            content="https://yaeldruckman.com/assets/og-he.png"
+        />
+        <link
+            rel="preload"
+            href="fonts/VarelaRound-hebrew.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link rel="stylesheet" href="styles.min.css" />
+    </head>
+    <body>
+        <a class="skip-link" href="#main">דלג לתוכן הראשי</a>
+
+        <header>
+            <div class="container nav">
+                <a
+                    href="index.he.html"
+                    class="logo"
+                    aria-label="יעל דרוקמן — דף הבית"
+                >
+                    <span class="logo-icon">YD</span>
+                    <span class="logo-text">
+                        <span class="logo-name">יעל דרוקמן</span>
+                        <span class="logo-title"
+                            >עריכת דין &middot; גישור &middot; ביטוח
+                            ופיננסים</span
+                        >
+                    </span>
+                </a>
+
+                <nav class="nav-links" aria-label="ניווט ראשי">
+                    <a href="index.he.html#services">שירותים</a>
+                    <a href="index.he.html#about">אודות</a>
+                    <a href="index.he.html#testimonials">המלצות</a>
+                    <a href="index.he.html#media">מדיה</a>
+                    <a href="index.he.html#contact">צור קשר</a>
+                </nav>
+
+                <div class="nav-actions">
+                    <a
+                        href="index.html"
+                        class="lang-toggle"
+                        aria-label="Switch to English"
+                    >
+                        English
+                    </a>
+                    <button
+                        class="hamburger"
+                        type="button"
+                        id="navToggle"
+                        aria-label="פתח תפריט נייד"
+                        aria-expanded="false"
+                        aria-controls="mobileNav"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <line x1="4" x2="20" y1="12" y2="12" />
+                            <line x1="4" x2="20" y1="6" y2="6" />
+                            <line x1="4" x2="20" y1="18" y2="18" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="mobile-nav" id="mobileNav" aria-label="ניווט נייד">
+                <a href="index.he.html#services">שירותים</a>
+                <a href="index.he.html#about">אודות</a>
+                <a href="index.he.html#testimonials">המלצות</a>
+                <a href="index.he.html#media">מדיה</a>
+                <a href="index.he.html#contact">צור קשר</a>
+                <a href="index.html">English</a>
+            </div>
+        </header>
+
+        <main id="main" class="legal-page">
+            <article class="container legal-article">
+                <p class="section-label">נגישות</p>
+                <h1>הצהרת נגישות</h1>
+                <p class="legal-updated">עודכן ב־21 בספטמבר 2026</p>
+
+                <p>
+                    אתר
+                    <a href="index.he.html">yaeldruckman.com</a>
+                    מספק מידע על המשרד ומאפשר יצירת קשר. ההצהרה מתייחסת לגירסה
+                    העברית. היעד הוא התאמה לתקן הישראלי 5568 (הנחיות
+                    WCAG 2.0 ברמת AA), לפי תקנות שוויון זכויות לאנשים עם
+                    מוגבלות (התאמות נגישות לשירות), התשע״ג–2013.
+                </p>
+
+                <h2>מה קיים באתר</h2>
+                <ul>
+                    <li>קישור דילוג לתוכן הראשי</li>
+                    <li>תוויות לשדות טופס יצירת הקשר</li>
+                    <li>טקסט חלופי לתמונות עיקריות</li>
+                    <li>ניווט מקלדת בתפריט הראשי ובנייד</li>
+                    <li>מבנה כותרות ומסך שמתאים לרוחב המכשיר</li>
+                </ul>
+
+                <h2>חריגים</h2>
+                <ul>
+                    <li>
+                        מפת Google Maps היא רכיב של צד שלישי. הנגישות שלה
+                        תלויה ב־Google.
+                    </li>
+                    <li>
+                        הסרטון מערוץ 10 נטען מ־YouTube. אין באתר כתוביות
+                        נפרדות לסרטון.
+                    </li>
+                </ul>
+
+                <h2>דיווח על תקלה</h2>
+                <p>
+                    אם נתקלתם בבעיית נגישות, כתבו לדוא״ל או התקשרו. נשתדל
+                    לתקן בהקדם האפשרי.
+                </p>
+                <p>
+                    יעל דרוקמן<br />
+                    דוא״ל:
+                    <a href="mailto:office@yaeldruckman.com"
+                        >office@yaeldruckman.com</a
+                    ><br />
+                    טלפון:
+                    <a href="tel:0586306460">058-6306460</a>
+                </p>
+            </article>
+        </main>
+
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-links">
+                        <a href="privacy.he.html" rel="privacy-policy"
+                            >פרטיות</a
+                        >
+                        <a href="accessibility.he.html" aria-current="page"
+                            >נגישות</a
+                        >
+                    </div>
+                    <div class="footer-copy">
+                        <small
+                            >&copy; <span id="year"></span> יעל דרוקמן. כל
+                            הזכויות שמורות.</small
+                        >
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="script.min.js" defer></script>
+    </body>
+</html>
