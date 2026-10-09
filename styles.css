@@ -73,6 +73,9 @@
     --shadow-lg: 0 20px 60px oklch(0% 0 0 / calc(var(--shadow-strength) * 1.4));
     --shadow-glow: 0 0 40px color-mix(in oklch, var(--accent) 8%, transparent);
 
+    /* ── Accent Gradients (Gold) ── */
+    --accent-gradient: linear-gradient(135deg, #ebd197 0%, #b48c36 40%, #d4af5c 100%);
+
     /* ── Spacing ── */
     --space-xs: 0.5rem;
     --space-sm: 1rem;
@@ -703,6 +706,61 @@ html[dir="rtl"] .hero h1 {
     }
 }
 
+.glass-cta {
+    background: color-mix(in oklch, var(--surface) 40%, transparent) !important;
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid color-mix(in oklch, var(--accent) 30%, transparent) !important;
+    color: var(--accent) !important; /* Gold text */
+    box-shadow:
+        0 4px 24px -4px color-mix(in oklch, var(--bg-main) 50%, transparent),
+        inset 0 1px 0 0 color-mix(in oklch, var(--text-main) 10%, transparent) !important;
+    text-shadow: 0 0 12px color-mix(in oklch, var(--accent) 20%, transparent); /* Subtle text glow */
+}
+
+.glass-cta svg {
+    color: var(--accent) !important;
+    filter: drop-shadow(0 0 4px color-mix(in oklch, var(--accent) 30%, transparent));
+}
+
+.glass-cta:hover {
+    background: color-mix(in oklch, var(--surface) 60%, transparent) !important;
+    border-color: color-mix(in oklch, var(--accent) 60%, transparent) !important;
+    box-shadow:
+        0 8px 32px -4px color-mix(in oklch, var(--bg-main) 60%, transparent),
+        0 0 20px color-mix(in oklch, var(--accent) 15%, transparent), /* Outer glow on hover */
+        inset 0 1px 0 0 color-mix(in oklch, var(--text-main) 15%, transparent) !important;
+    transform: translateY(-2px);
+}
+
+.glass-whatsapp {
+    background: color-mix(in oklch, var(--surface) 40%, transparent) !important;
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid color-mix(in oklch, oklch(76.10% 0.201 149.7) 30%, transparent) !important;
+    color: oklch(76.10% 0.201 149.7) !important; /* WhatsApp Green text */
+    box-shadow:
+        0 4px 24px -4px color-mix(in oklch, var(--bg-main) 50%, transparent),
+        inset 0 1px 0 0 color-mix(in oklch, var(--text-main) 10%, transparent) !important;
+    text-shadow: 0 0 12px color-mix(in oklch, oklch(76.10% 0.201 149.7) 20%, transparent) !important;
+    transition: all var(--t-base) var(--ease) !important;
+}
+
+.glass-whatsapp svg {
+    color: oklch(76.10% 0.201 149.7) !important;
+    filter: drop-shadow(0 0 4px color-mix(in oklch, oklch(76.10% 0.201 149.7) 30%, transparent));
+}
+
+.glass-whatsapp:hover {
+    background: color-mix(in oklch, var(--surface) 60%, transparent) !important;
+    border-color: color-mix(in oklch, oklch(76.10% 0.201 149.7) 60%, transparent) !important;
+    box-shadow:
+        0 8px 32px -4px color-mix(in oklch, var(--bg-main) 60%, transparent),
+        0 0 20px color-mix(in oklch, oklch(76.10% 0.201 149.7) 15%, transparent),
+        inset 0 1px 0 0 color-mix(in oklch, var(--text-main) 15%, transparent) !important;
+    transform: translateY(-2px);
+}
+
 /* ===== BUTTONS ===== */
 .cta {
     display: inline-flex;
@@ -757,19 +815,13 @@ html[dir="rtl"] .hero h1 {
     transform: translateY(-2px);
 }
 
-.cta-whatsapp {
+.cta-whatsapp:not(.glass-whatsapp) {
     background: oklch(76.10% 0.201 149.7);
     color: oklch(100.00% 0.000 89.9);
-    box-shadow:
-        var(--shadow-sm),
-        0 0 20px oklch(76.10% 0.201 149.7 / 0.15);
 }
 
-.cta-whatsapp:hover {
+.cta-whatsapp:not(.glass-whatsapp):hover {
     background: oklch(70.07% 0.186 149.6);
-    box-shadow:
-        var(--shadow-md),
-        0 0 30px oklch(76.10% 0.201 149.7 / 0.25);
 }
 
 /* Secondary CTA (used in contact, etc.) */
@@ -1994,9 +2046,9 @@ html[dir="rtl"] .footer-brand-name {
     width: 56px;
     height: 56px;
     border-radius: var(--radius-full);
-    background: oklch(76.10% 0.201 149.7);
-    color: oklch(100.00% 0.000 89.9);
-    box-shadow: 0 4px 20px oklch(76.10% 0.201 149.7 / 0.35);
+    transition: all var(--t-base) cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* Removed background, color, and static box-shadow to let .glass-whatsapp handle it */
+}
     transition: all var(--t-base) var(--ease);
     text-decoration: none;
     border: none;
@@ -2016,7 +2068,6 @@ html[lang="he"] .whatsapp-float.is-hidden-over-hero {
 
 .whatsapp-float:hover {
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 30px oklch(76.10% 0.201 149.7 / 0.45);
 }
 
 .whatsapp-float svg {
@@ -2916,9 +2967,7 @@ html[lang="he"] .hero-cta-group .cta {
 }
 
 html[lang="he"] .hero-cta-group .cta-whatsapp {
-    box-shadow:
-        var(--shadow-sm),
-        0 0 28px oklch(76.10% 0.201 149.7 / 0.38);
+    /* Removed static box-shadow override to allow glass-whatsapp styles to work consistently */
 }
 
 @media (max-width: 899px) {
