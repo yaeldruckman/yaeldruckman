@@ -243,10 +243,14 @@ header {
     background: color-mix(in oklch, var(--bg) 85%, transparent);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid transparent;
     transition:
         background var(--t-base) var(--ease),
         border-color var(--t-base) var(--ease);
+}
+
+header.scrolled {
+    border-bottom-color: var(--border);
 }
 
 .nav {
@@ -510,25 +514,14 @@ html[dir="rtl"] .logo-title {
     min-height: 85vh;
     display: flex;
     align-items: center;
-    background: var(--bg);
+    background: #000;
 }
 
 .hero-bg {
     position: absolute;
     inset: 0;
     z-index: 0;
-    background: linear-gradient(
-        135deg,
-        color-mix(in oklch, var(--bg-main) 95%, transparent) 0%,
-        color-mix(in oklch, var(--accent) 22%, var(--bg-main)) 100%
-    );
-}
-
-.hero-bg::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: color-mix(in oklch, var(--bg-main) 10%, transparent);
+    background: #000;
 }
 
 .hero-content {
@@ -615,7 +608,7 @@ html[lang="he"] .profile-pic-dark {
     inset: 0;
     background: linear-gradient(
         to top,
-        color-mix(in oklch, var(--bg-main) 30%, transparent) 0%,
+        rgba(0, 0, 0, 0.4) 0%,
         transparent 40%
     );
     pointer-events: none;
@@ -2760,7 +2753,7 @@ html[lang="he"] ::view-transition-group(morph-author) {
 
 html[lang="he"] .hero,
 html[lang="he"] .hero-bg {
-    background: var(--bg);
+    background: #000;
 }
 
 html[lang="he"] .hero-bg::after {
@@ -2781,6 +2774,7 @@ html[lang="he"] .profile-image-wrapper::after {
 html[lang="he"] .nav {
     min-height: 0;
     padding: var(--nav-pad-y) 0;
+    background-color: #000;
 }
 
 html[lang="he"] .logo {

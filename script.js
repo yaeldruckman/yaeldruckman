@@ -229,21 +229,15 @@ function initHeaderScroll() {
   const header = document.querySelector("header");
   if (!header) return;
 
-  let lastScroll = 0;
   let ticking = false;
 
   function updateHeader() {
     const scrollY = window.scrollY;
-
-    if (scrollY > 50) {
-      header.style.borderBottomColor = "var(--border-light)";
-    } else {
-      header.style.borderBottomColor = "var(--border)";
-    }
-
-    lastScroll = scrollY;
+    header.classList.toggle("scrolled", scrollY > 0);
     ticking = false;
   }
+
+  updateHeader();
 
   window.addEventListener(
     "scroll",
