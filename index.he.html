@@ -77,6 +77,11 @@
             fetchpriority="high"
         />
         <link rel="stylesheet" href="styles.min.css" />
+        <style>
+            header.is-scrolled {
+                border-bottom: 0.5px solid var(--text-main);
+            }
+        </style>
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
@@ -640,7 +645,7 @@
                         <h2 class="section-title">לקוחות מספרים</h2>
                         <p class="section-subtitle">
                             ההוכחה הטובה ביותר לעשייה שלנו היא השקט הנפשי
-                            והביטחון<br />
+                            והביטחון
                             של הלקוחות שאנחנו מלווים לאורך השנים.
                         </p>
                     </div>
@@ -1426,6 +1431,16 @@
         <script>
             (function () {
                 "use strict";
+
+                const header = document.querySelector("header");
+                const updateHeaderBorder = () => {
+                    header.classList.toggle("is-scrolled", window.scrollY > 0);
+                };
+
+                updateHeaderBorder();
+                window.addEventListener("scroll", updateHeaderBorder, {
+                    passive: true,
+                });
 
                 const dialog = document.getElementById("morph-dialog");
                 const modalCard = document.getElementById("modal-card");
