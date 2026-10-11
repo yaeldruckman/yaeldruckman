@@ -1,0 +1,8 @@
+<!doctype html><body><iframe id=f src="/index.he.html" style="width:1200px;height:800px"></iframe><pre id=o></pre>
+<script>
+f.onload=()=>{const w=f.contentWindow,d=w.document;d.documentElement.style.scrollBehavior="auto";
+const hb=d.getElementById("home").getBoundingClientRect().bottom+w.scrollY, h=d.querySelector("header").getBoundingClientRect().bottom;
+const pts=[hb-h-20,hb-h-2,hb-h+2,hb-h+20];const out=[];let i=0;
+const step=()=>{if(i>=pts.length){o.textContent=JSON.stringify({headerBottom:h,out});return}
+w.scrollTo(0,pts[i]);setTimeout(()=>{out.push([Math.round(pts[i]),d.querySelector(".whatsapp-float").classList.contains("is-hidden-over-hero")?"hidden":"shown"]);i++;step()},200)};step()};
+</script>

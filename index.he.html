@@ -8,7 +8,7 @@
         <meta name="theme-color" content="#1c202a" id="theme-color" />
         <meta
             name="description"
-            content="יעל דרוקמן — משפטים, גישור, ביטוח ופיננסים. משרד משפחתי לניהול סיכונים משפטיים, ביטוחיים וכלכליים."
+            content="יעל דרוקמן — משפטים, גישור, ביטוח ופיננסים בהרצליה. משרד משפחתי לניהול סיכונים משפטיים, ביטוחיים וכלכליים."
         />
         <title>יעל דרוקמן - משרד עורכי דין, סוכנת ביטוח ופיננסים</title>
         <link rel="canonical" href="https://yaeldruckman.com/index.he.html" />
@@ -40,7 +40,7 @@
         />
         <meta
             property="og:description"
-            content="יעל דרוקמן — משפטים, גישור, ביטוח ופיננסים. משרד משפחתי לניהול סיכונים משפטיים, ביטוחיים וכלכליים."
+            content="יעל דרוקמן — משפטים, גישור, ביטוח ופיננסים בהרצליה. משרד משפחתי לניהול סיכונים משפטיים, ביטוחיים וכלכליים."
         />
         <meta
             property="og:image"
@@ -55,7 +55,7 @@
         />
         <meta
             name="twitter:description"
-            content="יעל דרוקמן — משפטים, גישור, ביטוח ופיננסים. משרד משפחתי לניהול סיכונים משפטיים, ביטוחיים וכלכליים."
+            content="יעל דרוקמן — משפטים, גישור, ביטוח ופיננסים בהרצליה. משרד משפחתי לניהול סיכונים משפטיים, ביטוחיים וכלכליים."
         />
         <meta
             name="twitter:image"
@@ -70,9 +70,10 @@
         />
         <link
             rel="preload"
-            href="assets/profile-pic-gray-bg.avif"
             as="image"
             type="image/avif"
+            imagesrcset="assets/profile-pic-gray-bg-640.avif 640w, assets/profile-pic-gray-bg.avif 864w"
+            imagesizes="(min-width: 900px) 420px, min(78vw, 320px)"
             fetchpriority="high"
         />
         <link rel="stylesheet" href="styles.min.css" />
@@ -87,13 +88,24 @@
                 "logo": "https://yaeldruckman.com/assets/logo-black.jpg",
                 "description": "משרד עורכי דין, גישור, ביטוח ופיננסים.",
                 "telephone": "+972-58-630-6460",
-                "areaServed": "IL",
-                "sameAs": ["https://wa.me/972586306460"]
+                "email": "office@yaeldruckman.com",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "העצמאות 51 ב׳",
+                    "addressLocality": "הרצליה",
+                    "addressCountry": "IL"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 32.1652,
+                    "longitude": 34.8442
+                },
+                "areaServed": "IL"
             }
         </script>
     </head>
     <body>
-        <a class="skip-link" href="#main">דלג לתוכן הראשי</a>
+        <a class="skip-link" href="#main">דילוג לתוכן הראשי</a>
 
         <!-- ===== HEADER ===== -->
         <header>
@@ -114,7 +126,7 @@
                     <a href="#about">אודות</a>
                     <a href="#testimonials">המלצות</a>
                     <a href="#media">מדיה</a>
-                    <a href="#contact">צור קשר</a>
+                    <a href="#contact">יצירת קשר</a>
                 </nav>
 
                 <div class="nav-actions">
@@ -129,7 +141,8 @@
                         class="hamburger"
                         type="button"
                         id="navToggle"
-                        aria-label="פתח תפריט נייד"
+                        aria-label="פתיחת תפריט"
+                        data-close-label="סגירת תפריט"
                         aria-expanded="false"
                         aria-controls="mobileNav"
                     >
@@ -153,7 +166,7 @@
             </div>
 
             <!-- Mobile Nav -->
-            <div class="mobile-nav" id="mobileNav" aria-label="ניווט נייד">
+            <nav class="mobile-nav" id="mobileNav" aria-label="ניווט נייד">
                 <a href="#services">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -243,7 +256,7 @@
                         <rect width="20" height="16" x="2" y="4" rx="2" />
                         <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                     </svg>
-                    צור קשר
+                    יצירת קשר
                 </a>
                 <a href="index.html">
                     <svg
@@ -265,7 +278,7 @@
                     </svg>
                     English
                 </a>
-            </div>
+            </nav>
         </header>
 
         <main id="main">
@@ -279,14 +292,18 @@
                                 <picture>
                                     <source
                                         type="image/avif"
-                                        srcset="assets/profile-pic-gray-bg.avif"
+                                        srcset="assets/profile-pic-gray-bg-640.avif 640w, assets/profile-pic-gray-bg.avif 864w"
+                                        sizes="(min-width: 900px) 420px, min(78vw, 320px)"
                                     />
                                     <source
                                         type="image/webp"
-                                        srcset="assets/profile-pic-gray-bg.webp"
+                                        srcset="assets/profile-pic-gray-bg-640.webp 640w, assets/profile-pic-gray-bg.webp 864w"
+                                        sizes="(min-width: 900px) 420px, min(78vw, 320px)"
                                     />
                                     <img
                                         src="assets/profile-pic-gray-bg.jpg"
+                                        srcset="assets/profile-pic-gray-bg-640.jpg 640w, assets/profile-pic-gray-bg.jpg 864w"
+                                        sizes="(min-width: 900px) 420px, min(78vw, 320px)"
                                         alt="יעל דרוקמן - משרד עורכי דין, סוכנת ביטוח ופיננסים"
                                         width="864"
                                         height="1232"
@@ -324,7 +341,7 @@
                                 זו אהבה בוגרת שמתורגמת למסמך&quot;
                             </h1>
                             <div class="hero-cta-group">
-                                <a class="cta glass-cta" href="#contact">
+                                <a class="cta btn-outline-accent" href="#contact">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="18"
@@ -353,7 +370,7 @@
                                     קביעת פגישה
                                 </a>
                                 <a
-                                    class="cta cta-whatsapp glass-whatsapp"
+                                    class="cta cta-whatsapp btn-outline-whatsapp"
                                     href="https://wa.me/972586306460"
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -420,17 +437,17 @@
                                 </div>
                                 <h3>עריכת דין</h3>
                             </div>
-                            <p>
-                                • ייפוי כח מתמשך<br />
-                                • צוואות<br />
-                                • הסכמי גירושין<br />
-                                • הסכמי ממון<br />
-                                • הסכמי חיים משותפים<br />
-                                • תביעות למימוש זכאויות מהפוליסות השונות<br />
-                                • תביעות פוליסות סיעוד קופ"ח<br />
-                                • ניהול נכסים למתגוררים בארץ ובחו"ל<br />
-                                • יעוץ משפטי ביטוחי עקב רילוקיישן
-                            </p>
+                            <ul class="card-list">
+                                <li>ייפוי כח מתמשך</li>
+                                <li>צוואות</li>
+                                <li>הסכמי גירושין</li>
+                                <li>הסכמי ממון</li>
+                                <li>הסכמי חיים משותפים</li>
+                                <li>תביעות למימוש זכאויות מהפוליסות השונות</li>
+                                <li>תביעות פוליסות סיעוד קופ"ח</li>
+                                <li>ניהול נכסים למתגוררים בארץ ובחו"ל</li>
+                                <li>יעוץ משפטי ביטוחי עקב רילוקיישן</li>
+                            </ul>
                             <div class="accent-divider"></div>
                         </article>
 
@@ -441,19 +458,19 @@
                                 </div>
                                 <h3>ביטוח ופיננסים</h3>
                             </div>
-                            <p>
-                                • העברת זכויות פנסיוניות אגב גירושין<br />
-                                • ביטוחי בריאות<br />
-                                • ביטוחי חיים<br />
-                                • ביטוחי מחלות קשות<br />
-                                • ביטוחי תאונות אישיות<br />
-                                • קרנות פנסיה<br />
-                                • קרנות השתלמות<br />
-                                • פוליסות פיננסיות<br />
-                                • קופות גמל<br />
-                                • הלוואות מקופות גמל<br />
-                                • קופת גמל להשקעה
-                            </p>
+                            <ul class="card-list">
+                                <li>העברת זכויות פנסיוניות אגב גירושין</li>
+                                <li>ביטוחי בריאות</li>
+                                <li>ביטוחי חיים</li>
+                                <li>ביטוחי מחלות קשות</li>
+                                <li>ביטוחי תאונות אישיות</li>
+                                <li>קרנות פנסיה</li>
+                                <li>קרנות השתלמות</li>
+                                <li>פוליסות פיננסיות</li>
+                                <li>קופות גמל</li>
+                                <li>הלוואות מקופות גמל</li>
+                                <li>קופת גמל להשקעה</li>
+                            </ul>
                             <div class="accent-divider"></div>
                         </article>
 
@@ -464,11 +481,11 @@
                                 </div>
                                 <h3>גישור</h3>
                             </div>
-                            <p>
-                                • העברה בין-דורית משפחתית<br />
-                                • סכסוכים משפחתיים<br />
-                                • סכסוכי גירושין
-                            </p>
+                            <ul class="card-list">
+                                <li>העברה בין-דורית משפחתית</li>
+                                <li>סכסוכים משפחתיים</li>
+                                <li>סכסוכי גירושין</li>
+                            </ul>
                             <div class="accent-divider"></div>
                         </article>
                     </div>
@@ -650,7 +667,7 @@
                                 class="read-more-btn"
                                 onclick="morphTestimonial(this)"
                             >
-                                קרא עוד<span aria-hidden="true">...</span>
+                                לקריאה המלאה
                             </button>
                             <div class="testimonial-author">
                                 <div class="testimonial-info">
@@ -691,7 +708,7 @@
                                 class="read-more-btn"
                                 onclick="morphTestimonial(this)"
                             >
-                                קרא עוד<span aria-hidden="true">...</span>
+                                לקריאה המלאה
                             </button>
                             <div class="testimonial-author">
                                 <div class="testimonial-info">
@@ -703,16 +720,16 @@
 
                         <div class="testimonial-card fade-up">
 <p class="testimonial-text">
-                                יעל מנהלת את נכסיי בארץ למעלה מעשר שנים,
+                                "יעל מנהלת את נכסיי בארץ למעלה מעשר שנים,
                                 במקצועיות רבה, אמון מלא ואנושיות על מלא. השקט
                                 הנפשי שיש לי שאני יודעת שיש מי שמטפל בי, דואג לי
-                                ושומר על נכסיי כאילו היו שלו, לא יסולא בפז.
+                                ושומר על נכסיי כאילו היו שלו, לא יסולא בפז."
                             </p>
                             <button
                                 class="read-more-btn"
                                 onclick="morphTestimonial(this)"
                             >
-                                קרא עוד<span aria-hidden="true">...</span>
+                                לקריאה המלאה
                             </button>
                             <div class="testimonial-author">
                                 <div class="testimonial-info">
@@ -820,7 +837,7 @@
                                         />
                                         <img
                                             src="assets/media-od-yad.jpg"
-                                            alt="מיזם עו''ד יד"
+                                            alt="מיזם עו״ד יד"
                                             width="1200"
                                             height="800"
                                             loading="lazy"
@@ -844,7 +861,9 @@
 
                             <!-- Featured Video Card -->
                             <a
-                                href="https://www.youtube.com/embed/PPfSPrZoMTc?autoplay=1"
+                                href="https://www.youtube.com/watch?v=PPfSPrZoMTc"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 onclick="openVideoModal(event, this.href)"
                                 class="media-card featured fade-up"
                             >
@@ -931,7 +950,7 @@
                                         />
                                         <img
                                             src="assets/media-walla.jpg"
-                                            alt="כתבה מקצועית בוואלה! פיננס"
+                                            alt="כתבה מקצועית בוואלה כסף"
                                             width="1200"
                                             height="800"
                                             loading="lazy"
@@ -947,7 +966,7 @@
                                         סקירה מקצועית בתחומי הביטוח והפיננסים.
                                     </p>
                                     <div class="media-card-meta">
-                                        <span>Walla! Finance</span>
+                                        <span>וואלה כסף</span>
                                     </div>
                                 </div>
                             </a>
@@ -979,7 +998,7 @@
                                         הנחיית כנס נשים בענף הביטוח
                                     </h3>
                                     <p class="media-card-desc">
-                                        הנחיית כנס נשים מרכזי בענף הביטוח.
+                                        2018
                                     </p>
                                     <div class="media-card-meta">
                                         <span>כנס מקצועי</span>
@@ -1055,7 +1074,9 @@
                                         טלפון
                                     </div>
                                     <div class="contact-detail-value">
-                                        <a href="tel:0586306460">058-6306460</a>
+                                        <a href="tel:+972586306460" dir="ltr"
+                                            >058-6306460</a
+                                        >
                                     </div>
                                 </div>
                             </div>
@@ -1138,8 +1159,8 @@
                                     href="https://maps.google.com/maps?q=%D7%94%D7%A2%D7%A6%D7%9E%D7%90%D7%95%D7%AA%2051%20%D7%91'%2C%20%D7%94%D7%A8%D7%A6%D7%9C%D7%99%D7%94&amp;hl=he"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    aria-label="פתח ב-Google Maps"
-                                    title="פתח ב-Google Maps"
+                                    aria-label="פתיחה ב-Google Maps"
+                                    title="פתיחה ב-Google Maps"
                                 >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -1165,7 +1186,7 @@
 
                             <div class="contact-whatsapp">
                                 <a
-                                    class="cta cta-whatsapp glass-whatsapp"
+                                    class="cta cta-whatsapp btn-outline-whatsapp"
                                     href="https://wa.me/972586306460"
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -1188,6 +1209,7 @@
 
                         <form
                             class="contact-card fade-up"
+                            method="post"
                             aria-label="טופס יצירת קשר"
                         >
                             <div class="form-row">
@@ -1208,6 +1230,7 @@
                                         id="phone"
                                         name="phone"
                                         type="tel"
+                                        dir="ltr"
                                         autocomplete="tel"
                                         placeholder="050-000-0000"
                                     />
@@ -1267,7 +1290,7 @@
                                 />
                                 Protected by Cloudflare
                             </a>
-                            <button type="submit" class="cta glass-cta">
+                            <button type="submit" class="cta btn-outline-accent">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="18"
@@ -1312,7 +1335,7 @@
 
         <!-- ===== FLOATING WHATSAPP ===== -->
         <a
-            class="whatsapp-float is-hidden-over-hero glass-whatsapp"
+            class="whatsapp-float is-hidden-over-hero btn-outline-whatsapp"
             href="https://wa.me/972586306460"
             target="_blank"
             rel="noopener noreferrer"
@@ -1340,7 +1363,7 @@
                 <button
                     id="video-modal-close"
                     class="modal-close-btn"
-                    aria-label="סגור"
+                    aria-label="סגירה"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -1375,7 +1398,7 @@
                 <button
                     id="modal-close"
                     class="modal-close-btn"
-                    aria-label="סגור"
+                    aria-label="סגירה"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -1437,34 +1460,25 @@
                     }
 
                     activeCard = card;
-                    const stars = card.querySelector(".testimonial-stars");
                     const author = card.querySelector(".testimonial-author");
 
                     // Set transition names on the clicked card
                     card.style.viewTransitionName = "morph-card";
-                    if (stars) stars.style.viewTransitionName = "morph-stars";
                     if (author)
                         author.style.viewTransitionName = "morph-author";
 
-                    const transition = document.startViewTransition(() => {
+                    document.startViewTransition(() => {
                         // Remove transition names from the original card to avoid conflict
                         card.style.viewTransitionName = "none";
-                        if (stars) stars.style.viewTransitionName = "none";
                         if (author) author.style.viewTransitionName = "none";
 
-                        // Inject content into dialog
                         modalContent.innerHTML = card.innerHTML;
 
                         // Set transition names on the dialog elements
                         modalCard.style.viewTransitionName = "morph-card";
-                        const modalStars =
-                            modalContent.querySelector(".testimonial-stars");
                         const modalAuthor = modalContent.querySelector(
                             ".testimonial-author",
                         );
-
-                        if (modalStars)
-                            modalStars.style.viewTransitionName = "morph-stars";
                         if (modalAuthor)
                             modalAuthor.style.viewTransitionName =
                                 "morph-author";
@@ -1472,11 +1486,6 @@
                         dialog.showModal();
                         lockScroll(true);
                         card.classList.add("is-ghost");
-                    });
-
-                    transition.finished.finally(() => {
-                        // Cleanup: ensure names are cleared from card (already done in VT callback)
-                        // and we can clear from modal too if we want, but it's removed on close anyway
                     });
                 }
 
@@ -1490,8 +1499,6 @@
                         return;
                     }
 
-                    const modalStars =
-                        modalContent.querySelector(".testimonial-stars");
                     const modalAuthor = modalContent.querySelector(
                         ".testimonial-author",
                     );
@@ -1499,22 +1506,16 @@
                     const transition = document.startViewTransition(() => {
                         // Remove transition names from modal
                         modalCard.style.viewTransitionName = "none";
-                        if (modalStars)
-                            modalStars.style.viewTransitionName = "none";
                         if (modalAuthor)
                             modalAuthor.style.viewTransitionName = "none";
 
                         // Reassign to original card for reverse morph
                         if (activeCard) {
                             activeCard.style.viewTransitionName = "morph-card";
-                            const stars =
-                                activeCard.querySelector(".testimonial-stars");
                             const author = activeCard.querySelector(
                                 ".testimonial-author",
                             );
 
-                            if (stars)
-                                stars.style.viewTransitionName = "morph-stars";
                             if (author)
                                 author.style.viewTransitionName =
                                     "morph-author";
@@ -1529,12 +1530,9 @@
                     transition.finished.finally(() => {
                         if (activeCard) {
                             activeCard.style.viewTransitionName = "none";
-                            const stars =
-                                activeCard.querySelector(".testimonial-stars");
                             const author = activeCard.querySelector(
                                 ".testimonial-author",
                             );
-                            if (stars) stars.style.viewTransitionName = "none";
                             if (author)
                                 author.style.viewTransitionName = "none";
                             activeCard = null;
@@ -1564,9 +1562,16 @@
                     document.getElementById("video-modal-close");
                 const videoIframe = document.getElementById("video-iframe");
 
+                // The link points to the normal watch page (works without JS);
+                // the modal plays it via the privacy-enhanced embed domain.
                 window.openVideoModal = function (e, url) {
+                    const id = new URL(url).searchParams.get("v");
+                    if (!id) return;
                     e.preventDefault();
-                    videoIframe.src = url;
+                    videoIframe.src =
+                        "https://www.youtube-nocookie.com/embed/" +
+                        encodeURIComponent(id) +
+                        "?autoplay=1";
                     videoDialog.showModal();
                     lockScroll(true);
                 };
@@ -1605,9 +1610,6 @@
             });
         </script>
         <script src="script.min.js" defer></script>
-        <script
-            src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&amp;onload=onTurnstileLoad"
-            defer
-        ></script>
+
     </body>
 </html>

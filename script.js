@@ -22,7 +22,7 @@ const i18n = {
   he: {
     dark: "כהה",
     light: "בהיר",
-    sending: "שולח...",
+    sending: "בשליחה...",
     sent: "ההודעה נשלחה!",
     sendError: "השליחה נכשלה. נסו שוב.",
   },
@@ -66,9 +66,13 @@ if (navToggle && mobileNav) {
   const hamburger = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>`;
   const close = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>`;
 
+  const openLabel = navToggle.getAttribute("aria-label");
+  const closeLabel = navToggle.dataset.closeLabel || openLabel;
+
   const setNavState = (open) => {
     mobileNav.classList.toggle("open", open);
     navToggle.setAttribute("aria-expanded", String(open));
+    navToggle.setAttribute("aria-label", open ? closeLabel : openLabel);
     navToggle.innerHTML = open ? close : hamburger;
   };
 
@@ -273,6 +277,35 @@ window.onTurnstileLoad = function () {
   });
 };
 
+// Load Turnstile only when the form approaches the viewport (or gets focus),
+// so visitors who never reach the form don't contact Cloudflare.
+const TURNSTILE_SRC =
+  "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstileLoad";
+
+function loadTurnstile() {
+  if (window.turnstile) return window.onTurnstileLoad();
+  if (document.querySelector('script[src^="https://challenges.cloudflare.com/turnstile/"]')) return;
+  const s = document.createElement("script");
+  s.src = TURNSTILE_SRC;
+  s.async = true;
+  document.head.appendChild(s);
+}
+
+function initLazyTurnstile(form) {
+  form.addEventListener("focusin", loadTurnstile, { once: true });
+  if (!("IntersectionObserver" in window)) return loadTurnstile();
+  const io = new IntersectionObserver(
+    (entries) => {
+      if (entries.some((e) => e.isIntersecting)) {
+        io.disconnect();
+        loadTurnstile();
+      }
+    },
+    { rootMargin: "600px 0px" },
+  );
+  io.observe(form);
+}
+
 function resetTurnstile() {
   if (window.turnstile && turnstileWidgetId !== null) {
     window.turnstile.reset(turnstileWidgetId);
@@ -288,6 +321,7 @@ function initContactForm() {
   const form = document.querySelector(".contact-card");
   if (!form || form.tagName !== "FORM" || contactFormBound) return;
   contactFormBound = true;
+  initLazyTurnstile(form);
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -295,10 +329,14 @@ function initContactForm() {
     const button = form.querySelector('button[type="submit"]');
     const originalContent = button.innerHTML;
 
+    // Outline buttons (.btn-outline-*) take their color from --btn-tone;
+    // filled buttons (English page) use the background.
+    const isOutline = /\bbtn-outline-/.test(button.className);
     const setButton = (html, { disabled = true, background = "" } = {}) => {
       button.innerHTML = html;
       button.disabled = disabled;
-      button.style.background = background;
+      if (isOutline) button.style.setProperty("--btn-tone", background);
+      else button.style.background = background;
     };
 
     const token = getTurnstileToken();
@@ -370,7 +408,7 @@ window.toggleTestimonial = function (btn) {
   const isExpanded = card.classList.toggle("expanded");
 
   if (lang === "he") {
-    btn.textContent = isExpanded ? "קרא פחות" : "קרא עוד...";
+    btn.textContent = isExpanded ? "לקריאה מקוצרת" : "לקריאה המלאה";
   } else {
     btn.textContent = isExpanded ? "Read Less" : "Read More...";
   }
@@ -384,19 +422,29 @@ function initWhatsappHeroHide() {
   if (!fab || !hero || fab.dataset.heroHideInit === "1") return;
   fab.dataset.heroHideInit = "1";
 
-  const setHidden = (hidden) => {
-    fab.classList.toggle("is-hidden-over-hero", hidden);
+  const header = document.querySelector("header");
+
+  // Show as soon as the hero's bottom edge passes under the sticky header
+  // (the header covers the last strip of the hero, so the viewport top is too late).
+  let ticking = false;
+  const update = () => {
+    ticking = false;
+    const headerBottom = header ? header.getBoundingClientRect().bottom : 0;
+    fab.classList.toggle(
+      "is-hidden-over-hero",
+      hero.getBoundingClientRect().bottom > headerBottom,
+    );
+  };
+  const schedule = () => {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
   };
 
-  // threshold 0 fires when hero enters/leaves the viewport (0.35 never
-  // fired at 0, so the button stayed hidden after scroll).
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => setHidden(entry.isIntersecting));
-    },
-    { threshold: 0 },
-  );
-  io.observe(hero);
+  window.addEventListener("scroll", schedule, { passive: true });
+  window.addEventListener("resize", schedule, { passive: true });
+  update();
 }
 
 // ===== INIT =====

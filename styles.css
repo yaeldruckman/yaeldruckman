@@ -109,6 +109,8 @@
 /* Hebrew: one typeface + one type/space/tap scale. Breakpoints: 375 / 390 / 768 / 900 / 1200 / 1440 */
 html[lang="he"] {
     color-scheme: dark;
+    /* Varela Round ships a single 400 weight; stop browsers faking bold */
+    font-synthesis-weight: none;
     --font-heading: "Varela Round", sans-serif;
     --font-body: "Varela Round", sans-serif;
     --font-hebrew: "Varela Round", sans-serif;
@@ -699,61 +701,6 @@ html[dir="rtl"] .hero h1 {
     }
 }
 
-.glass-cta {
-    background: color-mix(in oklch, var(--surface) 40%, transparent) !important;
-    backdrop-filter: blur(12px) saturate(180%);
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
-    border: 1px solid color-mix(in oklch, var(--accent) 30%, transparent) !important;
-    color: var(--accent) !important; /* Gold text */
-    box-shadow:
-        0 4px 24px -4px color-mix(in oklch, var(--bg-main) 50%, transparent),
-        inset 0 1px 0 0 color-mix(in oklch, var(--text-main) 10%, transparent) !important;
-    text-shadow: 0 0 12px color-mix(in oklch, var(--accent) 20%, transparent); /* Subtle text glow */
-}
-
-.glass-cta svg {
-    color: var(--accent) !important;
-    filter: drop-shadow(0 0 4px color-mix(in oklch, var(--accent) 30%, transparent));
-}
-
-.glass-cta:hover {
-    background: color-mix(in oklch, var(--surface) 60%, transparent) !important;
-    border-color: color-mix(in oklch, var(--accent) 60%, transparent) !important;
-    box-shadow:
-        0 8px 32px -4px color-mix(in oklch, var(--bg-main) 60%, transparent),
-        0 0 20px color-mix(in oklch, var(--accent) 15%, transparent), /* Outer glow on hover */
-        inset 0 1px 0 0 color-mix(in oklch, var(--text-main) 15%, transparent) !important;
-    transform: translateY(-2px);
-}
-
-.glass-whatsapp {
-    background: color-mix(in oklch, var(--surface) 40%, transparent) !important;
-    backdrop-filter: blur(12px) saturate(180%);
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
-    border: 1px solid color-mix(in oklch, oklch(76.10% 0.201 149.7) 30%, transparent) !important;
-    color: oklch(76.10% 0.201 149.7) !important; /* WhatsApp Green text */
-    box-shadow:
-        0 4px 24px -4px color-mix(in oklch, var(--bg-main) 50%, transparent),
-        inset 0 1px 0 0 color-mix(in oklch, var(--text-main) 10%, transparent) !important;
-    text-shadow: 0 0 12px color-mix(in oklch, oklch(76.10% 0.201 149.7) 20%, transparent) !important;
-    transition: all var(--t-base) var(--ease) !important;
-}
-
-.glass-whatsapp svg {
-    color: oklch(76.10% 0.201 149.7) !important;
-    filter: drop-shadow(0 0 4px color-mix(in oklch, oklch(76.10% 0.201 149.7) 30%, transparent));
-}
-
-.glass-whatsapp:hover {
-    background: color-mix(in oklch, var(--surface) 60%, transparent) !important;
-    border-color: color-mix(in oklch, oklch(76.10% 0.201 149.7) 60%, transparent) !important;
-    box-shadow:
-        0 8px 32px -4px color-mix(in oklch, var(--bg-main) 60%, transparent),
-        0 0 20px color-mix(in oklch, oklch(76.10% 0.201 149.7) 15%, transparent),
-        inset 0 1px 0 0 color-mix(in oklch, var(--text-main) 15%, transparent) !important;
-    transform: translateY(-2px);
-}
-
 /* ===== BUTTONS ===== */
 .cta {
     display: inline-flex;
@@ -808,13 +755,54 @@ html[dir="rtl"] .hero h1 {
     transform: translateY(-2px);
 }
 
-.cta-whatsapp:not(.glass-whatsapp) {
+.cta-whatsapp:not(.btn-outline-whatsapp) {
     background: oklch(76.10% 0.201 149.7);
     color: oklch(100.00% 0.000 89.9);
 }
 
-.cta-whatsapp:not(.glass-whatsapp):hover {
+.cta-whatsapp:not(.btn-outline-whatsapp):hover {
     background: oklch(70.07% 0.186 149.6);
+}
+
+/* Outline CTAs: transparent fill, solid colored border; hover tints the fill.
+   Chained selectors so they beat .cta without !important. */
+.cta.btn-outline-accent,
+.cta.btn-outline-whatsapp,
+.whatsapp-float.btn-outline-whatsapp {
+    --btn-tone: var(--accent);
+    background: transparent;
+    border: 1.5px solid var(--btn-tone);
+    color: var(--btn-tone);
+    box-shadow: none;
+    transition:
+        background-color var(--t-fast) var(--ease),
+        transform var(--t-fast) var(--ease);
+}
+
+.cta.btn-outline-whatsapp,
+.whatsapp-float.btn-outline-whatsapp {
+    --btn-tone: oklch(76.10% 0.201 149.7);
+}
+
+/* Floating button sits over changing content, so it needs a solid fill */
+.whatsapp-float.btn-outline-whatsapp {
+    background: var(--bg-main);
+}
+
+.cta.btn-outline-accent:hover,
+.cta.btn-outline-whatsapp:hover {
+    background: color-mix(in oklch, var(--btn-tone) 12%, transparent);
+    box-shadow: none;
+    transform: translateY(-1px);
+}
+
+.whatsapp-float.btn-outline-whatsapp:hover {
+    background: color-mix(in oklch, var(--btn-tone) 12%, var(--bg-main));
+}
+
+.cta.btn-outline-accent:active,
+.cta.btn-outline-whatsapp:active {
+    transform: none;
 }
 
 /* Secondary CTA (used in contact, etc.) */
@@ -1011,11 +999,27 @@ html[dir="rtl"] .card h3 {
     letter-spacing: 0;
 }
 
-.card p {
+.card p,
+.card-list {
     color: var(--text-muted);
     font-size: 0.925rem;
     line-height: 1.7;
     margin-bottom: 1.25rem;
+}
+
+/* Looks like the former "• " text bullets; wrapped lines hang under the text.
+   0.637em = width of "• " in Varela Round. */
+.card-list {
+    list-style: none;
+}
+
+.card-list li {
+    padding-inline-start: 0.637em;
+    text-indent: -0.637em;
+}
+
+.card-list li::before {
+    content: "• ";
 }
 
 .accent-divider {
@@ -1916,7 +1920,7 @@ html[lang="he"][data-theme="dark"] .cf-protected-logo {
     flex-shrink: 0;
 }
 
-.contact-card button[type="submit"] {
+.contact-card button[type="submit"]:not(.btn-outline-accent) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1938,7 +1942,7 @@ html[lang="he"][data-theme="dark"] .cf-protected-logo {
     letter-spacing: 0.01em;
 }
 
-.contact-card button[type="submit"]:hover {
+.contact-card button[type="submit"]:not(.btn-outline-accent):hover {
     background: var(--accent-hover);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
@@ -2039,13 +2043,8 @@ html[dir="rtl"] .footer-brand-name {
     width: 56px;
     height: 56px;
     border-radius: var(--radius-full);
-    transition: all var(--t-base) cubic-bezier(0.34, 1.56, 0.64, 1);
-    /* Removed background, color, and static box-shadow to let .glass-whatsapp handle it */
-}
-    transition: all var(--t-base) var(--ease);
     text-decoration: none;
-    border: none;
-    cursor: pointer;
+    transition: all var(--t-base) cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 html[dir="rtl"] .whatsapp-float {
@@ -2060,7 +2059,7 @@ html[lang="he"] .whatsapp-float.is-hidden-over-hero {
 }
 
 .whatsapp-float:hover {
-    transform: translateY(-3px) scale(1.05);
+    transform: translateY(-1px);
 }
 
 .whatsapp-float svg {
@@ -2525,17 +2524,6 @@ html[lang="he"] .testimonial-card::before {
     pointer-events: none;
 }
 
-html[lang="he"] .testimonial-stars {
-    justify-content: center;
-    margin-bottom: 2rem;
-    gap: 6px;
-}
-
-html[lang="he"] .testimonial-stars svg {
-    width: 14px;
-    height: 14px;
-    color: var(--accent);
-}
 
 html[lang="he"] .testimonial-quote-icon {
     display: none;
@@ -2734,7 +2722,6 @@ html[lang="he"] .testimonial-card.is-ghost {
 
 /* View Transitions */
 html[lang="he"] ::view-transition-group(morph-card),
-html[lang="he"] ::view-transition-group(morph-stars),
 html[lang="he"] ::view-transition-group(morph-author) {
     animation-duration: 500ms;
     animation-timing-function: cubic-bezier(
@@ -2955,13 +2942,6 @@ html[lang="he"] .hero-cta-group .cta {
     flex: 0 0 14rem;
     box-sizing: border-box;
     justify-content: center;
-    box-shadow:
-        var(--shadow-sm),
-        0 0 28px color-mix(in oklch, var(--accent) 38%, transparent);
-}
-
-html[lang="he"] .hero-cta-group .cta-whatsapp {
-    /* Removed static box-shadow override to allow glass-whatsapp styles to work consistently */
 }
 
 @media (max-width: 899px) {
