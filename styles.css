@@ -40,7 +40,7 @@
     --border: oklch(32% 0.02 260 / 1);
     --text-main: oklch(96% 0.01 90 / 1);
     --text-muted: oklch(90% 0.02 255 / 1);
-    --accent: oklch(78% 0.13 85 / 1);
+    --accent: oklch(82% 0.15 85 / 1);
     --accent-hover: oklch(84% 0.12 85 / 1);
     --accent-text: oklch(18% 0.03 85 / 1);
 
@@ -675,10 +675,6 @@ html[dir="rtl"] .hero h1 {
         min-height: auto;
     }
 
-    .hero-content {
-        padding-bottom: 0;
-    }
-
     .hero-subtitle {
         margin-left: auto;
         margin-right: auto;
@@ -1101,6 +1097,7 @@ html[dir="rtl"] .about-content .section-header::after {
     font-size: 0.975rem;
     line-height: 1.8;
     margin-bottom: 1.25rem;
+    text-align: justify;
 }
 
 .about-stats {
@@ -2786,6 +2783,17 @@ html[lang="he"] .logo-icon {
     letter-spacing: 0.02em;
 }
 
+html[lang="he"] .logo-icon--monogram {
+    background: transparent;
+}
+
+html[lang="he"] .logo-icon--monogram img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 html[lang="he"] .logo-text {
     gap: var(--nav-stack-gap);
 }
@@ -2863,6 +2871,7 @@ html[lang="he"] .mobile-nav a:focus-visible {
 
 html[lang="he"] .hero {
     min-height: 0;
+    padding: 0;
 }
 
 html[lang="he"] .hero-content {

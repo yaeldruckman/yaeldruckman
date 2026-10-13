@@ -408,7 +408,7 @@ window.toggleTestimonial = function (btn) {
   const isExpanded = card.classList.toggle("expanded");
 
   if (lang === "he") {
-    btn.textContent = isExpanded ? "לקריאה מקוצרת" : "לקריאה המלאה";
+    btn.textContent = isExpanded ? "לקריאה מקוצרת" : "המשך...";
   } else {
     btn.textContent = isExpanded ? "Read Less" : "Read More...";
   }
