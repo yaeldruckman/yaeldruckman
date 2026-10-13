@@ -1,0 +1,120 @@
+        <style>
+            /* Enhanced Classy Testimonials */
+            .testimonial-card {
+                padding: 3.5rem 2.25rem 2.5rem !important;
+                text-align: center;
+                border: 1px solid var(--border) !important;
+                border-top: 3px solid var(--accent) !important;
+                background: var(--card-gradient) !important;
+                border-radius: var(--radius-lg) !important;
+                position: relative;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                transition:
+                    transform 0.4s var(--ease-out),
+                    box-shadow 0.4s var(--ease-out) !important;
+            }
+
+            .testimonial-card:hover {
+                transform: translateY(-8px) !important;
+                box-shadow:
+                    var(--shadow-lg),
+                    0 0 30px var(--accent-subtle) !important;
+                border-color: var(--accent) !important;
+            }
+
+            .testimonial-card::before {
+                content: "“";
+                position: absolute;
+                top: 0.5rem;
+                left: 1.5rem;
+                font-family: var(--font-heading);
+                font-size: 8rem;
+                color: var(--accent);
+                opacity: 0.08;
+                line-height: 1;
+                pointer-events: none;
+            }
+
+            .testimonial-stars {
+                justify-content: center;
+                margin-bottom: 2rem !important;
+                gap: 6px !important;
+            }
+
+            .testimonial-stars svg {
+                width: 14px !important;
+                height: 14px !important;
+                color: var(--accent) !important;
+            }
+
+            .testimonial-quote-icon {
+                display: none !important;
+            }
+
+            .testimonial-text {
+                font-family: var(--font-heading) !important;
+                font-size: 1.15rem !important;
+                font-style: italic !important;
+                color: var(--text-heading) !important;
+                line-height: 1.8 !important;
+                margin-bottom: 2.5rem !important;
+                flex-grow: 1;
+                position: relative;
+                z-index: 1;
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                transition: all 0.3s ease;
+            }
+
+            .testimonial-card.expanded .testimonial-text {
+                -webkit-line-clamp: unset;
+                display: block;
+            }
+
+            .read-more-btn {
+                background: none;
+                border: none;
+                color: var(--accent);
+                font-weight: 600;
+                cursor: pointer;
+                padding: 0;
+                margin-top: -1.5rem;
+                margin-bottom: 1.5rem;
+                font-size: 0.95rem;
+                display: block;
+                font-family: inherit;
+            }
+
+            .testimonial-card.expanded .read-more-btn {
+                display: block;
+            }
+
+            .testimonial-author {
+                flex-direction: column !important;
+                border-top: 1px solid var(--border) !important;
+                padding-top: 2rem !important;
+                gap: 1rem !important;
+                margin-top: auto;
+            }
+
+            .testimonial-name {
+                font-family: var(--font-heading);
+                font-weight: 700;
+                font-size: 1.15rem;
+                color: var(--text-heading);
+                margin-bottom: 0.25rem;
+            }
+
+            .testimonial-role {
+                text-transform: uppercase;
+                font-size: 0.75rem;
+                letter-spacing: 0.15em;
+                color: var(--accent);
+                font-weight: 600;
+            }
+        </style>

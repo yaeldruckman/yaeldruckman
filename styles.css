@@ -1,4 +1,4 @@
-/* Local Varela Round (Hebrew + Latin subsets). EN still loads Playfair/Inter via <link>. */
+/* Local Varela Round: Hebrew and Latin subsets shared by both languages. */
 @font-face {
     font-family: "Varela Round";
     font-style: normal;
@@ -106,8 +106,8 @@
     --font-hebrew: "Heebo", "Inter", sans-serif;
 }
 
-/* Hebrew: one typeface + one type/space/tap scale. Breakpoints: 375 / 390 / 768 / 900 / 1200 / 1440 */
-html[lang="he"] {
+/* Both languages: one typeface + one type/space/tap scale. Breakpoints: 375 / 390 / 768 / 900 / 1200 / 1440 */
+html:is([lang="he"], [lang="en"]) {
     color-scheme: dark;
     /* Varela Round ships a single 400 weight; stop browsers faking bold */
     font-synthesis-weight: none;
@@ -252,7 +252,7 @@ header {
 }
 
 header.scrolled {
-    border-bottom-color: var(--border);
+    border-bottom: 0.5px solid var(--text-main);
 }
 
 .nav {
@@ -975,7 +975,7 @@ html[dir="rtl"] .card::before {
     border: 1px solid color-mix(in oklch, var(--accent) 12%, transparent);
 }
 
-html[lang="he"] .card-icon {
+html:is([lang="he"], [lang="en"]) .card-icon {
     background: transparent;
     border: none;
 }
@@ -1045,16 +1045,16 @@ html[dir="rtl"] .card h3 {
         gap: var(--space-xl);
     }
 
-    html[lang="he"] .about {
+    html:is([lang="he"], [lang="en"]) .about {
         direction: ltr;
         grid-template-columns: 1fr 2fr;
     }
 
-    html[lang="he"] .about-visual {
+    html:is([lang="he"], [lang="en"]) .about-visual {
         order: -1;
     }
 
-    html[lang="he"] .about-content {
+    html:is([lang="he"], [lang="en"]) .about-content {
         direction: rtl;
     }
 }
@@ -1828,14 +1828,14 @@ html[dir="rtl"] .contact-detail-label {
     opacity: 1;
 }
 
-html[lang="he"] .contact-card input,
-html[lang="he"] .contact-card textarea,
-html[lang="he"] .contact-card select {
+html:is([lang="he"], [lang="en"]) .contact-card input,
+html:is([lang="he"], [lang="en"]) .contact-card textarea,
+html:is([lang="he"], [lang="en"]) .contact-card select {
     border: 1.5px solid color-mix(in oklch, var(--border) 55%, var(--text-muted));
 }
 
-html[lang="he"] .contact-card input::placeholder,
-html[lang="he"] .contact-card textarea::placeholder {
+html:is([lang="he"], [lang="en"]) .contact-card input::placeholder,
+html:is([lang="he"], [lang="en"]) .contact-card textarea::placeholder {
     color: var(--text-muted);
     opacity: 0.42;
 }
@@ -1881,14 +1881,9 @@ html[dir="rtl"] .contact-card select {
     min-height: 65px;
 }
 
-html[lang="he"] .cf-turnstile-slot {
-    position: absolute;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    margin: 0;
+/* Keep interactive Turnstile challenges visible and keyboard-accessible. */
+.cf-turnstile-slot {
     min-height: 0;
-    clip: rect(0, 0, 0, 0);
 }
 
 .cf-protected {
@@ -1915,7 +1910,7 @@ html[lang="he"] .cf-turnstile-slot {
     flex-shrink: 0;
 }
 
-html[lang="he"][data-theme="dark"] .cf-protected-logo {
+html:is([lang="he"], [lang="en"])[data-theme="dark"] .cf-protected-logo {
     width: 40px;
     height: 19px;
     object-fit: contain;
@@ -2054,7 +2049,7 @@ html[dir="rtl"] .whatsapp-float {
     left: 1.5rem;
 }
 
-html[lang="he"] .whatsapp-float.is-hidden-over-hero {
+html:is([lang="he"], [lang="en"]) .whatsapp-float.is-hidden-over-hero {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -2231,7 +2226,7 @@ html[lang="he"] .whatsapp-float.is-hidden-over-hero {
         display: inline-flex;
     }
 
-    html[lang="he"] .nav-actions .lang-toggle {
+    html:is([lang="he"], [lang="en"]) .nav-actions .lang-toggle {
         display: none;
     }
 }
@@ -2243,41 +2238,41 @@ html[lang="he"] .whatsapp-float.is-hidden-over-hero {
     }
 }
 
-/* Hebrew: hamburger through tablet; inline nav on desktop only */
+/* Both languages: hamburger through tablet; inline nav on desktop only */
 @media (max-width: 1023px) {
-    html[lang="he"] .nav-links {
+    html:is([lang="he"], [lang="en"]) .nav-links {
         display: none;
     }
 
-    html[lang="he"] .hamburger {
+    html:is([lang="he"], [lang="en"]) .hamburger {
         display: inline-flex;
     }
 
-    html[lang="he"] .nav-actions .lang-toggle {
+    html:is([lang="he"], [lang="en"]) .nav-actions .lang-toggle {
         display: none;
     }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-    html[lang="he"] .mobile-nav.open {
+    html:is([lang="he"], [lang="en"]) .mobile-nav.open {
         display: block !important;
     }
 }
 
 @media (min-width: 1024px) {
-    html[lang="he"] .nav-links {
+    html:is([lang="he"], [lang="en"]) .nav-links {
         display: flex;
     }
 
-    html[lang="he"] .hamburger {
+    html:is([lang="he"], [lang="en"]) .hamburger {
         display: none;
     }
 
-    html[lang="he"] .mobile-nav {
+    html:is([lang="he"], [lang="en"]) .mobile-nav {
         display: none !important;
     }
 
-    html[lang="he"] .nav-actions .lang-toggle {
+    html:is([lang="he"], [lang="en"]) .nav-actions .lang-toggle {
         display: inline-flex;
         border-color: currentColor;
     }
@@ -2479,18 +2474,18 @@ html[lang="he"] .whatsapp-float.is-hidden-over-hero {
     }
 }
 
-/* ===== HEBREW LAYOUT ===== */
-html[lang="he"] {
+/* ===== SHARED HOME PAGE REFINEMENTS ===== */
+html:is([lang="he"], [lang="en"]) {
     view-transition-name: none;
 }
 
-html[lang="he"] body {
+html:is([lang="he"], [lang="en"]) body {
     font-size: 1.15rem;
     line-height: 1.7;
 }
 
 /* Enhanced Classy Testimonials */
-html[lang="he"] .testimonial-card {
+html:is([lang="he"], [lang="en"]) .testimonial-card {
     padding: 3.5rem 2.25rem 2.5rem;
     text-align: center;
     border: 1px solid var(--border);
@@ -2507,13 +2502,13 @@ html[lang="he"] .testimonial-card {
         box-shadow 0.4s var(--ease-out);
 }
 
-html[lang="he"] .testimonial-card:hover {
+html:is([lang="he"], [lang="en"]) .testimonial-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg), 0 0 30px var(--accent-subtle);
     border-color: var(--accent);
 }
 
-html[lang="he"] .testimonial-card::before {
+html:is([lang="he"], [lang="en"]) .testimonial-card::before {
     content: "“";
     position: absolute;
     top: 0.5rem;
@@ -2527,11 +2522,11 @@ html[lang="he"] .testimonial-card::before {
 }
 
 
-html[lang="he"] .testimonial-quote-icon {
+html:is([lang="he"], [lang="en"]) .testimonial-quote-icon {
     display: none;
 }
 
-html[lang="he"] .testimonial-text {
+html:is([lang="he"], [lang="en"]) .testimonial-text {
     font-family: var(--font-heading);
     font-size: 1.15rem;
     font-style: italic;
@@ -2548,12 +2543,12 @@ html[lang="he"] .testimonial-text {
     transition: all 0.3s ease;
 }
 
-html[lang="he"] .testimonial-card.expanded .testimonial-text {
+html:is([lang="he"], [lang="en"]) .testimonial-card.expanded .testimonial-text {
     -webkit-line-clamp: unset;
     display: block;
 }
 
-html[lang="he"] .read-more-btn {
+html:is([lang="he"], [lang="en"]) .read-more-btn {
     background: none;
     border: none;
     color: var(--accent);
@@ -2568,11 +2563,11 @@ html[lang="he"] .read-more-btn {
     unicode-bidi: isolate;
 }
 
-html[lang="he"] .testimonial-card.expanded .read-more-btn {
+html:is([lang="he"], [lang="en"]) .testimonial-card.expanded .read-more-btn {
     display: block;
 }
 
-html[lang="he"] .testimonial-author {
+html:is([lang="he"], [lang="en"]) .testimonial-author {
     flex-direction: column;
     border-top: 1px solid var(--border);
     padding-top: 2rem;
@@ -2580,7 +2575,7 @@ html[lang="he"] .testimonial-author {
     margin-top: auto;
 }
 
-html[lang="he"] .testimonial-name {
+html:is([lang="he"], [lang="en"]) .testimonial-name {
     font-family: var(--font-heading);
     font-weight: 700;
     font-size: 1.15rem;
@@ -2588,7 +2583,7 @@ html[lang="he"] .testimonial-name {
     margin-bottom: 0.25rem;
 }
 
-html[lang="he"] .testimonial-role {
+html:is([lang="he"], [lang="en"]) .testimonial-role {
     text-transform: uppercase;
     font-size: 0.75rem;
     letter-spacing: 0.15em;
@@ -2597,7 +2592,7 @@ html[lang="he"] .testimonial-role {
 }
 
 /* Morphing Dialog Styles */
-html[lang="he"] .dialog-modal {
+html:is([lang="he"], [lang="en"]) .dialog-modal {
     border: none;
     padding: 0;
     background: transparent;
@@ -2608,7 +2603,7 @@ html[lang="he"] .dialog-modal {
     outline: none;
 }
 
-html[lang="he"] .video-modal-content {
+html:is([lang="he"], [lang="en"]) .video-modal-content {
     width: min(900px, 90vw);
     padding: 1rem;
     aspect-ratio: 16/9;
@@ -2620,7 +2615,7 @@ html[lang="he"] .video-modal-content {
     box-shadow: 0 25px 50px -12px var(--shadow-color);
 }
 
-html[lang="he"] .video-container {
+html:is([lang="he"], [lang="en"]) .video-container {
     flex: 1;
     width: 100%;
     height: 100%;
@@ -2628,19 +2623,19 @@ html[lang="he"] .video-container {
     overflow: hidden;
 }
 
-html[lang="he"] .video-container iframe {
+html:is([lang="he"], [lang="en"]) .video-container iframe {
     width: 100%;
     height: 100%;
     border: none;
 }
 
-html[lang="he"] .dialog-modal::backdrop {
+html:is([lang="he"], [lang="en"]) .dialog-modal::backdrop {
     background-color: transparent;
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
 }
 
-html[lang="he"] .dialog-modal[open]::backdrop {
+html:is([lang="he"], [lang="en"]) .dialog-modal[open]::backdrop {
     animation: backdrop-blur-in 500ms
         cubic-bezier(0.175, 0.885, 0.32, 1.12) forwards;
 }
@@ -2658,7 +2653,7 @@ html[lang="he"] .dialog-modal[open]::backdrop {
     }
 }
 
-html[lang="he"] .modal-content {
+html:is([lang="he"], [lang="en"]) .modal-content {
     position: relative;
     width: 600px;
     max-width: calc(100vw - 24px);
@@ -2671,7 +2666,7 @@ html[lang="he"] .modal-content {
     overflow: hidden;
 }
 
-html[lang="he"] .scroll-area {
+html:is([lang="he"], [lang="en"]) .scroll-area {
     max-height: 90vh;
     overflow-y: auto;
     padding: 3.5rem 2.25rem 2.5rem;
@@ -2679,11 +2674,11 @@ html[lang="he"] .scroll-area {
     -ms-overflow-style: none;
 }
 
-html[lang="he"] .scroll-area::-webkit-scrollbar {
+html:is([lang="he"], [lang="en"]) .scroll-area::-webkit-scrollbar {
     display: none;
 }
 
-html[lang="he"] .modal-close-btn {
+html:is([lang="he"], [lang="en"]) .modal-close-btn {
     position: absolute;
     top: 1rem;
     left: 1rem;
@@ -2700,7 +2695,7 @@ html[lang="he"] .modal-close-btn {
     transition: background-color 0.2s;
 }
 
-html[lang="he"] .modal-close-btn:hover {
+html:is([lang="he"], [lang="en"]) .modal-close-btn:hover {
     background-color: color-mix(
         in oklch,
         var(--accent-text) 10%,
@@ -2708,23 +2703,23 @@ html[lang="he"] .modal-close-btn:hover {
     );
 }
 
-html[lang="he"] #modal-content-inner .testimonial-text {
+html:is([lang="he"], [lang="en"]) #modal-content-inner .testimonial-text {
     -webkit-line-clamp: unset;
     display: block;
     overflow: visible;
 }
 
-html[lang="he"] #modal-content-inner .read-more-btn {
+html:is([lang="he"], [lang="en"]) #modal-content-inner .read-more-btn {
     display: none;
 }
 
-html[lang="he"] .testimonial-card.is-ghost {
+html:is([lang="he"], [lang="en"]) .testimonial-card.is-ghost {
     opacity: 0;
 }
 
 /* View Transitions */
-html[lang="he"] ::view-transition-group(morph-card),
-html[lang="he"] ::view-transition-group(morph-author) {
+html:is([lang="he"], [lang="en"]) ::view-transition-group(morph-card),
+html:is([lang="he"], [lang="en"]) ::view-transition-group(morph-author) {
     animation-duration: 500ms;
     animation-timing-function: cubic-bezier(
         0.175,
@@ -2735,22 +2730,22 @@ html[lang="he"] ::view-transition-group(morph-author) {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    html[lang="he"] ::view-transition-group(*) {
+    html:is([lang="he"], [lang="en"]) ::view-transition-group(*) {
         animation-duration: 0.01ms;
     }
 }
 
-html[lang="he"] .hero,
-html[lang="he"] .hero-bg {
+html:is([lang="he"], [lang="en"]) .hero,
+html:is([lang="he"], [lang="en"]) .hero-bg {
     background: #000;
 }
 
-html[lang="he"] .hero-bg::after {
+html:is([lang="he"], [lang="en"]) .hero-bg::after {
     background: none;
 }
 
 /* No frame: the radial mask on the image is the only edge, so it blends into the hero. */
-html[lang="he"] .profile-image-wrapper {
+html:is([lang="he"], [lang="en"]) .profile-image-wrapper {
     width: min(78vw, 20rem);
     border: none;
     box-shadow: none;
@@ -2758,23 +2753,23 @@ html[lang="he"] .profile-image-wrapper {
     overflow: visible;
 }
 
-html[lang="he"] .profile-image-wrapper::after {
+html:is([lang="he"], [lang="en"]) .profile-image-wrapper::after {
     content: none;
 }
 
-html[lang="he"] .nav {
+html:is([lang="he"], [lang="en"]) .nav {
     min-height: 0;
     padding: var(--nav-pad-y) 0;
     background-color: #000;
 }
 
-html[lang="he"] .logo {
+html:is([lang="he"], [lang="en"]) .logo {
     gap: var(--nav-logo-gap);
     font-size: var(--nav-fs);
     align-items: center;
 }
 
-html[lang="he"] .logo-icon {
+html:is([lang="he"], [lang="en"]) .logo-icon {
     width: var(--nav-mark);
     height: var(--nav-mark);
     font-family: "Playfair Display YD", "Playfair Display", Georgia, serif;
@@ -2783,37 +2778,37 @@ html[lang="he"] .logo-icon {
     letter-spacing: 0.02em;
 }
 
-html[lang="he"] .logo-icon--monogram {
+html:is([lang="he"], [lang="en"]) .logo-icon--monogram {
     background: transparent;
 }
 
-html[lang="he"] .logo-icon--monogram img {
+html:is([lang="he"], [lang="en"]) .logo-icon--monogram img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
 
-html[lang="he"] .logo-text {
+html:is([lang="he"], [lang="en"]) .logo-text {
     gap: var(--nav-stack-gap);
 }
 
-html[lang="he"] .logo-name,
-html[lang="he"] .nav-links a,
-html[lang="he"] .lang-toggle,
-html[lang="he"] .toggle-label,
-html[lang="he"] .hamburger,
-html[lang="he"] .mobile-nav a {
+html:is([lang="he"], [lang="en"]) .logo-name,
+html:is([lang="he"], [lang="en"]) .nav-links a,
+html:is([lang="he"], [lang="en"]) .lang-toggle,
+html:is([lang="he"], [lang="en"]) .toggle-label,
+html:is([lang="he"], [lang="en"]) .hamburger,
+html:is([lang="he"], [lang="en"]) .mobile-nav a {
     font-size: var(--nav-fs);
 }
 
-html[lang="he"] .logo-title {
+html:is([lang="he"], [lang="en"]) .logo-title {
     font-size: var(--nav-title-fs);
     line-height: 1.25;
     color: var(--text-heading);
 }
 
-html[lang="he"] .hamburger {
+html:is([lang="he"], [lang="en"]) .hamburger {
     width: var(--nav-mark);
     height: var(--nav-mark);
     min-width: var(--nav-mark);
@@ -2821,77 +2816,77 @@ html[lang="he"] .hamburger {
     padding: 0;
 }
 
-html[lang="he"] .hamburger svg,
-html[lang="he"] .mobile-nav a svg {
+html:is([lang="he"], [lang="en"]) .hamburger svg,
+html:is([lang="he"], [lang="en"]) .mobile-nav a svg {
     width: 1em;
     height: 1em;
 }
 
-html[lang="he"] .mobile-nav a {
+html:is([lang="he"], [lang="en"]) .mobile-nav a {
     padding: 0.65rem 1.1rem;
 }
 
-html[lang="he"] .nav-links a,
-html[lang="he"] .lang-toggle,
-html[lang="he"] .mobile-nav a {
+html:is([lang="he"], [lang="en"]) .nav-links a,
+html:is([lang="he"], [lang="en"]) .lang-toggle,
+html:is([lang="he"], [lang="en"]) .mobile-nav a {
     min-height: var(--tap);
     min-width: var(--tap);
 }
 
-html[lang="he"] .nav-links a,
-html[lang="he"] .mobile-nav a {
+html:is([lang="he"], [lang="en"]) .nav-links a,
+html:is([lang="he"], [lang="en"]) .mobile-nav a {
     color: var(--text-heading);
 }
 
-html[lang="he"] .nav-links a:hover,
-html[lang="he"] .nav-links a:focus-visible {
+html:is([lang="he"], [lang="en"]) .nav-links a:hover,
+html:is([lang="he"], [lang="en"]) .nav-links a:focus-visible {
     color: var(--accent);
     background: var(--accent-subtle);
     opacity: 1;
 }
 
-html[lang="he"] .mobile-nav a:hover,
-html[lang="he"] .mobile-nav a:focus-visible {
+html:is([lang="he"], [lang="en"]) .mobile-nav a:hover,
+html:is([lang="he"], [lang="en"]) .mobile-nav a:focus-visible {
     color: var(--accent);
     background: var(--accent-subtle);
 }
 
 @media (max-width: 480px) {
-    html[lang="he"] .logo {
+    html:is([lang="he"], [lang="en"]) .logo {
         white-space: normal;
         align-items: center;
     }
 
-    html[lang="he"] .logo-title {
+    html:is([lang="he"], [lang="en"]) .logo-title {
         display: block;
         white-space: nowrap;
         line-height: 1.25;
     }
 }
 
-html[lang="he"] .hero {
+html:is([lang="he"], [lang="en"]) .hero {
     min-height: 0;
     padding: 0;
 }
 
-html[lang="he"] .hero-content {
+html:is([lang="he"], [lang="en"]) .hero-content {
     min-height: 0;
     display: flex;
     align-items: center;
     padding: var(--space-section) 0;
 }
 
-html[lang="he"] section {
+html:is([lang="he"], [lang="en"]) section {
     padding: var(--space-section) 0;
 }
 
-html[lang="he"] .hero-text {
+html:is([lang="he"], [lang="en"]) .hero-text {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-html[lang="he"] .hero-subtitle {
+html:is([lang="he"], [lang="en"]) .hero-subtitle {
     margin-bottom: 0;
     font-size: clamp(1.05rem, 2vw, 1.25rem);
     color: var(--text-muted);
@@ -2899,12 +2894,12 @@ html[lang="he"] .hero-subtitle {
     max-width: 36rem;
 }
 
-html[lang="he"] .hero-text .section-label {
+html:is([lang="he"], [lang="en"]) .hero-text .section-label {
     margin-bottom: 0;
 }
 
 @media (max-width: 899px) {
-    html[lang="he"] .section-label {
+    html:is([lang="he"], [lang="en"]) .section-label {
         display: flex;
         width: fit-content;
         margin-inline: auto;
@@ -2912,7 +2907,7 @@ html[lang="he"] .hero-text .section-label {
     }
 }
 
-html[lang="he"] .hero h1 {
+html:is([lang="he"], [lang="en"]) .hero h1 {
     margin-bottom: 0;
     font-size: var(--fs-3xl);
     font-style: italic;
@@ -2921,14 +2916,14 @@ html[lang="he"] .hero h1 {
 }
 
 @media (max-width: 899px) {
-    html[lang="he"] .hero-grid,
-    html[lang="he"] .hero-text {
+    html:is([lang="he"], [lang="en"]) .hero-grid,
+    html:is([lang="he"], [lang="en"]) .hero-text {
         min-width: 0;
         max-width: 100%;
         width: 100%;
     }
 
-    html[lang="he"] .hero h1 {
+    html:is([lang="he"], [lang="en"]) .hero h1 {
         min-width: 0;
         max-width: 100%;
         width: 100%;
@@ -2937,22 +2932,22 @@ html[lang="he"] .hero h1 {
     }
 
     /* .hero-content { width: 100% } overrides .container gutters; restore on dark mobile */
-    html[lang="he"] .hero .container.hero-content {
+    html:is([lang="he"], [lang="en"]) .hero .container.hero-content {
         width: min(100% - 2rem, var(--max-width));
     }
 }
 
 @media (min-width: 768px) and (max-width: 899px) {
-    html[lang="he"] .hero .container.hero-content {
+    html:is([lang="he"], [lang="en"]) .hero .container.hero-content {
         width: min(100% - 3rem, var(--max-width));
     }
 }
 
-html[lang="he"] .hero-cta-group {
+html:is([lang="he"], [lang="en"]) .hero-cta-group {
     margin-top: 0.75rem;
 }
 
-html[lang="he"] .hero-cta-group .cta {
+html:is([lang="he"], [lang="en"]) .hero-cta-group .cta {
     width: 14rem;
     min-width: 14rem;
     flex: 0 0 14rem;
@@ -2961,21 +2956,21 @@ html[lang="he"] .hero-cta-group .cta {
 }
 
 @media (max-width: 899px) {
-    /*html[lang="he"] .hero-content {
+    /*html:is([lang="he"], [lang="en"]) .hero-content {
         padding-block: clamp(4.5rem, 10vw, 7rem);
     }*/
 
-    html[lang="he"] .hero-text {
+    html:is([lang="he"], [lang="en"]) .hero-text {
         gap: 2rem;
     }
 
-    html[lang="he"] .hero-cta-group {
+    html:is([lang="he"], [lang="en"]) .hero-cta-group {
         justify-content: center;
     }
 }
 
 @media (max-width: 1023px) {
-    html[lang="he"] .hero-cta-group {
+    html:is([lang="he"], [lang="en"]) .hero-cta-group {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
@@ -2984,7 +2979,7 @@ html[lang="he"] .hero-cta-group .cta {
         margin-top: 1.75rem;
     }
 
-    html[lang="he"] .hero-cta-group .cta {
+    html:is([lang="he"], [lang="en"]) .hero-cta-group .cta {
         width: 14rem;
         min-width: 14rem;
         flex: 0 0 14rem;
@@ -2994,14 +2989,14 @@ html[lang="he"] .hero-cta-group .cta {
         font-weight: 600;
     }
 
-    html[lang="he"] .hero-cta-group .cta svg {
+    html:is([lang="he"], [lang="en"]) .hero-cta-group .cta svg {
         width: 17px;
         height: 17px;
     }
 }
 
 @media (max-width: 480px) {
-    html[lang="he"] .hero-cta-group {
+    html:is([lang="he"], [lang="en"]) .hero-cta-group {
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
@@ -3011,7 +3006,7 @@ html[lang="he"] .hero-cta-group .cta {
         margin-top: 1.75rem;
     }
 
-    /*html[lang="he"] .hero-cta-group .cta {
+    /*html:is([lang="he"], [lang="en"]) .hero-cta-group .cta {
         width: 10.5rem;
         min-width: 10.5rem;
         flex: 0 0 10.5rem;
@@ -3021,13 +3016,13 @@ html[lang="he"] .hero-cta-group .cta {
 }
 
 @media (max-width: 374px) {
-    html[lang="he"] .hero-cta-group {
+    html:is([lang="he"], [lang="en"]) .hero-cta-group {
         flex-direction: row;
         flex-wrap: wrap;
         width: auto;
     }
 
-    html[lang="he"] .hero-cta-group .cta {
+    html:is([lang="he"], [lang="en"]) .hero-cta-group .cta {
         width: 10.5rem;
         min-width: 10.5rem;
         flex: 0 0 10.5rem;
@@ -3035,7 +3030,7 @@ html[lang="he"] .hero-cta-group .cta {
 }
 
 @media (min-width: 900px) {
-    html[lang="he"] .hero-grid {
+    html:is([lang="he"], [lang="en"]) .hero-grid {
         display: flex;
         direction: ltr;
         align-items: stretch;
@@ -3043,21 +3038,21 @@ html[lang="he"] .hero-cta-group .cta {
         width: 100%;
     }
 
-    html[lang="he"] .profile-pic {
+    html:is([lang="he"], [lang="en"]) .profile-pic {
         flex: 0 0 auto;
         display: flex;
         align-items: stretch;
     }
 
-    html[lang="he"] .profile-image-wrapper {
+    html:is([lang="he"], [lang="en"]) .profile-image-wrapper {
         position: relative;
         flex-shrink: 0;
         width: 26.25rem;
         aspect-ratio: 2 / 3;
     }
 
-    html[lang="he"] .profile-image-wrapper picture,
-    html[lang="he"] .profile-image-wrapper img {
+    html:is([lang="he"], [lang="en"]) .profile-image-wrapper picture,
+    html:is([lang="he"], [lang="en"]) .profile-image-wrapper img {
         width: 100%;
         height: 100%;
         max-width: none;
@@ -3066,7 +3061,7 @@ html[lang="he"] .hero-cta-group .cta {
         display: block;
     }
 
-    html[lang="he"] .hero-text {
+    html:is([lang="he"], [lang="en"]) .hero-text {
         direction: rtl;
         text-align: right;
         flex: 0 1 36rem;
@@ -3078,17 +3073,17 @@ html[lang="he"] .hero-cta-group .cta {
         gap: 2.5rem;
     }
 
-    html[lang="he"] .hero-text .section-label {
+    html:is([lang="he"], [lang="en"]) .hero-text .section-label {
         margin: 0;
     }
 
-    html[lang="he"] .hero h1 {
+    html:is([lang="he"], [lang="en"]) .hero h1 {
         position: static;
         transform: none;
         margin: 0;
     }
 
-    html[lang="he"] .hero-cta-group {
+    html:is([lang="he"], [lang="en"]) .hero-cta-group {
         justify-content: space-between;
         margin-top: 0;
         width: 100%;
@@ -3096,70 +3091,70 @@ html[lang="he"] .hero-cta-group .cta {
 }
 
 @media (max-width: 374px) {
-    html[lang="he"] .profile-image-wrapper {
+    html:is([lang="he"], [lang="en"]) .profile-image-wrapper {
         width: min(78vw, 16rem);
     }
 }
 
-html[lang="he"] p,
-html[lang="he"] .card p,
-html[lang="he"] .testimonial-text,
-html[lang="he"] .hero-description {
+html:is([lang="he"], [lang="en"]) p,
+html:is([lang="he"], [lang="en"]) .card p,
+html:is([lang="he"], [lang="en"]) .testimonial-text,
+html:is([lang="he"], [lang="en"]) .hero-description {
     font-size: var(--fs-md);
 }
 
-html[lang="he"] .hero-subtitle,
-html[lang="he"] .about-text,
-html[lang="he"] .section-subtitle {
+html:is([lang="he"], [lang="en"]) .hero-subtitle,
+html:is([lang="he"], [lang="en"]) .about-text,
+html:is([lang="he"], [lang="en"]) .section-subtitle {
     font-size: var(--fs-lg);
 }
 
-html[lang="he"] .card {
+html:is([lang="he"], [lang="en"]) .card {
     padding: var(--space-card);
 }
 
-html[lang="he"] #services .card-heading {
+html:is([lang="he"], [lang="en"]) #services .card-heading {
     display: flex;
     align-items: center;
     gap: 0.75rem;
     margin-bottom: 0.6rem;
 }
 
-html[lang="he"] #services .card-icon {
+html:is([lang="he"], [lang="en"]) #services .card-icon {
     margin-bottom: 0;
     flex-shrink: 0;
 }
 
-html[lang="he"] #services .card h3 {
+html:is([lang="he"], [lang="en"]) #services .card h3 {
     margin-bottom: 0;
 }
 
-html[lang="he"] h2,
-html[lang="he"] .section-title {
+html:is([lang="he"], [lang="en"]) h2,
+html:is([lang="he"], [lang="en"]) .section-title {
     font-size: var(--fs-2xl);
 }
 
-html[lang="he"] h3 {
+html:is([lang="he"], [lang="en"]) h3 {
     font-size: var(--fs-xl);
 }
 
-html[lang="he"] .hero-description {
+html:is([lang="he"], [lang="en"]) .hero-description {
     line-height: 1.6;
     max-width: 800px;
     margin-top: 1.5rem;
     color: var(--text-muted);
 }
 
-html[lang="he"] footer {
+html:is([lang="he"], [lang="en"]) footer {
     padding: var(--space-md) 0;
 }
 
-html[lang="he"] .footer-content {
+html:is([lang="he"], [lang="en"]) .footer-content {
     gap: var(--space-sm);
 }
 
 @media (min-width: 768px) {
-    html[lang="he"] .footer-content {
+    html:is([lang="he"], [lang="en"]) .footer-content {
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -3167,43 +3162,43 @@ html[lang="he"] .footer-content {
     }
 }
 
-html[lang="he"] .footer-brand-name,
-html[lang="he"] .footer-copy {
+html:is([lang="he"], [lang="en"]) .footer-brand-name,
+html:is([lang="he"], [lang="en"]) .footer-copy {
     font-size: var(--fs-sm);
 }
 
 @media (min-width: 375px) {
-    html[lang="he"] {
+    html:is([lang="he"], [lang="en"]) {
         --space-card: 1.25rem;
     }
 }
 
 @media (min-width: 390px) {
-    html[lang="he"] {
+    html:is([lang="he"], [lang="en"]) {
         --space-card: 1.35rem;
     }
 }
 
 @media (min-width: 768px) {
-    html[lang="he"] {
+    html:is([lang="he"], [lang="en"]) {
         --space-card: 1.5rem;
     }
 }
 
 @media (min-width: 900px) {
-    html[lang="he"] {
+    html:is([lang="he"], [lang="en"]) {
         --space-card: 1.6rem;
     }
 }
 
 @media (min-width: 1200px) {
-    html[lang="he"] {
+    html:is([lang="he"], [lang="en"]) {
         --space-card: 1.75rem;
     }
 }
 
 @media (min-width: 1440px) {
-    html[lang="he"] {
+    html:is([lang="he"], [lang="en"]) {
         --max-width: 1180px;
     }
 }
@@ -3218,54 +3213,54 @@ html[lang="he"] .footer-copy {
     object-fit: contain;
 }
 
-html[lang="he"] .about-visual-image--dark {
+html:is([lang="he"], [lang="en"]) .about-visual-image--dark {
     display: block;
 }
 
-html[lang="he"] .about-visual img {
+html:is([lang="he"], [lang="en"]) .about-visual img {
     transform: scale(1.2);
 }
 
-html[lang="he"] .about-visual:hover img {
+html:is([lang="he"], [lang="en"]) .about-visual:hover img {
     transform: scale(1.236);
 }
 
 /* Stacked: mark, not full-bleed. Tablet 2-col: cap inside the 1fr slot. */
 @media (max-width: 899px) {
-    html[lang="he"] .about-visual {
+    html:is([lang="he"], [lang="en"]) .about-visual {
         width: min(16rem, 52%);
         margin-inline: auto;
     }
 }
 
 @media (min-width: 900px) and (max-width: 1023px) {
-    html[lang="he"] .about-visual {
+    html:is([lang="he"], [lang="en"]) .about-visual {
         width: min(100%, 16rem);
         justify-self: center;
         align-self: center;
     }
 }
 
-html[lang="he"] .contact-title {
+html:is([lang="he"], [lang="en"]) .contact-title {
     margin-top: 0;
 }
 
-html[lang="he"] .contact-subtitle {
+html:is([lang="he"], [lang="en"]) .contact-subtitle {
     line-height: 1.6;
     margin: 0.5rem 0 1.5rem;
     color: var(--text-muted);
     max-width: 28rem;
 }
 
-html[lang="he"] #contact .section-header {
+html:is([lang="he"], [lang="en"]) #contact .section-header {
     max-width: 40rem;
 }
 
-html[lang="he"] .contact-info {
+html:is([lang="he"], [lang="en"]) .contact-info {
     gap: 1.25rem;
 }
 
-html[lang="he"] .contact-details {
+html:is([lang="he"], [lang="en"]) .contact-details {
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -3274,7 +3269,7 @@ html[lang="he"] .contact-details {
     width: 100%;
 }
 
-html[lang="he"] .contact-map {
+html:is([lang="he"], [lang="en"]) .contact-map {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -3286,7 +3281,7 @@ html[lang="he"] .contact-map {
     padding: 10px;
 }
 
-html[lang="he"] .contact-map-viewport {
+html:is([lang="he"], [lang="en"]) .contact-map-viewport {
     position: relative;
     flex: 1 1 auto;
     width: 100%;
@@ -3295,7 +3290,7 @@ html[lang="he"] .contact-map-viewport {
     border-radius: calc(var(--radius-md) - 6px);
 }
 
-html[lang="he"] .contact-map iframe {
+html:is([lang="he"], [lang="en"]) .contact-map iframe {
     display: block;
     position: absolute;
     inset-inline-start: 0;
@@ -3307,7 +3302,7 @@ html[lang="he"] .contact-map iframe {
     filter: invert(90%) hue-rotate(180deg);
 }
 
-html[lang="he"] .contact-map-open {
+html:is([lang="he"], [lang="en"]) .contact-map-open {
     position: absolute;
     top: 20px;
     inset-inline-start: 20px;
@@ -3323,21 +3318,21 @@ html[lang="he"] .contact-map-open {
     box-shadow: 0 1px 4px color-mix(in oklch, var(--bg-main) 55%, transparent);
 }
 
-html[lang="he"] .contact-map-open:hover {
+html:is([lang="he"], [lang="en"]) .contact-map-open:hover {
     background: var(--surface);
     color: var(--accent);
 }
 
 @media (min-width: 768px) {
-    html[lang="he"] .contact-heading-break {
+    html:is([lang="he"], [lang="en"]) .contact-heading-break {
         display: none;
     }
 
-    html[lang="he"] .contact-info {
+    html:is([lang="he"], [lang="en"]) .contact-info {
         align-self: stretch;
     }
 
-    html[lang="he"] .contact-details {
+    html:is([lang="he"], [lang="en"]) .contact-details {
         flex: 1;
         min-height: 0;
     }
@@ -3405,4 +3400,47 @@ html[lang="he"] .contact-map-open:hover {
 
 .footer-links a[aria-current="page"] {
     color: var(--text);
+}
+
+/* The longer English subtitle must not push the mobile menu beyond the viewport. */
+@media (max-width: 480px) {
+    html[lang="en"] .logo {
+        flex: 1;
+        min-width: 0;
+    }
+
+    html[lang="en"] .logo-text {
+        min-width: 0;
+    }
+
+    html[lang="en"] .logo-title {
+        white-space: normal;
+    }
+
+    html[lang="en"] .logo-icon,
+    html[lang="en"] .nav-actions {
+        flex-shrink: 0;
+    }
+}
+
+/* Mirror only directional details; the Hebrew desktop image composition stays intact. */
+html[lang="en"] .testimonial-card::before {
+    right: auto;
+    left: 1.5rem;
+}
+
+html[lang="en"] .modal-close-btn {
+    left: auto;
+    right: 1rem;
+}
+
+@media (min-width: 900px) {
+    html[lang="en"] .hero-text {
+        direction: ltr;
+        text-align: left;
+    }
+
+    html[lang="en"] .about-content {
+        direction: ltr;
+    }
 }

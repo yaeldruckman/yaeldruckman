@@ -1,0 +1,1298 @@
+[
+  {
+    "version": "current",
+    "lang": "en",
+    "width": 375,
+    "errors": [],
+    "missing": [],
+    "documentWidth": 375,
+    "bodyFont": "\"Varela Round\", sans-serif",
+    "headingFont": "\"Varela Round\", sans-serif",
+    "fontLoaded": true,
+    "h1": {
+      "x": 16,
+      "y": 665.34375,
+      "width": 343,
+      "height": 247.625
+    },
+    "h1Size": "24.4px",
+    "heroDirection": "ltr",
+    "aboutDirection": "ltr",
+    "navDisplay": "none",
+    "nav": {
+      "x": 16,
+      "y": 0,
+      "width": 343,
+      "height": 65.15625
+    },
+    "hero": {
+      "x": 0,
+      "y": 66.15625,
+      "width": 375,
+      "height": 1091.09375
+    },
+    "services": {
+      "x": 0,
+      "y": 1157.25,
+      "width": 375,
+      "height": 1689.375
+    },
+    "contact": {
+      "x": 0,
+      "y": 7885.078125,
+      "width": 375,
+      "height": 1666.59375
+    },
+    "cards": 3,
+    "testimonials": 3,
+    "dialogDirections": [
+      "ltr",
+      "ltr"
+    ],
+    "overflow": [],
+    "brokenImages": [],
+    "badAnchors": [],
+    "placeholderLinks": [],
+    "metadata": {
+      "title": "Yael Druckman — Law, Insurance & Finance",
+      "description": "Yael Druckman — law, mediation, insurance, and finance in Herzliya. A family practice managing legal, insurance, and financial risks.",
+      "canonical": "https://yaeldruckman.com/",
+      "alternate": [
+        [
+          "he",
+          "https://yaeldruckman.com/index.he.html"
+        ],
+        [
+          "en",
+          "https://yaeldruckman.com/"
+        ],
+        [
+          "x-default",
+          "https://yaeldruckman.com/"
+        ]
+      ],
+      "ogTitle": "Yael Druckman — Law, Insurance & Finance",
+      "ogURL": "https://yaeldruckman.com/",
+      "ogImage": "https://yaeldruckman.com/assets/og-en.png",
+      "ogLocale": "en_US",
+      "twitterImage": "https://yaeldruckman.com/assets/og-en.png",
+      "structuredData": [
+        {
+          "@context": "https://schema.org",
+          "@type": [
+            "Attorney",
+            "LocalBusiness"
+          ],
+          "name": "Yael Druckman",
+          "alternateName": "יעל דרוקמן",
+          "url": "https://yaeldruckman.com/",
+          "image": "https://yaeldruckman.com/assets/og-en.png",
+          "logo": "https://yaeldruckman.com/assets/logo-black.jpg",
+          "description": "Law, mediation, insurance, and finance practice.",
+          "telephone": "+972-58-630-6460",
+          "email": "office@yaeldruckman.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "51B HaAtzmaut Street",
+            "addressLocality": "Herzliya",
+            "addressCountry": "IL"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 32.1652,
+            "longitude": 34.8442
+          },
+          "areaServed": "IL"
+        }
+      ]
+    }
+  },
+  {
+    "version": "current",
+    "lang": "en",
+    "width": 768,
+    "errors": [],
+    "missing": [],
+    "documentWidth": 768,
+    "bodyFont": "\"Varela Round\", sans-serif",
+    "headingFont": "\"Varela Round\", sans-serif",
+    "fontLoaded": true,
+    "h1": {
+      "x": 24,
+      "y": 666.03125,
+      "width": 720,
+      "height": 222.421875
+    },
+    "h1Size": "30.688px",
+    "heroDirection": "ltr",
+    "aboutDirection": "ltr",
+    "navDisplay": "none",
+    "nav": {
+      "x": 24,
+      "y": 0,
+      "width": 720,
+      "height": 53.84375
+    },
+    "hero": {
+      "x": 0,
+      "y": 54.84375,
+      "width": 768,
+      "height": 1006.953125
+    },
+    "services": {
+      "x": 0,
+      "y": 1061.796875,
+      "width": 768,
+      "height": 1198.203125
+    },
+    "contact": {
+      "x": 0,
+      "y": 5762.375,
+      "width": 768,
+      "height": 980.90625
+    },
+    "cards": 3,
+    "testimonials": 3,
+    "dialogDirections": [
+      "ltr",
+      "ltr"
+    ],
+    "overflow": [],
+    "brokenImages": [],
+    "badAnchors": [],
+    "placeholderLinks": [],
+    "metadata": {
+      "title": "Yael Druckman — Law, Insurance & Finance",
+      "description": "Yael Druckman — law, mediation, insurance, and finance in Herzliya. A family practice managing legal, insurance, and financial risks.",
+      "canonical": "https://yaeldruckman.com/",
+      "alternate": [
+        [
+          "he",
+          "https://yaeldruckman.com/index.he.html"
+        ],
+        [
+          "en",
+          "https://yaeldruckman.com/"
+        ],
+        [
+          "x-default",
+          "https://yaeldruckman.com/"
+        ]
+      ],
+      "ogTitle": "Yael Druckman — Law, Insurance & Finance",
+      "ogURL": "https://yaeldruckman.com/",
+      "ogImage": "https://yaeldruckman.com/assets/og-en.png",
+      "ogLocale": "en_US",
+      "twitterImage": "https://yaeldruckman.com/assets/og-en.png",
+      "structuredData": [
+        {
+          "@context": "https://schema.org",
+          "@type": [
+            "Attorney",
+            "LocalBusiness"
+          ],
+          "name": "Yael Druckman",
+          "alternateName": "יעל דרוקמן",
+          "url": "https://yaeldruckman.com/",
+          "image": "https://yaeldruckman.com/assets/og-en.png",
+          "logo": "https://yaeldruckman.com/assets/logo-black.jpg",
+          "description": "Law, mediation, insurance, and finance practice.",
+          "telephone": "+972-58-630-6460",
+          "email": "office@yaeldruckman.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "51B HaAtzmaut Street",
+            "addressLocality": "Herzliya",
+            "addressCountry": "IL"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 32.1652,
+            "longitude": 34.8442
+          },
+          "areaServed": "IL"
+        }
+      ]
+    }
+  },
+  {
+    "version": "current",
+    "lang": "en",
+    "width": 900,
+    "errors": [],
+    "missing": [],
+    "documentWidth": 900,
+    "bodyFont": "\"Varela Round\", sans-serif",
+    "headingFont": "\"Varela Round\", sans-serif",
+    "fontLoaded": true,
+    "h1": {
+      "x": 484,
+      "y": 187.5625,
+      "width": 416,
+      "height": 380.375
+    },
+    "h1Size": "32.8px",
+    "heroDirection": "ltr",
+    "aboutDirection": "ltr",
+    "navDisplay": "none",
+    "nav": {
+      "x": 24,
+      "y": 0,
+      "width": 852,
+      "height": 56.3125
+    },
+    "hero": {
+      "x": 0,
+      "y": 57.3125,
+      "width": 900,
+      "height": 742
+    },
+    "services": {
+      "x": 0,
+      "y": 799.3125,
+      "width": 900,
+      "height": 1181.34375
+    },
+    "contact": {
+      "x": 0,
+      "y": 5502.890625,
+      "width": 900,
+      "height": 984.71875
+    },
+    "cards": 3,
+    "testimonials": 3,
+    "dialogDirections": [
+      "ltr",
+      "ltr"
+    ],
+    "overflow": [],
+    "brokenImages": [],
+    "badAnchors": [],
+    "placeholderLinks": [],
+    "metadata": {
+      "title": "Yael Druckman — Law, Insurance & Finance",
+      "description": "Yael Druckman — law, mediation, insurance, and finance in Herzliya. A family practice managing legal, insurance, and financial risks.",
+      "canonical": "https://yaeldruckman.com/",
+      "alternate": [
+        [
+          "he",
+          "https://yaeldruckman.com/index.he.html"
+        ],
+        [
+          "en",
+          "https://yaeldruckman.com/"
+        ],
+        [
+          "x-default",
+          "https://yaeldruckman.com/"
+        ]
+      ],
+      "ogTitle": "Yael Druckman — Law, Insurance & Finance",
+      "ogURL": "https://yaeldruckman.com/",
+      "ogImage": "https://yaeldruckman.com/assets/og-en.png",
+      "ogLocale": "en_US",
+      "twitterImage": "https://yaeldruckman.com/assets/og-en.png",
+      "structuredData": [
+        {
+          "@context": "https://schema.org",
+          "@type": [
+            "Attorney",
+            "LocalBusiness"
+          ],
+          "name": "Yael Druckman",
+          "alternateName": "יעל דרוקמן",
+          "url": "https://yaeldruckman.com/",
+          "image": "https://yaeldruckman.com/assets/og-en.png",
+          "logo": "https://yaeldruckman.com/assets/logo-black.jpg",
+          "description": "Law, mediation, insurance, and finance practice.",
+          "telephone": "+972-58-630-6460",
+          "email": "office@yaeldruckman.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "51B HaAtzmaut Street",
+            "addressLocality": "Herzliya",
+            "addressCountry": "IL"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 32.1652,
+            "longitude": 34.8442
+          },
+          "areaServed": "IL"
+        }
+      ]
+    }
+  },
+  {
+    "version": "current",
+    "lang": "en",
+    "width": 1440,
+    "errors": [],
+    "missing": [],
+    "documentWidth": 1440,
+    "bodyFont": "\"Varela Round\", sans-serif",
+    "headingFont": "\"Varela Round\", sans-serif",
+    "fontLoaded": true,
+    "h1": {
+      "x": 690,
+      "y": 282.921875,
+      "width": 576,
+      "height": 313.125
+    },
+    "h1Size": "36px",
+    "heroDirection": "ltr",
+    "aboutDirection": "ltr",
+    "navDisplay": "flex",
+    "nav": {
+      "x": 130,
+      "y": 0,
+      "width": 1180,
+      "height": 65.421875
+    },
+    "hero": {
+      "x": 0,
+      "y": 66.421875,
+      "width": 1440,
+      "height": 774
+    },
+    "services": {
+      "x": 0,
+      "y": 840.421875,
+      "width": 1440,
+      "height": 835.90625
+    },
+    "contact": {
+      "x": 0,
+      "y": 5020.046875,
+      "width": 1440,
+      "height": 1067.109375
+    },
+    "cards": 3,
+    "testimonials": 3,
+    "dialogDirections": [
+      "ltr",
+      "ltr"
+    ],
+    "overflow": [],
+    "brokenImages": [],
+    "badAnchors": [],
+    "placeholderLinks": [],
+    "metadata": {
+      "title": "Yael Druckman — Law, Insurance & Finance",
+      "description": "Yael Druckman — law, mediation, insurance, and finance in Herzliya. A family practice managing legal, insurance, and financial risks.",
+      "canonical": "https://yaeldruckman.com/",
+      "alternate": [
+        [
+          "he",
+          "https://yaeldruckman.com/index.he.html"
+        ],
+        [
+          "en",
+          "https://yaeldruckman.com/"
+        ],
+        [
+          "x-default",
+          "https://yaeldruckman.com/"
+        ]
+      ],
+      "ogTitle": "Yael Druckman — Law, Insurance & Finance",
+      "ogURL": "https://yaeldruckman.com/",
+      "ogImage": "https://yaeldruckman.com/assets/og-en.png",
+      "ogLocale": "en_US",
+      "twitterImage": "https://yaeldruckman.com/assets/og-en.png",
+      "structuredData": [
+        {
+          "@context": "https://schema.org",
+          "@type": [
+            "Attorney",
+            "LocalBusiness"
+          ],
+          "name": "Yael Druckman",
+          "alternateName": "יעל דרוקמן",
+          "url": "https://yaeldruckman.com/",
+          "image": "https://yaeldruckman.com/assets/og-en.png",
+          "logo": "https://yaeldruckman.com/assets/logo-black.jpg",
+          "description": "Law, mediation, insurance, and finance practice.",
+          "telephone": "+972-58-630-6460",
+          "email": "office@yaeldruckman.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "51B HaAtzmaut Street",
+            "addressLocality": "Herzliya",
+            "addressCountry": "IL"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 32.1652,
+            "longitude": 34.8442
+          },
+          "areaServed": "IL"
+        }
+      ]
+    }
+  },
+  {
+    "version": "current",
+    "lang": "he",
+    "width": 375,
+    "errors": [],
+    "missing": [],
+    "documentWidth": 375,
+    "bodyFont": "\"Varela Round\", sans-serif, \"Varela Round\", sans-serif",
+    "headingFont": "\"Varela Round\", sans-serif",
+    "fontLoaded": true,
+    "h1": {
+      "x": 16,
+      "y": 623.15625,
+      "width": 343,
+      "height": 176.875
+    },
+    "h1Size": "24.4px",
+    "heroDirection": "rtl",
+    "aboutDirection": "rtl",
+    "navDisplay": "none",
+    "nav": {
+      "x": 16,
+      "y": 0,
+      "width": 343,
+      "height": 50.15625
+    },
+    "hero": {
+      "x": 0,
+      "y": 51.15625,
+      "width": 375,
+      "height": 993.15625
+    },
+    "services": {
+      "x": 0,
+      "y": 1044.3125,
+      "width": 375,
+      "height": 1502.484375
+    },
+    "contact": {
+      "x": 0,
+      "y": 7106.15625,
+      "width": 375,
+      "height": 1637.796875
+    },
+    "cards": 3,
+    "testimonials": 3,
+    "dialogDirections": [
+      "rtl",
+      "rtl"
+    ],
+    "overflow": [],
+    "brokenImages": [],
+    "badAnchors": [],
+    "placeholderLinks": [],
+    "metadata": {
+      "title": "יעל דרוקמן - משרד עורכי דין, סוכנת ביטוח ופיננסים",
+      "description": "יעל דרוקמן — משפטים, גישור, ביטוח ופיננסים בהרצליה. משרד משפחתי לניהול סיכונים משפטיים, ביטוחיים וכלכליים.",
+      "canonical": "https://yaeldruckman.com/index.he.html",
+      "alternate": [
+        [
+          "he",
+          "https://yaeldruckman.com/index.he.html"
+        ],
+        [
+          "en",
+          "https://yaeldruckman.com/"
+        ],
+        [
+          "x-default",
+          "https://yaeldruckman.com/"
+        ]
+      ],
+      "ogTitle": "יעל דרוקמן - משרד עורכי דין, סוכנת ביטוח ופיננסים",
+      "ogURL": "https://yaeldruckman.com/index.he.html",
+      "ogImage": "https://yaeldruckman.com/assets/og-he.png",
+      "ogLocale": "he_IL",
+      "twitterImage": "https://yaeldruckman.com/assets/og-he.png",
+      "structuredData": [
+        {
+          "@context": "https://schema.org",
+          "@type": [
+            "Attorney",
+            "LocalBusiness"
+          ],
+          "name": "יעל דרוקמן",
+          "alternateName": "Yael Druckman",
+          "url": "https://yaeldruckman.com/index.he.html",
+          "image": "https://yaeldruckman.com/assets/og-he.png",
+          "logo": "https://yaeldruckman.com/assets/logo-black.jpg",
+          "description": "משרד עורכי דין, גישור, ביטוח ופיננסים.",
+          "telephone": "+972-58-630-6460",
+          "email": "office@yaeldruckman.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "העצמאות 51 ב׳",
+            "addressLocality": "הרצליה",
+            "addressCountry": "IL"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 32.1652,
+            "longitude": 34.8442
+          },
+          "areaServed": "IL"
+        }
+      ]
+    }
+  },
+  {
+    "version": "current",
+    "lang": "he",
+    "width": 768,
+    "errors": [],
+    "missing": [],
+    "documentWidth": 768,
+    "bodyFont": "\"Varela Round\", sans-serif, \"Varela Round\", sans-serif",
+    "headingFont": "\"Varela Round\", sans-serif",
+    "fontLoaded": true,
+    "h1": {
+      "x": 24,
+      "y": 666.03125,
+      "width": 720,
+      "height": 133.453125
+    },
+    "h1Size": "30.688px",
+    "heroDirection": "rtl",
+    "aboutDirection": "rtl",
+    "navDisplay": "none",
+    "nav": {
+      "x": 24,
+      "y": 0,
+      "width": 720,
+      "height": 53.84375
+    },
+    "hero": {
+      "x": 0,
+      "y": 54.84375,
+      "width": 768,
+      "height": 917.984375
+    },
+    "services": {
+      "x": 0,
+      "y": 972.828125,
+      "width": 768,
+      "height": 1117.328125
+    },
+    "contact": {
+      "x": 0,
+      "y": 5351.78125,
+      "width": 768,
+      "height": 980.90625
+    },
+    "cards": 3,
+    "testimonials": 3,
+    "dialogDirections": [
+      "rtl",
+      "rtl"
+    ],
+    "overflow": [],
+    "brokenImages": [],
+    "badAnchors": [],
+    "placeholderLinks": [],
+    "metadata": {
+      "title": "יעל דרוקמן - משרד עורכי דין, סוכנת ביטוח ופיננסים",
+      "description": "יעל דרוקמן — משפטים, גישור, ביטוח ופיננסים בהרצליה. משרד משפחתי לניהול סיכונים משפטיים, ביטוחיים וכלכליים.",
+      "canonical": "https://yaeldruckman.com/index.he.html",
+      "alternate": [
+        [
+          "he",
+          "https://yaeldruckman.com/index.he.html"
+        ],
+        [
+          "en",
+          "https://yaeldruckman.com/"
+        ],
+        [
+          "x-default",
+          "https://yaeldruckman.com/"
+        ]
+      ],
+      "ogTitle": "יעל דרוקמן - משרד עורכי דין, סוכנת ביטוח ופיננסים",
+      "ogURL": "https://yaeldruckman.com/index.he.html",
+      "ogImage": "https://yaeldruckman.com/assets/og-he.png",
+      "ogLocale": "he_IL",
+      "twitterImage": "https://yaeldruckman.com/assets/og-he.png",
+      "structuredData": [
+        {
+          "@context": "https://schema.org",
+          "@type": [
+            "Attorney",
+            "LocalBusiness"
+          ],
+          "name": "יעל דרוקמן",
+          "alternateName": "Yael Druckman",
+          "url": "https://yaeldruckman.com/index.he.html",
+          "image": "https://yaeldruckman.com/assets/og-he.png",
+          "logo": "https://yaeldruckman.com/assets/logo-black.jpg",
+          "description": "משרד עורכי דין, גישור, ביטוח ופיננסים.",
+          "telephone": "+972-58-630-6460",
+          "email": "office@yaeldruckman.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "העצמאות 51 ב׳",
+            "addressLocality": "הרצליה",
+            "addressCountry": "IL"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 32.1652,
+            "longitude": 34.8442
+          },
+          "areaServed": "IL"
+        }
+      ]
+    }
+  },
+  {
+    "version": "current",
+    "lang": "he",
+    "width": 900,
+    "errors": [],
+    "missing": [],
+    "documentWidth": 900,
+    "bodyFont": "\"Varela Round\", sans-serif, \"Varela Round\", sans-serif",
+    "headingFont": "\"Varela Round\", sans-serif",
+    "fontLoaded": true,
+    "h1": {
+      "x": 484,
+      "y": 235.125,
+      "width": 416,
+      "height": 285.28125
+    },
+    "h1Size": "32.8px",
+    "heroDirection": "rtl",
+    "aboutDirection": "rtl",
+    "navDisplay": "none",
+    "nav": {
+      "x": 24,
+      "y": 0,
+      "width": 852,
+      "height": 56.3125
+    },
+    "hero": {
+      "x": 0,
+      "y": 57.3125,
+      "width": 900,
+      "height": 742
+    },
+    "services": {
+      "x": 0,
+      "y": 799.3125,
+      "width": 900,
+      "height": 1125.609375
+    },
+    "contact": {
+      "x": 0,
+      "y": 5104.03125,
+      "width": 900,
+      "height": 984.71875
+    },
+    "cards": 3,
+    "testimonials": 3,
+    "dialogDirections": [
+      "rtl",
+      "rtl"
+    ],
+    "overflow": [],
+    "brokenImages": [],
+    "badAnchors": [],
+    "placeholderLinks": [],
+    "metadata": {
+      "title": "יעל דרוקמן - משרד עורכי דין, סוכנת ביטוח ופיננסים",
+      "description": "יעל דרוקמן — משפטים, גישור, ביטוח ופיננסים בהרצליה. משרד משפחתי לניהול סיכונים משפטיים, ביטוחיים וכלכליים.",
+      "canonical": "https://yaeldruckman.com/index.he.html",
+      "alternate": [
+        [
+          "he",
+          "https://yaeldruckman.com/index.he.html"
+        ],
+        [
+          "en",
+          "https://yaeldruckman.com/"
+        ],
+        [
+          "x-default",
+          "https://yaeldruckman.com/"
+        ]
+      ],
+      "ogTitle": "יעל דרוקמן - משרד עורכי דין, סוכנת ביטוח ופיננסים",
+      "ogURL": "https://yaeldruckman.com/index.he.html",
+      "ogImage": "https://yaeldruckman.com/assets/og-he.png",
+      "ogLocale": "he_IL",
+      "twitterImage": "https://yaeldruckman.com/assets/og-he.png",
+      "structuredData": [
+        {
+          "@context": "https://schema.org",
+          "@type": [
+            "Attorney",
+            "LocalBusiness"
+          ],
+          "name": "יעל דרוקמן",
+          "alternateName": "Yael Druckman",
+          "url": "https://yaeldruckman.com/index.he.html",
+          "image": "https://yaeldruckman.com/assets/og-he.png",
+          "logo": "https://yaeldruckman.com/assets/logo-black.jpg",
+          "description": "משרד עורכי דין, גישור, ביטוח ופיננסים.",
+          "telephone": "+972-58-630-6460",
+          "email": "office@yaeldruckman.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "העצמאות 51 ב׳",
+            "addressLocality": "הרצליה",
+            "addressCountry": "IL"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 32.1652,
+            "longitude": 34.8442
+          },
+          "areaServed": "IL"
+        }
+      ]
+    }
+  },
+  {
+    "version": "current",
+    "lang": "he",
+    "width": 1440,
+    "errors": [],
+    "missing": [],
+    "documentWidth": 1440,
+    "bodyFont": "\"Varela Round\", sans-serif, \"Varela Round\", sans-serif",
+    "headingFont": "\"Varela Round\", sans-serif",
+    "fontLoaded": true,
+    "h1": {
+      "x": 690,
+      "y": 335.109375,
+      "width": 576,
+      "height": 208.75
+    },
+    "h1Size": "36px",
+    "heroDirection": "rtl",
+    "aboutDirection": "rtl",
+    "navDisplay": "flex",
+    "nav": {
+      "x": 130,
+      "y": 0,
+      "width": 1180,
+      "height": 65.421875
+    },
+    "hero": {
+      "x": 0,
+      "y": 66.421875,
+      "width": 1440,
+      "height": 774
+    },
+    "services": {
+      "x": 0,
+      "y": 840.421875,
+      "width": 1440,
+      "height": 805.3125
+    },
+    "contact": {
+      "x": 0,
+      "y": 4759.5,
+      "width": 1440,
+      "height": 1026.3125
+    },
+    "cards": 3,
+    "testimonials": 3,
+    "dialogDirections": [
+      "rtl",
+      "rtl"
+    ],
+    "overflow": [],
+    "brokenImages": [],
+    "badAnchors": [],
+    "placeholderLinks": [],
+    "metadata": {
+      "title": "יעל דרוקמן - משרד עורכי דין, סוכנת ביטוח ופיננסים",
+      "description": "יעל דרוקמן — משפטים, גישור, ביטוח ופיננסים בהרצליה. משרד משפחתי לניהול סיכונים משפטיים, ביטוחיים וכלכליים.",
+      "canonical": "https://yaeldruckman.com/index.he.html",
+      "alternate": [
+        [
+          "he",
+          "https://yaeldruckman.com/index.he.html"
+        ],
+        [
+          "en",
+          "https://yaeldruckman.com/"
+        ],
+        [
+          "x-default",
+          "https://yaeldruckman.com/"
+        ]
+      ],
+      "ogTitle": "יעל דרוקמן - משרד עורכי דין, סוכנת ביטוח ופיננסים",
+      "ogURL": "https://yaeldruckman.com/index.he.html",
+      "ogImage": "https://yaeldruckman.com/assets/og-he.png",
+      "ogLocale": "he_IL",
+      "twitterImage": "https://yaeldruckman.com/assets/og-he.png",
+      "structuredData": [
+        {
+          "@context": "https://schema.org",
+          "@type": [
+            "Attorney",
+            "LocalBusiness"
+          ],
+          "name": "יעל דרוקמן",
+          "alternateName": "Yael Druckman",
+          "url": "https://yaeldruckman.com/index.he.html",
+          "image": "https://yaeldruckman.com/assets/og-he.png",
+          "logo": "https://yaeldruckman.com/assets/logo-black.jpg",
+          "description": "משרד עורכי דין, גישור, ביטוח ופיננסים.",
+          "telephone": "+972-58-630-6460",
+          "email": "office@yaeldruckman.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "העצמאות 51 ב׳",
+            "addressLocality": "הרצליה",
+            "addressCountry": "IL"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 32.1652,
+            "longitude": 34.8442
+          },
+          "areaServed": "IL"
+        }
+      ]
+    }
+  },
+  {
+    "version": "head",
+    "lang": "he",
+    "width": 375,
+    "errors": [],
+    "missing": [],
+    "documentWidth": 375,
+    "bodyFont": "\"Varela Round\", sans-serif, \"Varela Round\", sans-serif",
+    "headingFont": "\"Varela Round\", sans-serif",
+    "fontLoaded": true,
+    "h1": {
+      "x": 16,
+      "y": 623.15625,
+      "width": 343,
+      "height": 176.875
+    },
+    "h1Size": "24.4px",
+    "heroDirection": "rtl",
+    "aboutDirection": "rtl",
+    "navDisplay": "none",
+    "nav": {
+      "x": 16,
+      "y": 0,
+      "width": 343,
+      "height": 50.15625
+    },
+    "hero": {
+      "x": 0,
+      "y": 51.15625,
+      "width": 375,
+      "height": 993.15625
+    },
+    "services": {
+      "x": 0,
+      "y": 1044.3125,
+      "width": 375,
+      "height": 1502.484375
+    },
+    "contact": {
+      "x": 0,
+      "y": 7106.15625,
+      "width": 375,
+      "height": 1597.796875
+    },
+    "cards": 3,
+    "testimonials": 3,
+    "dialogDirections": [
+      "rtl",
+      "rtl"
+    ],
+    "overflow": [],
+    "brokenImages": [],
+    "badAnchors": [],
+    "placeholderLinks": [],
+    "metadata": {
+      "title": "יעל דרוקמן - משרד עורכי דין, סוכנת ביטוח ופיננסים",
+      "description": "יעל דרוקמן — משפטים, גישור, ביטוח ופיננסים בהרצליה. משרד משפחתי לניהול סיכונים משפטיים, ביטוחיים וכלכליים.",
+      "canonical": "https://yaeldruckman.com/index.he.html",
+      "alternate": [
+        [
+          "he",
+          "https://yaeldruckman.com/index.he.html"
+        ],
+        [
+          "en",
+          "https://yaeldruckman.com/"
+        ],
+        [
+          "x-default",
+          "https://yaeldruckman.com/"
+        ]
+      ],
+      "ogTitle": "יעל דרוקמן - משרד עורכי דין, סוכנת ביטוח ופיננסים",
+      "ogURL": "https://yaeldruckman.com/index.he.html",
+      "ogImage": "https://yaeldruckman.com/assets/og-he.png",
+      "ogLocale": "he_IL",
+      "twitterImage": "https://yaeldruckman.com/assets/og-he.png",
+      "structuredData": [
+        {
+          "@context": "https://schema.org",
+          "@type": [
+            "Attorney",
+            "LocalBusiness"
+          ],
+          "name": "יעל דרוקמן",
+          "alternateName": "Yael Druckman",
+          "url": "https://yaeldruckman.com/index.he.html",
+          "image": "https://yaeldruckman.com/assets/og-he.png",
+          "logo": "https://yaeldruckman.com/assets/logo-black.jpg",
+          "description": "משרד עורכי דין, גישור, ביטוח ופיננסים.",
+          "telephone": "+972-58-630-6460",
+          "email": "office@yaeldruckman.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "העצמאות 51 ב׳",
+            "addressLocality": "הרצליה",
+            "addressCountry": "IL"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 32.1652,
+            "longitude": 34.8442
+          },
+          "areaServed": "IL"
+        }
+      ]
+    }
+  },
+  {
+    "version": "head",
+    "lang": "he",
+    "width": 768,
+    "errors": [],
+    "missing": [],
+    "documentWidth": 768,
+    "bodyFont": "\"Varela Round\", sans-serif, \"Varela Round\", sans-serif",
+    "headingFont": "\"Varela Round\", sans-serif",
+    "fontLoaded": true,
+    "h1": {
+      "x": 24,
+      "y": 666.03125,
+      "width": 720,
+      "height": 133.453125
+    },
+    "h1Size": "30.688px",
+    "heroDirection": "rtl",
+    "aboutDirection": "rtl",
+    "navDisplay": "none",
+    "nav": {
+      "x": 24,
+      "y": 0,
+      "width": 720,
+      "height": 53.84375
+    },
+    "hero": {
+      "x": 0,
+      "y": 54.84375,
+      "width": 768,
+      "height": 917.984375
+    },
+    "services": {
+      "x": 0,
+      "y": 972.828125,
+      "width": 768,
+      "height": 1117.328125
+    },
+    "contact": {
+      "x": 0,
+      "y": 5351.78125,
+      "width": 768,
+      "height": 939.90625
+    },
+    "cards": 3,
+    "testimonials": 3,
+    "dialogDirections": [
+      "rtl",
+      "rtl"
+    ],
+    "overflow": [],
+    "brokenImages": [],
+    "badAnchors": [],
+    "placeholderLinks": [],
+    "metadata": {
+      "title": "יעל דרוקמן - משרד עורכי דין, סוכנת ביטוח ופיננסים",
+      "description": "יעל דרוקמן — משפטים, גישור, ביטוח ופיננסים בהרצליה. משרד משפחתי לניהול סיכונים משפטיים, ביטוחיים וכלכליים.",
+      "canonical": "https://yaeldruckman.com/index.he.html",
+      "alternate": [
+        [
+          "he",
+          "https://yaeldruckman.com/index.he.html"
+        ],
+        [
+          "en",
+          "https://yaeldruckman.com/"
+        ],
+        [
+          "x-default",
+          "https://yaeldruckman.com/"
+        ]
+      ],
+      "ogTitle": "יעל דרוקמן - משרד עורכי דין, סוכנת ביטוח ופיננסים",
+      "ogURL": "https://yaeldruckman.com/index.he.html",
+      "ogImage": "https://yaeldruckman.com/assets/og-he.png",
+      "ogLocale": "he_IL",
+      "twitterImage": "https://yaeldruckman.com/assets/og-he.png",
+      "structuredData": [
+        {
+          "@context": "https://schema.org",
+          "@type": [
+            "Attorney",
+            "LocalBusiness"
+          ],
+          "name": "יעל דרוקמן",
+          "alternateName": "Yael Druckman",
+          "url": "https://yaeldruckman.com/index.he.html",
+          "image": "https://yaeldruckman.com/assets/og-he.png",
+          "logo": "https://yaeldruckman.com/assets/logo-black.jpg",
+          "description": "משרד עורכי דין, גישור, ביטוח ופיננסים.",
+          "telephone": "+972-58-630-6460",
+          "email": "office@yaeldruckman.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "העצמאות 51 ב׳",
+            "addressLocality": "הרצליה",
+            "addressCountry": "IL"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 32.1652,
+            "longitude": 34.8442
+          },
+          "areaServed": "IL"
+        }
+      ]
+    }
+  },
+  {
+    "version": "head",
+    "lang": "he",
+    "width": 900,
+    "errors": [],
+    "missing": [],
+    "documentWidth": 900,
+    "bodyFont": "\"Varela Round\", sans-serif, \"Varela Round\", sans-serif",
+    "headingFont": "\"Varela Round\", sans-serif",
+    "fontLoaded": true,
+    "h1": {
+      "x": 484,
+      "y": 235.125,
+      "width": 416,
+      "height": 285.28125
+    },
+    "h1Size": "32.8px",
+    "heroDirection": "rtl",
+    "aboutDirection": "rtl",
+    "navDisplay": "none",
+    "nav": {
+      "x": 24,
+      "y": 0,
+      "width": 852,
+      "height": 56.3125
+    },
+    "hero": {
+      "x": 0,
+      "y": 57.3125,
+      "width": 900,
+      "height": 742
+    },
+    "services": {
+      "x": 0,
+      "y": 799.3125,
+      "width": 900,
+      "height": 1125.609375
+    },
+    "contact": {
+      "x": 0,
+      "y": 5104.03125,
+      "width": 900,
+      "height": 943.71875
+    },
+    "cards": 3,
+    "testimonials": 3,
+    "dialogDirections": [
+      "rtl",
+      "rtl"
+    ],
+    "overflow": [],
+    "brokenImages": [],
+    "badAnchors": [],
+    "placeholderLinks": [],
+    "metadata": {
+      "title": "יעל דרוקמן - משרד עורכי דין, סוכנת ביטוח ופיננסים",
+      "description": "יעל דרוקמן — משפטים, גישור, ביטוח ופיננסים בהרצליה. משרד משפחתי לניהול סיכונים משפטיים, ביטוחיים וכלכליים.",
+      "canonical": "https://yaeldruckman.com/index.he.html",
+      "alternate": [
+        [
+          "he",
+          "https://yaeldruckman.com/index.he.html"
+        ],
+        [
+          "en",
+          "https://yaeldruckman.com/"
+        ],
+        [
+          "x-default",
+          "https://yaeldruckman.com/"
+        ]
+      ],
+      "ogTitle": "יעל דרוקמן - משרד עורכי דין, סוכנת ביטוח ופיננסים",
+      "ogURL": "https://yaeldruckman.com/index.he.html",
+      "ogImage": "https://yaeldruckman.com/assets/og-he.png",
+      "ogLocale": "he_IL",
+      "twitterImage": "https://yaeldruckman.com/assets/og-he.png",
+      "structuredData": [
+        {
+          "@context": "https://schema.org",
+          "@type": [
+            "Attorney",
+            "LocalBusiness"
+          ],
+          "name": "יעל דרוקמן",
+          "alternateName": "Yael Druckman",
+          "url": "https://yaeldruckman.com/index.he.html",
+          "image": "https://yaeldruckman.com/assets/og-he.png",
+          "logo": "https://yaeldruckman.com/assets/logo-black.jpg",
+          "description": "משרד עורכי דין, גישור, ביטוח ופיננסים.",
+          "telephone": "+972-58-630-6460",
+          "email": "office@yaeldruckman.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "העצמאות 51 ב׳",
+            "addressLocality": "הרצליה",
+            "addressCountry": "IL"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 32.1652,
+            "longitude": 34.8442
+          },
+          "areaServed": "IL"
+        }
+      ]
+    }
+  },
+  {
+    "version": "head",
+    "lang": "he",
+    "width": 1440,
+    "errors": [],
+    "missing": [],
+    "documentWidth": 1440,
+    "bodyFont": "\"Varela Round\", sans-serif, \"Varela Round\", sans-serif",
+    "headingFont": "\"Varela Round\", sans-serif",
+    "fontLoaded": true,
+    "h1": {
+      "x": 690,
+      "y": 335.109375,
+      "width": 576,
+      "height": 208.75
+    },
+    "h1Size": "36px",
+    "heroDirection": "rtl",
+    "aboutDirection": "rtl",
+    "navDisplay": "flex",
+    "nav": {
+      "x": 130,
+      "y": 0,
+      "width": 1180,
+      "height": 65.421875
+    },
+    "hero": {
+      "x": 0,
+      "y": 66.421875,
+      "width": 1440,
+      "height": 774
+    },
+    "services": {
+      "x": 0,
+      "y": 840.421875,
+      "width": 1440,
+      "height": 805.3125
+    },
+    "contact": {
+      "x": 0,
+      "y": 4759.5,
+      "width": 1440,
+      "height": 985.3125
+    },
+    "cards": 3,
+    "testimonials": 3,
+    "dialogDirections": [
+      "rtl",
+      "rtl"
+    ],
+    "overflow": [],
+    "brokenImages": [],
+    "badAnchors": [],
+    "placeholderLinks": [],
+    "metadata": {
+      "title": "יעל דרוקמן - משרד עורכי דין, סוכנת ביטוח ופיננסים",
+      "description": "יעל דרוקמן — משפטים, גישור, ביטוח ופיננסים בהרצליה. משרד משפחתי לניהול סיכונים משפטיים, ביטוחיים וכלכליים.",
+      "canonical": "https://yaeldruckman.com/index.he.html",
+      "alternate": [
+        [
+          "he",
+          "https://yaeldruckman.com/index.he.html"
+        ],
+        [
+          "en",
+          "https://yaeldruckman.com/"
+        ],
+        [
+          "x-default",
+          "https://yaeldruckman.com/"
+        ]
+      ],
+      "ogTitle": "יעל דרוקמן - משרד עורכי דין, סוכנת ביטוח ופיננסים",
+      "ogURL": "https://yaeldruckman.com/index.he.html",
+      "ogImage": "https://yaeldruckman.com/assets/og-he.png",
+      "ogLocale": "he_IL",
+      "twitterImage": "https://yaeldruckman.com/assets/og-he.png",
+      "structuredData": [
+        {
+          "@context": "https://schema.org",
+          "@type": [
+            "Attorney",
+            "LocalBusiness"
+          ],
+          "name": "יעל דרוקמן",
+          "alternateName": "Yael Druckman",
+          "url": "https://yaeldruckman.com/index.he.html",
+          "image": "https://yaeldruckman.com/assets/og-he.png",
+          "logo": "https://yaeldruckman.com/assets/logo-black.jpg",
+          "description": "משרד עורכי דין, גישור, ביטוח ופיננסים.",
+          "telephone": "+972-58-630-6460",
+          "email": "office@yaeldruckman.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "העצמאות 51 ב׳",
+            "addressLocality": "הרצליה",
+            "addressCountry": "IL"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 32.1652,
+            "longitude": 34.8442
+          },
+          "areaServed": "IL"
+        }
+      ]
+    }
+  }
+]

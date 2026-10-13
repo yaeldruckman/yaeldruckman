@@ -219,7 +219,9 @@ function initSmoothScroll() {
 
       window.scrollTo({
         top: targetPosition,
-        behavior: "smooth",
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+                  ? "auto"
+                  : "smooth",
       });
 
       // Update URL without triggering scroll
@@ -273,7 +275,7 @@ window.onTurnstileLoad = function () {
     theme: "dark",
     language: lang === "he" ? "he" : "auto",
     size: "flexible",
-    appearance: lang === "he" ? "interaction-only" : "always",
+    appearance: "interaction-only",
   });
 };
 
@@ -318,19 +320,19 @@ function getTurnstileToken() {
 }
 
 function initContactForm() {
-  const form = document.querySelector(".contact-card");
-  if (!form || form.tagName !== "FORM" || contactFormBound) return;
+  const form = document.querySelector("form.contact-card");
+  const button = form?.querySelector('button[type="submit"]');
+  if (!form || !button || contactFormBound) return;
   contactFormBound = true;
   initLazyTurnstile(form);
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const button = form.querySelector('button[type="submit"]');
+    if (button.disabled) return;
     const originalContent = button.innerHTML;
 
-    // Outline buttons (.btn-outline-*) take their color from --btn-tone;
-    // filled buttons (English page) use the background.
+    // Outline buttons take their color from --btn-tone; filled buttons use background.
     const isOutline = /\bbtn-outline-/.test(button.className);
     const setButton = (html, { disabled = true, background = "" } = {}) => {
       button.innerHTML = html;
@@ -401,22 +403,231 @@ const spinStyle = document.createElement("style");
 spinStyle.textContent = `@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }`;
 document.head.appendChild(spinStyle);
 
-// ===== TESTIMONIALS =====
-window.toggleTestimonial = function (btn) {
-  const card = btn.closest(".testimonial-card");
-  const lang = document.documentElement.getAttribute("lang") || "en";
-  const isExpanded = card.classList.toggle("expanded");
-
-  if (lang === "he") {
-    btn.textContent = isExpanded ? "לקריאה מקוצרת" : "המשך...";
-  } else {
-    btn.textContent = isExpanded ? "Read Less" : "Read More...";
+// ===== SHARED TESTIMONIAL AND VIDEO DIALOGS =====
+function initDialogs() {
+  const dialog = document.getElementById("morph-dialog");
+  const modalCard = document.getElementById("modal-card");
+  const modalContent = document.getElementById("modal-content-inner");
+  const closeBtn = document.getElementById("modal-close");
+  const videoDialog = document.getElementById("video-dialog");
+  const videoCloseBtn = document.getElementById("video-modal-close");
+  const videoIframe = document.getElementById("video-iframe");
+  if (dialog && !dialog.hasAttribute("aria-label") && !dialog.hasAttribute("aria-labelledby")) {
+    dialog.setAttribute("aria-label", lang === "he" ? "המלצה" : "Testimonial");
   }
-};
+  if (videoDialog && !videoDialog.hasAttribute("aria-label") && !videoDialog.hasAttribute("aria-labelledby")) {
+    videoDialog.setAttribute("aria-label", lang === "he" ? "סרטון" : "Video");
+  }
+  let activeDialog = null;
+  let activeCard = null;
+  let returnFocus = null;
+  let scrollStyles = null;
+  let transition = null;
+  let closeRequested = false;
+  const transitionStyles = new Map();
 
-// Hide floating WhatsApp while the Hebrew hero is in view
+  function nameTransition(element, name) {
+    if (!element) return;
+    if (!transitionStyles.has(element)) {
+      transitionStyles.set(element, element.style.viewTransitionName);
+    }
+    element.style.viewTransitionName = name;
+  }
+
+  function resetTransitionNames() {
+    transitionStyles.forEach((name, element) => {
+      element.style.viewTransitionName = name;
+    });
+    transitionStyles.clear();
+  }
+
+  function lockScroll() {
+    scrollStyles = {
+      overflow: body.style.overflow,
+      paddingInlineEnd: body.style.paddingInlineEnd,
+    };
+    const compensation = window.innerWidth - root.clientWidth;
+    if (compensation > 0) {
+      const padding = parseFloat(getComputedStyle(body).paddingInlineEnd) || 0;
+      body.style.paddingInlineEnd = `${padding + compensation}px`;
+    }
+    body.style.overflow = "hidden";
+  }
+
+  function showDialog(target, trigger, closeButton) {
+    returnFocus = trigger || document.activeElement;
+    try {
+      target.showModal();
+    } catch (error) {
+      returnFocus = null;
+      return false;
+    }
+    activeDialog = target;
+    lockScroll();
+    closeButton.focus({ preventScroll: true });
+    return true;
+  }
+
+  function cleanupDialog(target) {
+    if (activeDialog !== target) return;
+    activeCard?.classList.remove("is-ghost");
+    activeCard = null;
+    if (target === videoDialog) videoIframe?.removeAttribute("src");
+    if (scrollStyles) {
+      body.style.overflow = scrollStyles.overflow;
+      body.style.paddingInlineEnd = scrollStyles.paddingInlineEnd;
+      scrollStyles = null;
+    }
+    activeDialog = null;
+    const trigger = returnFocus;
+    returnFocus = null;
+    if (trigger?.isConnected) trigger.focus({ preventScroll: true });
+  }
+
+  function runMorph(update) {
+    if (
+      typeof document.startViewTransition !== "function" ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      update();
+      resetTransitionNames();
+      return;
+    }
+    let updated = false;
+    const apply = () => {
+      if (updated) return;
+      updated = true;
+      update();
+    };
+    const finish = () => {
+      transition = null;
+      resetTransitionNames();
+      if (closeRequested) {
+        closeRequested = false;
+        closeMorphDialog();
+      }
+    };
+    try {
+      transition = document.startViewTransition(apply);
+      // A skipped animation can reject ready even though its DOM update succeeds.
+      transition.ready.catch(() => {});
+      transition.finished.then(finish, () => {
+        apply();
+        finish();
+      });
+    } catch (error) {
+      apply();
+      finish();
+    }
+  }
+
+  function expandTestimonial(btn, card) {
+    if (!btn.dataset.collapsedLabel) btn.dataset.collapsedLabel = btn.textContent;
+    const expanded = card.classList.toggle("expanded");
+    btn.setAttribute("aria-expanded", String(expanded));
+    btn.textContent = expanded
+      ? lang === "he" ? "לקריאה מקוצרת" : "Read Less"
+      : btn.dataset.collapsedLabel;
+  }
+
+  window.morphTestimonial = function (btn) {
+    const card = btn?.closest(".testimonial-card");
+    if (!card || activeDialog || transition) return;
+    if (!dialog || !modalCard || !modalContent || !closeBtn ||
+        typeof dialog.showModal !== "function") {
+      expandTestimonial(btn, card);
+      return;
+    }
+    activeCard = card;
+    const author = card.querySelector(".testimonial-author");
+    nameTransition(card, "morph-card");
+    nameTransition(author, "morph-author");
+    runMorph(() => {
+      nameTransition(card, "none");
+      nameTransition(author, "none");
+      modalContent.innerHTML = card.innerHTML;
+      // Cloned controls must not duplicate document IDs or remain focusable.
+      modalContent.querySelectorAll("[id]").forEach((el) => el.removeAttribute("id"));
+      modalContent.querySelectorAll(".read-more-btn").forEach((el) => el.remove());
+      nameTransition(modalCard, "morph-card");
+      nameTransition(modalContent.querySelector(".testimonial-author"), "morph-author");
+      if (showDialog(dialog, btn, closeBtn)) {
+        card.classList.add("is-ghost");
+        dialog.querySelector(".scroll-area")?.scrollTo(0, 0);
+      } else {
+        activeCard = null;
+        expandTestimonial(btn, card);
+      }
+    });
+  };
+  // Legacy markup and new markup use the same handler, never two click listeners.
+  window.toggleTestimonial = window.morphTestimonial;
+
+  function closeMorphDialog() {
+    if (transition) {
+      closeRequested = true;
+      transition.skipTransition();
+      return;
+    }
+    if (activeDialog !== dialog || !dialog?.open) return;
+    nameTransition(modalCard, "morph-card");
+    const modalAuthor = modalContent.querySelector(".testimonial-author");
+    nameTransition(modalAuthor, "morph-author");
+    runMorph(() => {
+      nameTransition(modalCard, "none");
+      nameTransition(modalAuthor, "none");
+      nameTransition(activeCard, "morph-card");
+      nameTransition(activeCard?.querySelector(".testimonial-author"), "morph-author");
+      dialog.close();
+      cleanupDialog(dialog);
+    });
+  }
+
+  window.openVideoModal = function (event, url) {
+    if (!videoDialog || !videoCloseBtn || !videoIframe || activeDialog || transition ||
+        typeof videoDialog.showModal !== "function") return;
+    let id;
+    try {
+      const parsed = new URL(url, document.baseURI);
+      if (!["www.youtube.com", "youtube.com", "m.youtube.com"].includes(parsed.hostname)) return;
+      id = parsed.searchParams.get("v");
+    } catch (error) {
+      return;
+    }
+    if (!id || !/^[\w-]{11}$/.test(id)) return;
+    if (!showDialog(videoDialog, event?.currentTarget, videoCloseBtn)) return;
+    event?.preventDefault();
+    videoIframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}?autoplay=1`;
+  };
+
+  function closeVideoDialog() {
+    if (activeDialog !== videoDialog || !videoDialog?.open) return;
+    videoDialog.close();
+    cleanupDialog(videoDialog);
+  }
+
+  function bindDialog(target, button, close) {
+    if (!target || !button) return;
+    button.addEventListener("click", close);
+    target.addEventListener("click", (event) => {
+      if (event.target !== target) return;
+      const bounds = target.getBoundingClientRect();
+      if (event.clientX < bounds.left || event.clientX > bounds.right ||
+          event.clientY < bounds.top || event.clientY > bounds.bottom) close();
+    });
+    target.addEventListener("cancel", (event) => {
+      event.preventDefault();
+      close();
+    });
+    target.addEventListener("close", () => cleanupDialog(target));
+  }
+
+  bindDialog(dialog, closeBtn, closeMorphDialog);
+  bindDialog(videoDialog, videoCloseBtn, closeVideoDialog);
+}
+
+// Hide floating WhatsApp while either home page's hero is in view.
 function initWhatsappHeroHide() {
-  if (lang !== "he") return;
   const fab = document.querySelector(".whatsapp-float");
   const hero = document.getElementById("home");
   if (!fab || !hero || fab.dataset.heroHideInit === "1") return;
@@ -448,7 +659,7 @@ function initWhatsappHeroHide() {
 }
 
 // ===== INIT =====
-document.addEventListener("DOMContentLoaded", () => {
+function initPage() {
   initScrollAnimations();
   initActiveNavState();
   initMediaTabs();
@@ -456,15 +667,11 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeaderScroll();
   initContactForm();
   initWhatsappHeroHide();
-});
+  initDialogs();
+}
 
-// Re-run scroll animations if content was loaded dynamically
-if (document.readyState === "complete") {
-  initScrollAnimations();
-  initActiveNavState();
-  initMediaTabs();
-  initSmoothScroll();
-  initHeaderScroll();
-  initContactForm();
-  initWhatsappHeroHide();
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initPage, { once: true });
+} else {
+  initPage();
 }

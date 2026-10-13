@@ -1,146 +1,114 @@
 <!doctype html>
 <!-- xFeinschmecker https://www.feinschmecker.dev/ contact@feinschmecker.dev -->
-<html lang="en" data-theme="dark">
+<html lang="en" dir="ltr" data-theme="dark">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" href="favicon.ico?v=9" sizes="16x16 32x32 48x48" />
         <link rel="icon" href="favicon.png?v=9" type="image/png" sizes="32x32" />
         <link rel="apple-touch-icon" href="apple-touch-icon.png?v=9" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="color-scheme" content="dark light" />
-        <meta name="theme-color" content="#080d1a" id="theme-color" />
+        <meta name="color-scheme" content="dark" />
+        <meta name="theme-color" content="#1c202a" id="theme-color" />
         <meta
             name="description"
-            content="Yael Druckman — Advocate at Law, Certified Mediator & Insurance Agent. Decades of expertise delivering results with integrity."
+            content="Yael Druckman — law, mediation, insurance, and finance in Herzliya. A family practice managing legal, insurance, and financial risks."
         />
-        <title>Yael Druckman — Advocate, Mediator & Insurance Agent</title>
-        <link rel="stylesheet" href="styles.min.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <title>Yael Druckman — Law, Insurance &amp; Finance</title>
+        <link rel="canonical" href="https://yaeldruckman.com/" />
         <link
-            href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Heebo:wght@300;400;500;600;700&display=swap"
-            rel="stylesheet"
+            rel="alternate"
+            hreflang="he"
+            href="https://yaeldruckman.com/index.he.html"
         />
-        <style>
-            /* Enhanced Classy Testimonials */
-            .testimonial-card {
-                padding: 3.5rem 2.25rem 2.5rem !important;
-                text-align: center;
-                border: 1px solid var(--border) !important;
-                border-top: 3px solid var(--accent) !important;
-                background: var(--card-gradient) !important;
-                border-radius: var(--radius-lg) !important;
-                position: relative;
-                overflow: hidden;
-                display: flex;
-                flex-direction: column;
-                height: 100%;
-                transition:
-                    transform 0.4s var(--ease-out),
-                    box-shadow 0.4s var(--ease-out) !important;
-            }
-
-            .testimonial-card:hover {
-                transform: translateY(-8px) !important;
-                box-shadow:
-                    var(--shadow-lg),
-                    0 0 30px var(--accent-subtle) !important;
-                border-color: var(--accent) !important;
-            }
-
-            .testimonial-card::before {
-                content: "“";
-                position: absolute;
-                top: 0.5rem;
-                left: 1.5rem;
-                font-family: var(--font-heading);
-                font-size: 8rem;
-                color: var(--accent);
-                opacity: 0.08;
-                line-height: 1;
-                pointer-events: none;
-            }
-
-            .testimonial-stars {
-                justify-content: center;
-                margin-bottom: 2rem !important;
-                gap: 6px !important;
-            }
-
-            .testimonial-stars svg {
-                width: 14px !important;
-                height: 14px !important;
-                color: var(--accent) !important;
-            }
-
-            .testimonial-quote-icon {
-                display: none !important;
-            }
-
-            .testimonial-text {
-                font-family: var(--font-heading) !important;
-                font-size: 1.15rem !important;
-                font-style: italic !important;
-                color: var(--text-heading) !important;
-                line-height: 1.8 !important;
-                margin-bottom: 2.5rem !important;
-                flex-grow: 1;
-                position: relative;
-                z-index: 1;
-                display: -webkit-box;
-                -webkit-line-clamp: 4;
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-                transition: all 0.3s ease;
-            }
-
-            .testimonial-card.expanded .testimonial-text {
-                -webkit-line-clamp: unset;
-                display: block;
-            }
-
-            .read-more-btn {
-                background: none;
-                border: none;
-                color: var(--accent);
-                font-weight: 600;
-                cursor: pointer;
-                padding: 0;
-                margin-top: -1.5rem;
-                margin-bottom: 1.5rem;
-                font-size: 0.95rem;
-                display: block;
-                font-family: inherit;
-            }
-
-            .testimonial-card.expanded .read-more-btn {
-                display: block;
-            }
-
-            .testimonial-author {
-                flex-direction: column !important;
-                border-top: 1px solid var(--border) !important;
-                padding-top: 2rem !important;
-                gap: 1rem !important;
-                margin-top: auto;
-            }
-
-            .testimonial-name {
-                font-family: var(--font-heading);
-                font-weight: 700;
-                font-size: 1.15rem;
-                color: var(--text-heading);
-                margin-bottom: 0.25rem;
-            }
-
-            .testimonial-role {
-                text-transform: uppercase;
-                font-size: 0.75rem;
-                letter-spacing: 0.15em;
-                color: var(--accent);
-                font-weight: 600;
-            }
-        </style>
+        <link
+            rel="alternate"
+            hreflang="en"
+            href="https://yaeldruckman.com/"
+        />
+        <link
+            rel="alternate"
+            hreflang="x-default"
+            href="https://yaeldruckman.com/"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:locale:alternate" content="he_IL" />
+        <meta
+            property="og:url"
+            content="https://yaeldruckman.com/"
+        />
+        <meta
+            property="og:title"
+            content="Yael Druckman — Law, Insurance &amp; Finance"
+        />
+        <meta
+            property="og:description"
+            content="Yael Druckman — law, mediation, insurance, and finance in Herzliya. A family practice managing legal, insurance, and financial risks."
+        />
+        <meta
+            property="og:image"
+            content="https://yaeldruckman.com/assets/og-en.png"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="Yael Druckman — Law, Insurance &amp; Finance"
+        />
+        <meta
+            name="twitter:description"
+            content="Yael Druckman — law, mediation, insurance, and finance in Herzliya. A family practice managing legal, insurance, and financial risks."
+        />
+        <meta
+            name="twitter:image"
+            content="https://yaeldruckman.com/assets/og-en.png"
+        />
+        <link
+            rel="preload"
+            href="fonts/VarelaRound-latin.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            as="image"
+            type="image/avif"
+            imagesrcset="assets/profile-pic-gray-bg-640.avif 640w, assets/profile-pic-gray-bg.avif 864w"
+            imagesizes="(min-width: 900px) 420px, min(78vw, 320px)"
+            fetchpriority="high"
+        />
+        <link rel="stylesheet" href="styles.min.css" />
+        <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": [
+        "Attorney",
+        "LocalBusiness"
+    ],
+    "name": "Yael Druckman",
+    "alternateName": "יעל דרוקמן",
+    "url": "https://yaeldruckman.com/",
+    "image": "https://yaeldruckman.com/assets/og-en.png",
+    "logo": "https://yaeldruckman.com/assets/logo-black.jpg",
+    "description": "Law, mediation, insurance, and finance practice.",
+    "telephone": "+972-58-630-6460",
+    "email": "office@yaeldruckman.com",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "51B HaAtzmaut Street",
+        "addressLocality": "Herzliya",
+        "addressCountry": "IL"
+    },
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 32.1652,
+        "longitude": 34.8442
+    },
+    "areaServed": "IL"
+}
+        </script>
     </head>
     <body>
         <a class="skip-link" href="#main">Skip to main content</a>
@@ -149,12 +117,18 @@
         <header>
             <div class="container nav">
                 <a href="#home" class="logo" aria-label="Yael Druckman — Home">
-                    <span class="logo-icon">YD</span>
+                    <span class="logo-icon logo-icon--monogram" aria-hidden="true">
+                        <img
+                            src="assets/yd-variations/01-metallic-gold.png"
+                            alt=""
+                            width="606"
+                            height="471"
+                        />
+                    </span>
                     <span class="logo-text">
                         <span class="logo-name">Yael Druckman</span>
                         <span class="logo-title"
-                            >Advocate &middot; Mediator &middot; Insurance
-                            Agent</span
+                            >Law · Mediation · Insurance &amp; Finance</span
                         >
                     </span>
                 </a>
@@ -171,80 +145,16 @@
                     <a
                         href="index.he.html"
                         class="lang-toggle"
-                        aria-label="לעברית"
+                        aria-label="Switch to Hebrew"
                     >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="14"
-                            height="14"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        >
-                            <circle cx="12" cy="12" r="10" />
-                            <path d="M2 12h20" />
-                            <path
-                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                            />
-                        </svg>
                         עברית
                     </a>
-                    <button
-                        class="theme-toggle"
-                        type="button"
-                        id="themeToggle"
-                        aria-pressed="true"
-                        aria-label="Toggle theme"
-                    >
-                        <span data-icon aria-hidden="true">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="18"
-                                height="18"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="icon-moon"
-                            >
-                                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-                            </svg>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="18"
-                                height="18"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="icon-sun"
-                                style="display: none"
-                            >
-                                <circle cx="12" cy="12" r="4" />
-                                <path d="M12 2v2" />
-                                <path d="M12 20v2" />
-                                <path d="m4.93 4.93 1.41 1.41" />
-                                <path d="m17.66 17.66 1.41 1.41" />
-                                <path d="M2 12h2" />
-                                <path d="M20 12h2" />
-                                <path d="m6.34 17.66-1.41 1.41" />
-                                <path d="m19.07 4.93-1.41 1.41" />
-                            </svg>
-                        </span>
-                        <span class="toggle-label">Dark</span>
-                    </button>
                     <button
                         class="hamburger"
                         type="button"
                         id="navToggle"
-                        aria-label="Toggle mobile menu"
+                        aria-label="Open menu"
+                        data-close-label="Close menu"
                         aria-expanded="false"
                         aria-controls="mobileNav"
                     >
@@ -268,11 +178,7 @@
             </div>
 
             <!-- Mobile Nav -->
-            <div
-                class="mobile-nav"
-                id="mobileNav"
-                aria-label="Mobile navigation"
-            >
+            <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
                 <a href="#services">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -384,7 +290,7 @@
                     </svg>
                     עברית
                 </a>
-            </div>
+            </nav>
         </header>
 
         <main id="main">
@@ -397,18 +303,22 @@
                             <div class="profile-image-wrapper">
                                 <picture>
                                     <source
-                                        srcset="assets/profile-pic.avif"
                                         type="image/avif"
+                                        srcset="assets/profile-pic-gray-bg-640.avif 640w, assets/profile-pic-gray-bg.avif 864w"
+                                        sizes="(min-width: 900px) 420px, min(78vw, 320px)"
                                     />
                                     <source
-                                        srcset="assets/profile-pic.webp"
                                         type="image/webp"
+                                        srcset="assets/profile-pic-gray-bg-640.webp 640w, assets/profile-pic-gray-bg.webp 864w"
+                                        sizes="(min-width: 900px) 420px, min(78vw, 320px)"
                                     />
                                     <img
-                                        src="assets/profile-pic.jpg"
-                                        alt="Yael Druckman — Attorney at Law, Mediator & Insurance Agent"
-                                        width="1200"
-                                        height="1800"
+                                        src="assets/profile-pic-gray-bg.jpg"
+                                        srcset="assets/profile-pic-gray-bg-640.jpg 640w, assets/profile-pic-gray-bg.jpg 864w"
+                                        sizes="(min-width: 900px) 420px, min(78vw, 320px)"
+                                        alt="Yael Druckman — Law, Insurance &amp; Finance"
+                                        width="864"
+                                        height="1232"
                                         loading="eager"
                                         fetchpriority="high"
                                     />
@@ -416,37 +326,33 @@
                             </div>
                         </div>
                         <div class="hero-text">
-                            <p class="eyebrow">
+                            <p class="section-label">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    width="12"
-                                    height="12"
+                                    width="16"
+                                    height="16"
                                     viewBox="0 0 24 24"
                                     fill="none"
                                     stroke="currentColor"
-                                    stroke-width="2.5"
+                                    stroke-width="2"
                                     stroke-linecap="round"
                                     stroke-linejoin="round"
                                 >
-                                    <path
-                                        d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"
-                                    />
+                                    <line x1="3" x2="21" y1="22" y2="22" />
+                                    <line x1="6" x2="6" y1="18" y2="11" />
+                                    <line x1="10" x2="10" y1="18" y2="11" />
+                                    <line x1="14" x2="14" y1="18" y2="11" />
+                                    <line x1="18" x2="18" y1="18" y2="11" />
+                                    <polygon points="12 2 20 7 4 7" />
                                 </svg>
-                                Advocate &middot; Mediator &middot; Insurance
-                                Agent
+                                Yael Druckman, Attorney at Law
                             </p>
                             <h1>
-                                Expert counsel.<br />Trusted resolution.<br />Complete
-                                protection.
+                                “Legal documents are not just paperwork. They are how we care for others, even when we are no longer there to explain…<br />
+                                They are a mature expression of love, put into writing.”
                             </h1>
-                            <p class="hero-subtitle">
-                                With decades of combined expertise in law,
-                                mediation and insurance, Yael Druckman delivers
-                                strategic, results-driven counsel for
-                                individuals and businesses alike.
-                            </p>
                             <div class="hero-cta-group">
-                                <a class="cta" href="#contact">
+                                <a class="cta btn-outline-accent" href="#contact">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="18"
@@ -472,10 +378,10 @@
                                         <line x1="8" x2="8" y1="2" y2="4" />
                                         <line x1="16" x2="16" y1="2" y2="4" />
                                     </svg>
-                                    Schedule a Consultation
+                                    Book an Appointment
                                 </a>
                                 <a
-                                    class="cta cta-whatsapp"
+                                    class="cta cta-whatsapp btn-outline-whatsapp"
                                     href="https://wa.me/972586306460"
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -526,108 +432,74 @@
                                     rx="2"
                                 />
                             </svg>
-                            Areas of Practice
+                            Services
                         </p>
-                        <h2 class="section-title">
-                            Comprehensive Legal &amp; Advisory Services
-                        </h2>
+                        <h2 class="section-title">Areas of Expertise</h2>
                         <p class="section-subtitle">
-                            A unique combination of legal expertise, mediation
-                            skills, and insurance knowledge — all under one
-                            roof.
+                            Everyone’s financial, legal, and insurance needs are different and change over time.<br />
+                            I specialize in tailoring precise, personal solutions.
                         </p>
                     </div>
                     <div class="grid grid-3">
                         <article class="card fade-up">
-                            <div class="card-icon">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="1.5"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                >
-                                    <path
-                                        d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"
-                                    />
-                                    <path d="M5 3v4" />
-                                    <path d="M19 17v4" />
-                                    <path d="M3 5h4" />
-                                    <path d="M17 19h4" />
-                                </svg>
+                            <div class="card-heading">
+                                <div class="card-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
+                                </div>
+                                <h3>Legal Services</h3>
                             </div>
-                            <h3>Legal Services</h3>
-                            <p>
-                                Expert representation in civil litigation,
-                                contract law, corporate governance, and real
-                                estate transactions. Strategic legal counsel
-                                tailored to protect your interests.
-                            </p>
+                            <ul class="card-list">
+                                <li>Enduring powers of attorney</li>
+                                <li>Wills</li>
+                                <li>Divorce agreements</li>
+                                <li>Marital property agreements</li>
+                                <li>Cohabitation agreements</li>
+                                <li>Claims for benefits under insurance policies</li>
+                                <li>Long-term care insurance claims through health funds</li>
+                                <li>Property management for residents of Israel and abroad</li>
+                                <li>Legal and insurance advice for relocation</li>
+                            </ul>
                             <div class="accent-divider"></div>
                         </article>
 
                         <article class="card fade-up">
-                            <div class="card-icon">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="1.5"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                >
-                                    <path
-                                        d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
-                                    />
-                                    <circle cx="12" cy="7" r="4" />
-                                    <path d="M16.5 11.5 14 14l2.5 2.5" />
-                                    <path d="M7.5 11.5 10 14l-2.5 2.5" />
-                                </svg>
+                            <div class="card-heading">
+                                <div class="card-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7 6.5 4.5 9 3h6l2.5 1.5L16 7"/><path d="M8 7h8"/><path d="M7 7c0 2-1 4-1 6 0 4.5 2.5 8 6 8s6-3.5 6-8c0-2-1-4-1-6"/><path d="M12 12v5"/><path d="M10.5 13.5h3a1.5 1.5 0 0 1 0 3h-3"/></svg>
+                                </div>
+                                <h3>Insurance &amp; Finance</h3>
                             </div>
-                            <h3>Mediation &amp; Dispute Resolution</h3>
-                            <p>
-                                Certified mediator facilitating constructive
-                                dialogue between parties. Specializing in
-                                commercial disputes, family matters, and
-                                workplace conflicts with a focus on achieving
-                                lasting agreements.
-                            </p>
+                            <ul class="card-list">
+                                <li>Transfer of pension rights following divorce</li>
+                                <li>Health insurance</li>
+                                <li>Life insurance</li>
+                                <li>Critical illness insurance</li>
+                                <li>Personal accident insurance</li>
+                                <li>Pension funds</li>
+                                <li>Continuing education savings funds</li>
+                                <li>Savings and investment policies</li>
+                                <li>Provident funds</li>
+                                <li>Loans against provident funds</li>
+                                <li>Investment provident funds</li>
+                            </ul>
                             <div class="accent-divider"></div>
                         </article>
 
                         <article class="card fade-up">
-                            <div class="card-icon">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="1.5"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                >
-                                    <path
-                                        d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"
-                                    />
-                                    <path d="m9 12 2 2 4-4" />
-                                </svg>
+                            <div class="card-heading">
+                                <div class="card-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+                                </div>
+                                <h3>Mediation</h3>
                             </div>
-                            <h3>Insurance Advisory</h3>
-                            <p>
-                                Comprehensive insurance consulting including
-                                claims advocacy, policy review, risk assessment,
-                                and coverage optimization. Ensuring you have the
-                                right protection at every stage.
-                            </p>
+                            <ul class="card-list">
+                                <li>Intergenerational family wealth transfers</li>
+                                <li>Family disputes</li>
+                                <li>Divorce disputes</li>
+                                <li>Agreements between heirs on family businesses, property, or investments</li>
+                                <li>Parenting agreements, parental responsibility, and parenting time</li>
+                                <li>Resolving family disputes over care for aging parents</li>
+                            </ul>
                             <div class="accent-divider"></div>
                         </article>
                     </div>
@@ -654,117 +526,48 @@
                                     <circle cx="12" cy="8" r="5" />
                                     <path d="M20 21a8 8 0 0 0-16 0" />
                                 </svg>
-                                About Yael
+                                About
                             </p>
                             <h2 class="section-title">
-                                Dedicated to Excellence in Every Case
+                                Experience, knowledge, and personal care
+                                <br />that make the difference
                             </h2>
-                            <p class="section-subtitle">
-                                A multi-disciplinary professional bridging the
-                                worlds of law, mediation and insurance.
-                            </p>
                         </div>
                         <p class="about-text fade-up">
-                            Yael Druckman brings a rare combination of expertise
-                            to the table. As a licensed attorney, certified
-                            mediator, and seasoned insurance professional, she
-                            offers clients a 360-degree perspective on legal and
-                            financial challenges.
+                            A graduate of Reichman University in Law and Business Administration (2004). Admitted to practice law in 2006, licensed as an insurance agent in 2008, and qualified as a mediator in 2022.
                         </p>
                         <p class="about-text fade-up">
-                            With a track record built on integrity, discretion,
-                            and relentless advocacy, Yael has earned the trust
-                            of individuals, families, and businesses across
-                            Israel. Her approach is straightforward: listen
-                            deeply, strategize precisely, and deliver measurable
-                            results.
+                            For more than twenty years, I have supported individuals, families, self-employed professionals, and business owners through different stages of life and changing needs. I combine knowledge and practical experience in law, insurance, and finance, helping people secure the rights and benefits they are entitled to in everyday life. My own journey, having lost my mother at the age of fifteen, led me to choose this path—guided by purpose, integrity, justice, and care for others.
                         </p>
-                        <div class="credentials fade-up">
-                            <span class="credential-badge">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="13"
-                                    height="13"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                >
-                                    <path
-                                        d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"
-                                    />
-                                </svg>
-                                Israel Bar Association
-                            </span>
-                            <span class="credential-badge">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="13"
-                                    height="13"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                >
-                                    <path
-                                        d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"
-                                    />
-                                </svg>
-                                Certified Mediator
-                            </span>
-                            <span class="credential-badge">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="13"
-                                    height="13"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                >
-                                    <path
-                                        d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"
-                                    />
-                                </svg>
-                                Licensed Insurance Agent
-                            </span>
-                        </div>
-                        <div class="about-stats fade-up">
-                            <div class="stat">
-                                <span class="stat-number">25+</span>
-                                <span class="stat-label">Years Experience</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-number">1,200+</span>
-                                <span class="stat-label">Cases Handled</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-number">98%</span>
-                                <span class="stat-label"
-                                    >Client Satisfaction</span
-                                >
-                            </div>
-                        </div>
+
                     </div>
                     <div
                         class="about-visual about-visual--plain fade-up"
                         role="img"
-                        aria-label="Office emblem"
+                        aria-label="Logo"
                     >
-                        <img
-                            class="about-visual-image"
-                            src="assets/stones.png"
-                            alt="Office emblem"
-                            width="992"
-                            height="992"
-                            loading="lazy"
-                        />
+                        <picture>
+                            <source
+                                type="image/avif"
+                                srcset="assets/logo-black-400.avif 400w, assets/logo-black-800.avif 800w, assets/logo-black-1179.avif 1179w"
+                                sizes="(min-width: 1024px) 420px, (min-width: 900px) 16rem, 52vw"
+                            />
+                            <source
+                                type="image/webp"
+                                srcset="assets/logo-black-400.webp 400w, assets/logo-black-800.webp 800w, assets/logo-black-1179.webp 1179w"
+                                sizes="(min-width: 1024px) 420px, (min-width: 900px) 16rem, 52vw"
+                            />
+                            <img
+                                class="about-visual-image about-visual-image--dark"
+                                src="assets/logo-black.jpg"
+                                srcset="assets/logo-black-400.jpg 400w, assets/logo-black-800.jpg 800w, assets/logo-black-1179.jpg 1179w"
+                                sizes="(min-width: 1024px) 420px, (min-width: 900px) 16rem, 52vw"
+                                alt="Yael Druckman logo"
+                                width="1179"
+                                height="896"
+                                loading="lazy"
+                            />
+                        </picture>
                     </div>
                 </div>
             </section>
@@ -791,271 +594,60 @@
                         </p>
                         <h2 class="section-title">What Clients Say</h2>
                         <p class="section-subtitle">
-                            Trusted by individuals and organizations. Here's
-                            what some of them have to say.
+                            The best testament to my work is the peace of mind and confidence of the clients I have supported over the years.
                         </p>
                     </div>
                     <div class="testimonials-grid">
                         <div class="testimonial-card fade-up">
-                            <div class="testimonial-stars">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                    stroke="none"
-                                >
-                                    <polygon
-                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                                    />
-                                </svg>
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                    stroke="none"
-                                >
-                                    <polygon
-                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                                    />
-                                </svg>
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                    stroke="none"
-                                >
-                                    <polygon
-                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                                    />
-                                </svg>
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                    stroke="none"
-                                >
-                                    <polygon
-                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                                    />
-                                </svg>
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                    stroke="none"
-                                >
-                                    <polygon
-                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                                    />
-                                </svg>
-                            </div>
-
-                            <p class="testimonial-text">
-                                "Yael handled my complex commercial dispute with
-                                exceptional professionalism. Her dual expertise
-                                in law and mediation meant we reached a
-                                favorable settlement without years of
-                                litigation. I couldn't recommend her more
-                                highly."
+<p class="testimonial-text">
+                                “I wholeheartedly recommend Yael. Beyond her exceptional professionalism, extensive knowledge, and ability to explain everything clearly and reassuringly, Yael is, first and foremost, a truly rare person. Over the years, especially during the difficult period when my father was ill, she was there for us far beyond what anyone could expect of a professional. Available, sensitive, patient, and genuinely caring, she felt like part of the family. Yael supports me through my most difficult moments with peace of mind, responsibility, and a complete sense of security, always making sure I make the most of all my rights and options. You feel that someone is fighting for you, caring for you, and truly seeing you—and that is something you cannot take for granted. I recommend her with all my heart to anyone looking not only for a professional, trustworthy insurance agent, but also for someone they can rely on completely when it matters most.”
                             </p>
                             <button
                                 class="read-more-btn"
-                                onclick="toggleTestimonial(this)"
+                                onclick="morphTestimonial(this)"
                             >
-                                Read More...
+                                Read More…
                             </button>
                             <div class="testimonial-author">
                                 <div class="testimonial-info">
-                                    <div class="testimonial-name">David M.</div>
-                                    <div class="testimonial-role">
-                                        CEO, Tech Startup
-                                    </div>
+                        <div class="testimonial-name">Meni Horowitz</div>
+                                    <div class="testimonial-role">Tel Aviv</div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="testimonial-card fade-up">
-                            <div class="testimonial-stars">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                    stroke="none"
-                                >
-                                    <polygon
-                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                                    />
-                                </svg>
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                    stroke="none"
-                                >
-                                    <polygon
-                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                                    />
-                                </svg>
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                    stroke="none"
-                                >
-                                    <polygon
-                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                                    />
-                                </svg>
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                    stroke="none"
-                                >
-                                    <polygon
-                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                                    />
-                                </svg>
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                    stroke="none"
-                                >
-                                    <polygon
-                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                                    />
-                                </svg>
-                            </div>
-
-                            <p class="testimonial-text">
-                                "After a devastating insurance claim denial,
-                                Yael stepped in and completely turned things
-                                around. Her knowledge of insurance law is
-                                unmatched, and she fought for every penny we
-                                were owed. A true professional."
+<p class="testimonial-text">
+                                “I came to Yael for help applying to the insurance company for a disability benefit from my pension fund after my mental health deteriorated. I had been hospitalized several times and was in a bad state. I could not manage anything bureaucratic, and dealing with the insurance company’s documents felt like trying to read Chinese. I understood nothing and did not know what to do. At our first meeting, Yael asked questions sensitively, listened with understanding, was thorough, and gave me hope. The whole process was quick, thorough, and, most importantly, simple for me. I felt I was in good hands. Yael guided me on which documents to send her, answered every question patiently and clearly, was available to me, and handled everything with astonishing efficiency and ease. Within a few days, I received approval and began receiving the benefit, including a substantial retroactive payment—the best outcome I could have hoped for. After the process was complete, she also checked how I was doing and was there for further questions. I could not have done this alone! Yael is professional, will fight for you when needed, and does her work thoroughly. She also has a huge heart, and you feel her care and humanity at every step. I have since recommended her to many friends, and I recommend her with complete confidence and peace of mind. I am so glad I found her and will certainly turn to her again if I need help in the future. Thank you, Yael!”
                             </p>
                             <button
                                 class="read-more-btn"
-                                onclick="toggleTestimonial(this)"
+                                onclick="morphTestimonial(this)"
                             >
-                                Read More...
+                                Read More…
                             </button>
                             <div class="testimonial-author">
                                 <div class="testimonial-info">
-                                    <div class="testimonial-name">Sarah K.</div>
-                                    <div class="testimonial-role">
-                                        Business Owner
-                                    </div>
+                                    <div class="testimonial-name">Lital David</div>
+                                    <div class="testimonial-role">Rosh HaAyin</div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="testimonial-card fade-up">
-                            <div class="testimonial-stars">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                    stroke="none"
-                                >
-                                    <polygon
-                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                                    />
-                                </svg>
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                    stroke="none"
-                                >
-                                    <polygon
-                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                                    />
-                                </svg>
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                    stroke="none"
-                                >
-                                    <polygon
-                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                                    />
-                                </svg>
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                    stroke="none"
-                                >
-                                    <polygon
-                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                                    />
-                                </svg>
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                    stroke="none"
-                                >
-                                    <polygon
-                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                                    />
-                                </svg>
-                            </div>
-
-                            <p class="testimonial-text">
-                                "As a mediator, Yael has a gift for finding
-                                common ground where none seems to exist. She
-                                guided our family through a difficult
-                                inheritance dispute with empathy and razor-sharp
-                                legal insight. We're so grateful."
+<p class="testimonial-text">
+                                “Yael has managed my properties in Israel for more than ten years, with great professionalism, complete trust, and genuine humanity. The peace of mind that comes from knowing someone is looking after me, caring for me, and protecting my properties as if they were her own is priceless.”
                             </p>
                             <button
                                 class="read-more-btn"
-                                onclick="toggleTestimonial(this)"
+                                onclick="morphTestimonial(this)"
                             >
-                                Read More...
+                                Read More…
                             </button>
                             <div class="testimonial-author">
                                 <div class="testimonial-info">
-                                    <div class="testimonial-name">
-                                        Michael R.
-                                    </div>
-                                    <div class="testimonial-role">
-                                        Private Client
-                                    </div>
+                                    <div class="testimonial-name">Liora Bukofzer</div>
+                                    <div class="testimonial-role">Canada</div>
                                 </div>
                             </div>
                         </div>
@@ -1089,36 +681,250 @@
                                     ry="2"
                                 />
                             </svg>
-                            In the Media
+                            Community &amp; Media
                         </p>
-                        <h2 class="section-title">
-                            Featured Appearances &amp; Publications
-                        </h2>
+                        <h2 class="section-title">Volunteering, Appearances &amp; Publications</h2>
                         <p class="section-subtitle">
-                            Interviews, expert commentary, and articles from
-                            leading publications.
+                            Selected interviews, talks, and publications from recent years.
                         </p>
                     </div>
 
-                    <!-- Media Tabs -->
-                    <div class="media-tabs fade-up">
-                        <button class="media-tab active" data-tab="videos">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="16"
-                                height="16"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
+                    <div class="media-content">
+                        <div class="media-grid">
+                            <!-- Winning Together Project -->
+                            <a
+                                href="https://polisa.news/%D7%9E%D7%99%D7%96%D7%9D-%D7%9E%D7%A0%D7%A6%D7%97%D7%99%D7%9D-%D7%91%D7%99%D7%97%D7%93-%D7%95%D7%9E%D7%A9%D7%A8%D7%93-%D7%94%D7%91%D7%99%D7%98%D7%97%D7%95%D7%9F-%D7%99%D7%A1%D7%93%D7%99%D7%A8/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="media-card fade-up"
                             >
-                                <polygon points="6 3 20 12 6 21 6 3" />
-                            </svg>
-                            Videos
-                        </button>
-                        <button class="media-tab" data-tab="articles">
+                                <div class="media-card-thumbnail">
+                                    <picture>
+                                        <source
+                                            type="image/avif"
+                                            srcset="assets/media-winning-together.avif"
+                                        />
+                                        <source
+                                            type="image/webp"
+                                            srcset="assets/media-winning-together.webp"
+                                        />
+                                        <img
+                                            src="assets/media-winning-together.jpg"
+                                            alt="Winning Together initiative"
+                                            width="1200"
+                                            height="675"
+                                            loading="lazy"
+                                        />
+                                    </picture>
+                                    <span class="media-badge">Volunteering</span>
+                                </div>
+                                <div class="media-card-body">
+                                    <h3 class="media-card-title">
+                                        “Winning Together” Initiative
+                                    </h3>
+                                    <p class="media-card-desc">
+                                        Supporting people with cancer and the families of those killed or wounded in the Swords of Iron war.
+                                    </p>
+                                    <div class="media-card-meta">
+                                        <span>Israel Insurance Agents Association</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- Gov.il Project -->
+                            <a
+                                href="https://www.gov.il/he/pages/od-yad"
+                                target="_blank"
+                                class="media-card fade-up"
+                            >
+                                <div class="media-card-thumbnail">
+                                    <picture>
+                                        <source
+                                            type="image/avif"
+                                            srcset="assets/media-od-yad.avif"
+                                        />
+                                        <source
+                                            type="image/webp"
+                                            srcset="assets/media-od-yad.webp"
+                                        />
+                                        <img
+                                            src="assets/media-od-yad.jpg"
+                                            alt="Orech Din Yad initiative"
+                                            width="1200"
+                                            height="800"
+                                            loading="lazy"
+                                        />
+                                    </picture>
+                                    <span class="media-badge">Volunteering</span>
+                                </div>
+                                <div class="media-card-body">
+                                    <h3 class="media-card-title">
+                                        “Orech Din Yad” Initiative
+                                    </h3>
+                                    <p class="media-card-desc">
+                                        A volunteer initiative preparing enduring powers of attorney for older adults and people living with mental health conditions.
+                                    </p>
+                                    <div class="media-card-meta">
+                                        <span>Ministry of Justice</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- Featured Video Card -->
+                            <a
+                                href="https://www.youtube.com/watch?v=PPfSPrZoMTc"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onclick="openVideoModal(event, this.href)"
+                                class="media-card featured fade-up"
+                            >
+                                <div class="media-card-thumbnail">
+                                    <picture>
+                                        <source
+                                            type="image/avif"
+                                            srcset="assets/media-channel10.avif"
+                                        />
+                                        <source
+                                            type="image/webp"
+                                            srcset="assets/media-channel10.webp"
+                                        />
+                                        <img
+                                            src="assets/media-channel10.jpg"
+                                            alt="Video: Channel 10, Mothers Without a Mother"
+                                            width="1200"
+                                            height="800"
+                                            loading="lazy"
+                                        />
+                                    </picture>
+                                    <span class="media-badge">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="12"
+                                            height="12"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        >
+                                            <polygon
+                                                points="6 3 20 12 6 21 6 3"
+                                            />
+                                        </svg>
+                                        Video
+                                    </span>
+                                    <div class="play-button">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="22"
+                                            height="22"
+                                            viewBox="0 0 24 24"
+                                            fill="currentColor"
+                                            stroke="none"
+                                        >
+                                            <polygon
+                                                points="6 3 20 12 6 21 6 3"
+                                            />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="media-card-body">
+                                    <h3 class="media-card-title">
+                                        Channel 10, “Mothers Without a Mother”
+                                    </h3>
+                                    <p class="media-card-desc">
+                                        A moving personal account of navigating life and its milestones without her mother by her side.
+                                    </p>
+                                    <div class="media-card-meta">
+                                        <span>Channel 10</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- Walla! Finance Article -->
+                            <a
+                                href="https://finance.walla.co.il/item/2916252"
+                                target="_blank"
+                                class="media-card fade-up"
+                            >
+                                <div class="media-card-thumbnail">
+                                    <picture>
+                                        <source
+                                            type="image/avif"
+                                            srcset="assets/media-walla.avif"
+                                        />
+                                        <source
+                                            type="image/webp"
+                                            srcset="assets/media-walla.webp"
+                                        />
+                                        <img
+                                            src="assets/media-walla.jpg"
+                                            alt="Expert article on Walla Finance"
+                                            width="1200"
+                                            height="800"
+                                            loading="lazy"
+                                        />
+                                    </picture>
+                                    <span class="media-badge"> Article </span>
+                                </div>
+                                <div class="media-card-body">
+                                    <h3 class="media-card-title">
+                                        Expert Article on Walla
+                                    </h3>
+                                    <p class="media-card-desc">
+                                        Professional insights into insurance and finance.
+                                    </p>
+                                    <div class="media-card-meta">
+                                        <span>Walla Finance</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- Conference hosting (no external link) -->
+                            <article class="media-card fade-up">
+                                <div class="media-card-thumbnail">
+                                    <picture>
+                                        <source
+                                            type="image/avif"
+                                            srcset="assets/convention-hosting.avif"
+                                        />
+                                        <source
+                                            type="image/webp"
+                                            srcset="assets/convention-hosting.webp"
+                                        />
+                                        <img
+                                            src="assets/convention-hosting.jpg"
+                                            alt="Conference for women in insurance"
+                                            width="1200"
+                                            height="800"
+                                            loading="lazy"
+                                        />
+                                    </picture>
+                                    <span class="media-badge">Conferences</span>
+                                </div>
+                                <div class="media-card-body">
+                                    <h3 class="media-card-title">
+                                        Hosting a Conference for Women in Insurance
+                                    </h3>
+                                    <p class="media-card-desc">
+                                        2018
+                                    </p>
+                                    <div class="media-card-meta">
+                                        <span>Professional Conference</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== CONTACT ===== -->
+            <section id="contact">
+                <div class="container">
+                    <div class="section-header fade-up">
+                        <p class="section-label">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="16"
@@ -1131,859 +937,30 @@
                                 stroke-linejoin="round"
                             >
                                 <path
-                                    d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"
+                                    d="M17 18a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2"
                                 />
-                                <path d="M18 14h-8" />
-                                <path d="M15 18h-5" />
-                                <path d="M10 6h8v4h-8V6Z" />
+                                <rect
+                                    width="18"
+                                    height="18"
+                                    x="3"
+                                    y="4"
+                                    rx="2"
+                                />
+                                <circle cx="12" cy="10" r="2" />
+                                <line x1="8" x2="8" y1="2" y2="4" />
+                                <line x1="16" x2="16" y1="2" y2="4" />
                             </svg>
-                            Articles
-                        </button>
+                            Contact
+                        </p>
+                        <h2 class="section-title">
+                            Where am I today,<br class="contact-heading-break" />
+                            where do I want to go,<br />
+                            and how can I protect myself along the way?
+                        </h2>
                     </div>
-
-                    <!-- Videos Tab -->
-                    <div class="tab-content active" id="tab-videos">
-                        <div class="media-grid">
-                            <div class="media-card fade-up">
-                                <div class="media-card-thumbnail">
-                                    <img
-                                        src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80"
-                                        alt="Video: Understanding Mediation in Israel"
-                                        loading="lazy"
-                                    />
-                                    <span class="media-badge">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="12"
-                                            height="12"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        >
-                                            <polygon
-                                                points="6 3 20 12 6 21 6 3"
-                                            />
-                                        </svg>
-                                        Video
-                                    </span>
-                                    <button
-                                        class="play-button"
-                                        aria-label="Play video"
-                                    >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="22"
-                                            height="22"
-                                            viewBox="0 0 24 24"
-                                            fill="currentColor"
-                                            stroke="none"
-                                        >
-                                            <polygon
-                                                points="6 3 20 12 6 21 6 3"
-                                            />
-                                        </svg>
-                                    </button>
-                                </div>
-                                <div class="media-card-body">
-                                    <h3 class="media-card-title">
-                                        Understanding Mediation as an
-                                        Alternative to Litigation
-                                    </h3>
-                                    <p class="media-card-desc">
-                                        Yael explains how mediation can save
-                                        time, money, and relationships in
-                                        dispute resolution.
-                                    </p>
-                                    <div class="media-card-meta">
-                                        <span>
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="13"
-                                                height="13"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            >
-                                                <rect
-                                                    width="18"
-                                                    height="18"
-                                                    x="3"
-                                                    y="4"
-                                                    rx="2"
-                                                    ry="2"
-                                                />
-                                                <line
-                                                    x1="16"
-                                                    x2="16"
-                                                    y1="2"
-                                                    y2="6"
-                                                />
-                                                <line
-                                                    x1="8"
-                                                    x2="8"
-                                                    y1="2"
-                                                    y2="6"
-                                                />
-                                                <line
-                                                    x1="3"
-                                                    x2="21"
-                                                    y1="10"
-                                                    y2="10"
-                                                />
-                                            </svg>
-                                            Channel 12 News
-                                        </span>
-                                        <span>
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="13"
-                                                height="13"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            >
-                                                <circle
-                                                    cx="12"
-                                                    cy="12"
-                                                    r="10"
-                                                />
-                                                <polyline
-                                                    points="12 6 12 12 16 14"
-                                                />
-                                            </svg>
-                                            8:32
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="media-card fade-up">
-                                <div class="media-card-thumbnail">
-                                    <img
-                                        src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80"
-                                        alt="Video: Insurance Claims — Know Your Rights"
-                                        loading="lazy"
-                                    />
-                                    <span class="media-badge">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="12"
-                                            height="12"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        >
-                                            <polygon
-                                                points="6 3 20 12 6 21 6 3"
-                                            />
-                                        </svg>
-                                        Video
-                                    </span>
-                                    <button
-                                        class="play-button"
-                                        aria-label="Play video"
-                                    >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="22"
-                                            height="22"
-                                            viewBox="0 0 24 24"
-                                            fill="currentColor"
-                                            stroke="none"
-                                        >
-                                            <polygon
-                                                points="6 3 20 12 6 21 6 3"
-                                            />
-                                        </svg>
-                                    </button>
-                                </div>
-                                <div class="media-card-body">
-                                    <h3 class="media-card-title">
-                                        Insurance Claims: Know Your Rights
-                                    </h3>
-                                    <p class="media-card-desc">
-                                        An expert panel discussion on navigating
-                                        insurance claims in Israel and
-                                        protecting policyholder interests.
-                                    </p>
-                                    <div class="media-card-meta">
-                                        <span>
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="13"
-                                                height="13"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            >
-                                                <rect
-                                                    width="18"
-                                                    height="18"
-                                                    x="3"
-                                                    y="4"
-                                                    rx="2"
-                                                    ry="2"
-                                                />
-                                                <line
-                                                    x1="16"
-                                                    x2="16"
-                                                    y1="2"
-                                                    y2="6"
-                                                />
-                                                <line
-                                                    x1="8"
-                                                    x2="8"
-                                                    y1="2"
-                                                    y2="6"
-                                                />
-                                                <line
-                                                    x1="3"
-                                                    x2="21"
-                                                    y1="10"
-                                                    y2="10"
-                                                />
-                                            </svg>
-                                            Kan 11
-                                        </span>
-                                        <span>
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="13"
-                                                height="13"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            >
-                                                <circle
-                                                    cx="12"
-                                                    cy="12"
-                                                    r="10"
-                                                />
-                                                <polyline
-                                                    points="12 6 12 12 16 14"
-                                                />
-                                            </svg>
-                                            12:15
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="media-card fade-up">
-                                <div class="media-card-thumbnail">
-                                    <img
-                                        src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=800&q=80"
-                                        alt="Video: Women in Law — Breaking Barriers"
-                                        loading="lazy"
-                                    />
-                                    <span class="media-badge">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="12"
-                                            height="12"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        >
-                                            <polygon
-                                                points="6 3 20 12 6 21 6 3"
-                                            />
-                                        </svg>
-                                        Video
-                                    </span>
-                                    <button
-                                        class="play-button"
-                                        aria-label="Play video"
-                                    >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="22"
-                                            height="22"
-                                            viewBox="0 0 24 24"
-                                            fill="currentColor"
-                                            stroke="none"
-                                        >
-                                            <polygon
-                                                points="6 3 20 12 6 21 6 3"
-                                            />
-                                        </svg>
-                                    </button>
-                                </div>
-                                <div class="media-card-body">
-                                    <h3 class="media-card-title">
-                                        Women in Law: Breaking Barriers in
-                                        Israeli Practice
-                                    </h3>
-                                    <p class="media-card-desc">
-                                        Yael shares her journey and insights on
-                                        leading a multidisciplinary legal
-                                        practice.
-                                    </p>
-                                    <div class="media-card-meta">
-                                        <span>
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="13"
-                                                height="13"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            >
-                                                <rect
-                                                    width="18"
-                                                    height="18"
-                                                    x="3"
-                                                    y="4"
-                                                    rx="2"
-                                                    ry="2"
-                                                />
-                                                <line
-                                                    x1="16"
-                                                    x2="16"
-                                                    y1="2"
-                                                    y2="6"
-                                                />
-                                                <line
-                                                    x1="8"
-                                                    x2="8"
-                                                    y1="2"
-                                                    y2="6"
-                                                />
-                                                <line
-                                                    x1="3"
-                                                    x2="21"
-                                                    y1="10"
-                                                    y2="10"
-                                                />
-                                            </svg>
-                                            TEDx Tel Aviv
-                                        </span>
-                                        <span>
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="13"
-                                                height="13"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            >
-                                                <circle
-                                                    cx="12"
-                                                    cy="12"
-                                                    r="10"
-                                                />
-                                                <polyline
-                                                    points="12 6 12 12 16 14"
-                                                />
-                                            </svg>
-                                            15:42
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="media-card fade-up">
-                                <div class="media-card-thumbnail">
-                                    <img
-                                        src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80"
-                                        alt="Video: Commercial Dispute Resolution Masterclass"
-                                        loading="lazy"
-                                    />
-                                    <span class="media-badge">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="12"
-                                            height="12"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        >
-                                            <polygon
-                                                points="6 3 20 12 6 21 6 3"
-                                            />
-                                        </svg>
-                                        Video
-                                    </span>
-                                    <button
-                                        class="play-button"
-                                        aria-label="Play video"
-                                    >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="22"
-                                            height="22"
-                                            viewBox="0 0 24 24"
-                                            fill="currentColor"
-                                            stroke="none"
-                                        >
-                                            <polygon
-                                                points="6 3 20 12 6 21 6 3"
-                                            />
-                                        </svg>
-                                    </button>
-                                </div>
-                                <div class="media-card-body">
-                                    <h3 class="media-card-title">
-                                        Commercial Dispute Resolution
-                                        Masterclass
-                                    </h3>
-                                    <p class="media-card-desc">
-                                        A deep dive into strategies for
-                                        resolving high-stakes commercial
-                                        disputes efficiently.
-                                    </p>
-                                    <div class="media-card-meta">
-                                        <span>
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="13"
-                                                height="13"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            >
-                                                <rect
-                                                    width="18"
-                                                    height="18"
-                                                    x="3"
-                                                    y="4"
-                                                    rx="2"
-                                                    ry="2"
-                                                />
-                                                <line
-                                                    x1="16"
-                                                    x2="16"
-                                                    y1="2"
-                                                    y2="6"
-                                                />
-                                                <line
-                                                    x1="8"
-                                                    x2="8"
-                                                    y1="2"
-                                                    y2="6"
-                                                />
-                                                <line
-                                                    x1="3"
-                                                    x2="21"
-                                                    y1="10"
-                                                    y2="10"
-                                                />
-                                            </svg>
-                                            i24NEWS
-                                        </span>
-                                        <span>
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="13"
-                                                height="13"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            >
-                                                <circle
-                                                    cx="12"
-                                                    cy="12"
-                                                    r="10"
-                                                />
-                                                <polyline
-                                                    points="12 6 12 12 16 14"
-                                                />
-                                            </svg>
-                                            10:07
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Articles Tab -->
-                    <div class="tab-content" id="tab-articles">
-                        <div class="articles-list">
-                            <a href="#" class="article-card fade-up">
-                                <div class="article-icon">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="22"
-                                        height="22"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="1.5"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    >
-                                        <path
-                                            d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"
-                                        />
-                                        <path d="M18 14h-8" />
-                                        <path d="M15 18h-5" />
-                                        <path d="M10 6h8v4h-8V6Z" />
-                                    </svg>
-                                </div>
-                                <div class="article-content">
-                                    <div class="article-title">
-                                        The Future of Mediation in Israel's
-                                        Legal System
-                                    </div>
-                                    <div class="article-source">
-                                        Haaretz &middot; Featured Op-Ed
-                                    </div>
-                                </div>
-                                <div class="article-arrow">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="18"
-                                        height="18"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    >
-                                        <path d="M5 12h14" />
-                                        <path d="m12 5 7 7-7 7" />
-                                    </svg>
-                                </div>
-                            </a>
-
-                            <a href="#" class="article-card fade-up">
-                                <div class="article-icon">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="22"
-                                        height="22"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="1.5"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    >
-                                        <path
-                                            d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"
-                                        />
-                                        <path d="M18 14h-8" />
-                                        <path d="M15 18h-5" />
-                                        <path d="M10 6h8v4h-8V6Z" />
-                                    </svg>
-                                </div>
-                                <div class="article-content">
-                                    <div class="article-title">
-                                        5 Things Every Policyholder Should Know
-                                        Before Filing a Claim
-                                    </div>
-                                    <div class="article-source">
-                                        Globes &middot; Expert Column
-                                    </div>
-                                </div>
-                                <div class="article-arrow">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="18"
-                                        height="18"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    >
-                                        <path d="M5 12h14" />
-                                        <path d="m12 5 7 7-7 7" />
-                                    </svg>
-                                </div>
-                            </a>
-
-                            <a href="#" class="article-card fade-up">
-                                <div class="article-icon">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="22"
-                                        height="22"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="1.5"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    >
-                                        <path
-                                            d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"
-                                        />
-                                        <path d="M18 14h-8" />
-                                        <path d="M15 18h-5" />
-                                        <path d="M10 6h8v4h-8V6Z" />
-                                    </svg>
-                                </div>
-                                <div class="article-content">
-                                    <div class="article-title">
-                                        Navigating Commercial Disputes: When to
-                                        Mediate, When to Litigate
-                                    </div>
-                                    <div class="article-source">
-                                        The Marker &middot; Legal Analysis
-                                    </div>
-                                </div>
-                                <div class="article-arrow">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="18"
-                                        height="18"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    >
-                                        <path d="M5 12h14" />
-                                        <path d="m12 5 7 7-7 7" />
-                                    </svg>
-                                </div>
-                            </a>
-
-                            <a href="#" class="article-card fade-up">
-                                <div class="article-icon">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="22"
-                                        height="22"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="1.5"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    >
-                                        <path
-                                            d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"
-                                        />
-                                        <path d="M18 14h-8" />
-                                        <path d="M15 18h-5" />
-                                        <path d="M10 6h8v4h-8V6Z" />
-                                    </svg>
-                                </div>
-                                <div class="article-content">
-                                    <div class="article-title">
-                                        Protecting Your Business: Essential
-                                        Insurance Coverage for Startups
-                                    </div>
-                                    <div class="article-source">
-                                        Calcalist &middot; Business Feature
-                                    </div>
-                                </div>
-                                <div class="article-arrow">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="18"
-                                        height="18"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    >
-                                        <path d="M5 12h14" />
-                                        <path d="m12 5 7 7-7 7" />
-                                    </svg>
-                                </div>
-                            </a>
-
-                            <a href="#" class="article-card fade-up">
-                                <div class="article-icon">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="22"
-                                        height="22"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="1.5"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    >
-                                        <path
-                                            d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"
-                                        />
-                                        <path d="M18 14h-8" />
-                                        <path d="M15 18h-5" />
-                                        <path d="M10 6h8v4h-8V6Z" />
-                                    </svg>
-                                </div>
-                                <div class="article-content">
-                                    <div class="article-title">
-                                        Family Mediation: A Compassionate Path
-                                        Through Conflict
-                                    </div>
-                                    <div class="article-source">
-                                        Yedioth Ahronoth &middot; Weekend
-                                        Magazine
-                                    </div>
-                                </div>
-                                <div class="article-arrow">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="18"
-                                        height="18"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    >
-                                        <path d="M5 12h14" />
-                                        <path d="m12 5 7 7-7 7" />
-                                    </svg>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ===== CTA BANNER ===== -->
-            <section id="cta-section" style="background: transparent">
-                <div class="container">
-                    <div class="cta-banner fade-up">
-                        <div class="cta-banner-content">
-                            <h2>Ready to Discuss Your Case?</h2>
-                            <p>
-                                Get expert legal advice, mediation guidance, or
-                                insurance consultation. First call is always
-                                complimentary.
-                            </p>
-                            <div class="cta-banner-buttons">
-                                <a class="cta" href="#contact">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="18"
-                                        height="18"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    >
-                                        <rect
-                                            width="20"
-                                            height="16"
-                                            x="2"
-                                            y="4"
-                                            rx="2"
-                                        />
-                                        <path
-                                            d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"
-                                        />
-                                    </svg>
-                                    Send a Message
-                                </a>
-                                <a
-                                    class="cta cta-whatsapp"
-                                    href="https://wa.me/972586306460"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="18"
-                                        height="18"
-                                        viewBox="0 0 24 24"
-                                        fill="currentColor"
-                                    >
-                                        <path
-                                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"
-                                        />
-                                    </svg>
-                                    WhatsApp Yael
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ===== CONTACT ===== -->
-            <section id="contact">
-                <div class="container">
                     <div class="contact-layout">
                         <div class="contact-info fade-up">
-                            <div class="contact-info-header">
-                                <p class="section-label">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="16"
-                                        height="16"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    >
-                                        <rect
-                                            width="20"
-                                            height="16"
-                                            x="2"
-                                            y="4"
-                                            rx="2"
-                                        />
-                                        <path
-                                            d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"
-                                        />
-                                    </svg>
-                                    Get in Touch
-                                </p>
-                                <h2 class="section-title">
-                                    Let's Start a Conversation
-                                </h2>
-                                <p class="section-subtitle">
-                                    Whether you need legal representation,
-                                    mediation services, or insurance guidance —
-                                    I'm here to help.
-                                </p>
-                            </div>
-
+                            <div class="contact-details">
                             <div class="contact-detail">
                                 <div class="contact-detail-icon">
                                     <svg
@@ -2007,8 +984,8 @@
                                         Phone
                                     </div>
                                     <div class="contact-detail-value">
-                                        <a href="tel:+972501234567"
-                                            >+972-50-123-4567</a
+                                        <a href="tel:+972586306460" dir="ltr"
+                                            >058-6306460</a
                                         >
                                     </div>
                                 </div>
@@ -2044,8 +1021,8 @@
                                         Email
                                     </div>
                                     <div class="contact-detail-value">
-                                        <a href="mailto:yael@druckman-law.co.il"
-                                            >yael@druckman-law.co.il</a
+                                        <a href="mailto:office@yaeldruckman.com"
+                                            >office@yaeldruckman.com</a
                                         >
                                     </div>
                                 </div>
@@ -2071,22 +1048,58 @@
                                     </svg>
                                 </div>
                                 <div class="contact-detail-text">
-                                    <div class="contact-detail-label">
-                                        Office
-                                    </div>
+                                    <div class="contact-detail-label">Office</div>
                                     <div class="contact-detail-value">
-                                        Rothschild Blvd 45, Tel Aviv, Israel
+                                        51B HaAtzmaut Street, Herzliya
                                     </div>
                                 </div>
+                            </div>
+                            <div class="contact-map" id="contact-map">
+                                <div class="contact-map-viewport">
+                                <iframe
+                                    title="Office map, 51B HaAtzmaut Street, Herzliya"
+                                    src="https://maps.google.com/maps?q=%D7%94%D7%A2%D7%A6%D7%9E%D7%90%D7%95%D7%AA%2051%20%D7%91'%2C%20%D7%94%D7%A8%D7%A6%D7%9C%D7%99%D7%94&amp;hl=en&amp;z=16&amp;output=embed"
+                                    loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    allowfullscreen
+                                ></iframe>
+                                </div>
+                                <a
+                                    class="contact-map-open"
+                                    href="https://maps.google.com/maps?q=%D7%94%D7%A2%D7%A6%D7%9E%D7%90%D7%95%D7%AA%2051%20%D7%91'%2C%20%D7%94%D7%A8%D7%A6%D7%9C%D7%99%D7%94&amp;hl=en"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Open in Google Maps"
+                                    title="Open in Google Maps"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.75"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        aria-hidden="true"
+                                    >
+                                        <polygon
+                                            points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"
+                                        />
+                                        <line x1="9" x2="9" y1="3" y2="18" />
+                                        <line x1="15" x2="15" y1="6" y2="21" />
+                                    </svg>
+                                </a>
+                            </div>
                             </div>
 
                             <div class="contact-whatsapp">
                                 <a
-                                    class="cta cta-whatsapp"
+                                    class="cta cta-whatsapp btn-outline-whatsapp"
                                     href="https://wa.me/972586306460"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    style="width: 100%; justify-content: center"
                                 >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -2099,13 +1112,14 @@
                                             d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"
                                         />
                                     </svg>
-                                    Message on WhatsApp
+                                    WhatsApp
                                 </a>
                             </div>
                         </div>
 
                         <form
                             class="contact-card fade-up"
+                            method="post"
                             aria-label="Contact form"
                         >
                             <div class="form-row">
@@ -2125,6 +1139,7 @@
                                         id="phone"
                                         name="phone"
                                         type="tel"
+                                        dir="ltr"
                                         autocomplete="tel"
                                     />
                                 </div>
@@ -2145,15 +1160,11 @@
                                     <option value="" disabled selected>
                                         Select a service
                                     </option>
-                                    <option value="legal">
-                                        Legal Services
+                                    <option value="legal">Legal Services</option>
+                                    <option value="finance">
+                                        Insurance &amp; Finance
                                     </option>
-                                    <option value="mediation">
-                                        Mediation & Dispute Resolution
-                                    </option>
-                                    <option value="insurance">
-                                        Insurance Advisory
-                                    </option>
+                                    <option value="mediation">Mediation</option>
                                     <option value="other">Other</option>
                                 </select>
                             </div>
@@ -2170,7 +1181,22 @@
                                 id="cf-turnstile"
                                 class="cf-turnstile-slot"
                             ></div>
-                            <button type="submit">
+                            <a
+                                class="cf-protected"
+                                href="https://www.cloudflare.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img
+                                    class="cf-protected-logo"
+                                    src="assets/cf-logo-dark.png"
+                                    alt=""
+                                    width="40"
+                                    height="19"
+                                />
+                                Protected by Cloudflare
+                            </a>
+                            <button type="submit" class="cta btn-outline-accent">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="18"
@@ -2197,21 +1223,16 @@
         <footer>
             <div class="container">
                 <div class="footer-content">
-                    <div class="footer-brand">
-                        <span class="logo-icon">YD</span>
-                        <span class="footer-brand-name">Yael Druckman</span>
+                    <div class="footer-links">
+                        <a href="privacy.he.html" rel="privacy-policy"
+                            >Privacy (Hebrew)</a
+                        >
+                        <a href="accessibility.he.html">Accessibility (Hebrew)</a>
                     </div>
                     <div class="footer-copy">
                         <small
-                            >&copy; <span id="year"></span> Yael Druckman. All
-                            rights reserved.</small
+                            >&copy; <span id="year"></span> Yael Druckman. All rights reserved.</small
                         >
-                    </div>
-                    <div class="footer-links">
-                        <a href="#services">Services</a>
-                        <a href="#about">About</a>
-                        <a href="#contact">Contact</a>
-                        <a href="index.he.html">עברית</a>
                     </div>
                 </div>
             </div>
@@ -2219,7 +1240,7 @@
 
         <!-- ===== FLOATING WHATSAPP ===== -->
         <a
-            class="whatsapp-float"
+            class="whatsapp-float is-hidden-over-hero btn-outline-whatsapp"
             href="https://wa.me/972586306460"
             target="_blank"
             rel="noopener noreferrer"
@@ -2238,25 +1259,91 @@
             </svg>
         </a>
 
+        <!-- Video Dialog Elements -->
+        <dialog id="video-dialog" class="dialog-modal" dir="ltr">
+            <div
+                id="video-modal-card"
+                class="modal-content video-modal-content"
+            >
+                <button
+                    id="video-modal-close"
+                    class="modal-close-btn"
+                    aria-label="Close"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+                <div class="video-container">
+                    <iframe
+                        id="video-iframe"
+                        title="Video"
+                        src=""
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+            </div>
+        </dialog>
+
+        <!-- Morphing Dialog Elements -->
+        <dialog id="morph-dialog" class="dialog-modal" dir="ltr">
+            <div id="modal-card" class="modal-content">
+                <button
+                    id="modal-close"
+                    class="modal-close-btn"
+                    aria-label="Close"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+                <div class="scroll-area">
+                    <div id="modal-content-inner">
+                        <!-- Content will be injected here -->
+                    </div>
+                </div>
+            </div>
+        </dialog>
+
         <script type="module">
-            import { initTuner } from "https://unpkg.com/oklch-tuner/oklch-tuner.js";
+            import { initTuner } from 'https://unpkg.com/oklch-tuner/oklch-tuner.js';
             initTuner({
                 variables: [
-                    "--bg-main",
-                    "--surface",
-                    "--border",
-                    "--text-main",
-                    "--text-muted",
-                    "--accent",
-                    "--accent-hover",
-                    "--accent-text",
-                ],
+                    '--bg-main',
+                    '--surface',
+                    '--border',
+                    '--text-main',
+                    '--text-muted',
+                    '--accent',
+                    '--accent-hover',
+                    '--accent-text'
+                ]
             });
         </script>
         <script src="script.min.js" defer></script>
-        <script
-            src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&amp;onload=onTurnstileLoad"
-            defer
-        ></script>
+
     </body>
 </html>

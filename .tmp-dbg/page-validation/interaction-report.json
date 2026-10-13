@@ -1,0 +1,66 @@
+[
+  {
+    "lang": "en",
+    "width": 375,
+    "testimonialDialogs": 3,
+    "mediaTabs": 0,
+    "submissions": 2,
+    "errors": []
+  },
+  {
+    "lang": "en",
+    "width": 768,
+    "testimonialDialogs": 3,
+    "mediaTabs": 0,
+    "submissions": 1,
+    "errors": []
+  },
+  {
+    "lang": "en",
+    "width": 900,
+    "testimonialDialogs": 3,
+    "mediaTabs": 0,
+    "submissions": 1,
+    "errors": []
+  },
+  {
+    "lang": "en",
+    "width": 1440,
+    "testimonialDialogs": 3,
+    "mediaTabs": 0,
+    "submissions": 1,
+    "errors": []
+  },
+  {
+    "lang": "he",
+    "width": 375,
+    "testimonialDialogs": 3,
+    "mediaTabs": 0,
+    "submissions": 2,
+    "errors": []
+  },
+  {
+    "lang": "he",
+    "width": 768,
+    "testimonialDialogs": 3,
+    "mediaTabs": 0,
+    "submissions": 1,
+    "errors": []
+  },
+  {
+    "lang": "he",
+    "width": 900,
+    "testimonialDialogs": 3,
+    "mediaTabs": 0,
+    "submissions": 1,
+    "errors": []
+  },
+  {
+    "lang": "he",
+    "width": 1440,
+    "testimonialDialogs": 3,
+    "mediaTabs": 0,
+    "submissions": 1,
+    "errors": []
+  }
+]
