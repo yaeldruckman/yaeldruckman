@@ -10,6 +10,8 @@
 - [Home — English](https://yaeldruckman.com/): English version of the site.
 - [מדיניות פרטיות](https://yaeldruckman.com/privacy.he.html)
 - [הצהרת נגישות](https://yaeldruckman.com/accessibility.he.html)
+- [Privacy Policy](https://yaeldruckman.com/privacy.html)
+- [Accessibility Statement](https://yaeldruckman.com/accessibility.html)
 
 ## קשר / Contact
 

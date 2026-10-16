@@ -3,9 +3,10 @@
 <html lang="he" dir="rtl" data-theme="dark">
     <head>
         <meta charset="utf-8" />
-        <link rel="icon" href="favicon.ico?v=9" sizes="16x16 32x32 48x48" />
-        <link rel="icon" href="favicon.png?v=9" type="image/png" sizes="32x32" />
-        <link rel="apple-touch-icon" href="apple-touch-icon.png?v=9" />
+        <link rel="icon" href="favicon.ico" sizes="48x48" />
+        <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+        <link rel="manifest" href="site.webmanifest" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="color-scheme" content="dark" />
         <meta name="theme-color" content="#1c202a" id="theme-color" />
@@ -17,6 +18,16 @@
         <link
             rel="canonical"
             href="https://yaeldruckman.com/accessibility.he.html"
+        />
+        <link
+            rel="alternate"
+            hreflang="he"
+            href="https://yaeldruckman.com/accessibility.he.html"
+        />
+        <link
+            rel="alternate"
+            hreflang="en"
+            href="https://yaeldruckman.com/accessibility.html"
         />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="he_IL" />
@@ -31,7 +42,7 @@
         />
         <meta
             property="og:image"
-            content="https://yaeldruckman.com/assets/og-he.png"
+            content="https://yaeldruckman.com/assets/og-he-logo-left.jpg"
         />
         <link
             rel="preload"
@@ -52,7 +63,14 @@
                     class="logo"
                     aria-label="יעל דרוקמן — דף הבית"
                 >
-                    <span class="logo-icon">YD</span>
+                    <span class="logo-icon logo-icon--monogram" aria-hidden="true">
+                        <img
+                            src="assets/yd-variations/01-metallic-gold.png"
+                            alt=""
+                            width="606"
+                            height="471"
+                        />
+                    </span>
                     <span class="logo-text">
                         <span class="logo-name">יעל דרוקמן</span>
                         <span class="logo-title"
@@ -72,7 +90,7 @@
 
                 <div class="nav-actions">
                     <a
-                        href="index.html"
+                        href="accessibility.html"
                         class="lang-toggle"
                         aria-label="Switch to English"
                     >
@@ -88,8 +106,8 @@
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
+                            width="22"
+                            height="22"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
@@ -111,9 +129,10 @@
                 <a href="index.he.html#testimonials">המלצות</a>
                 <a href="index.he.html#media">מדיה</a>
                 <a href="index.he.html#contact">צור קשר</a>
-                <a href="index.html">English</a>
+                <a href="accessibility.html">English</a>
             </div>
         </header>
+        <div class="mobile-backdrop" aria-hidden="true"></div>
 
         <main id="main" class="legal-page">
             <article class="container legal-article">

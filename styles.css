@@ -373,24 +373,25 @@ html[dir="rtl"] .logo-title {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    padding: 0.4rem 0.8rem;
-    border-radius: var(--radius-full);
-    border: 1px solid var(--border);
+    position: relative;
+    padding: 0.45rem 0.85rem;
+    border: none;
+    border-radius: 0;
     background: transparent;
     color: var(--text-muted);
-    font-size: 0.825rem;
+    font-size: var(--nav-fs);
     font-weight: 500;
     cursor: pointer;
-    transition: all var(--t-fast) var(--ease);
+    transition: color var(--t-fast) var(--ease);
     text-decoration: none;
     white-space: nowrap;
 }
 
+
 .lang-toggle:hover,
 .lang-toggle:focus-visible {
     color: var(--accent);
-    border-color: var(--accent);
-    background: var(--accent-subtle);
+    background: transparent;
 }
 
 .lang-toggle svg {
@@ -430,8 +431,8 @@ html[dir="rtl"] .logo-title {
     display: none;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
     background: transparent;
@@ -449,9 +450,60 @@ html[dir="rtl"] .logo-title {
 /* Mobile Nav */
 .mobile-nav {
     display: none;
-    padding: 0.5rem 0 1.25rem;
-    background: color-mix(in oklch, var(--bg) 98%, transparent);
-    border-top: 1px solid var(--border);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 0.75rem 0 1.25rem;
+    background: color-mix(in oklch, var(--bg) 96%, transparent);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+    z-index: 99;
+}
+
+/* Mobile backdrop: blurs the page behind the open menu.
+   Lives outside <header> so header's backdrop-filter does not trap it. */
+.mobile-backdrop {
+    position: fixed;
+    inset: 0;
+    background: color-mix(in oklch, var(--bg) 55%, transparent);
+    backdrop-filter: blur(10px) saturate(120%);
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
+    z-index: 90;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity var(--t-base) var(--ease),
+        visibility var(--t-base) var(--ease);
+}
+
+body.nav-open .mobile-backdrop {
+    opacity: 1;
+    visibility: visible;
+}
+
+.whatsapp-float {
+    transition: opacity var(--t-base) var(--ease);
+}
+
+body.nav-open .whatsapp-float {
+    opacity: 0;
+    pointer-events: none;
+}
+
+@media (min-width: 1024px) {
+    .mobile-backdrop {
+        display: none;
+    }
+}
+
+@media (max-width: 1023px) {
+    body.nav-open {
+        overflow: hidden;
+    }
 }
 
 .mobile-nav.open {
@@ -2274,7 +2326,7 @@ html:is([lang="he"], [lang="en"]) .whatsapp-float.is-hidden-over-hero {
 
     html:is([lang="he"], [lang="en"]) .nav-actions .lang-toggle {
         display: inline-flex;
-        border-color: currentColor;
+        border: none;
     }
 }
 
@@ -2809,17 +2861,21 @@ html:is([lang="he"], [lang="en"]) .logo-title {
 }
 
 html:is([lang="he"], [lang="en"]) .hamburger {
-    width: var(--nav-mark);
-    height: var(--nav-mark);
-    min-width: var(--nav-mark);
-    min-height: var(--nav-mark);
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
     padding: 0;
 }
 
-html:is([lang="he"], [lang="en"]) .hamburger svg,
+html:is([lang="he"], [lang="en"]) .hamburger svg {
+    width: 22px;
+    height: 22px;
+}
+
 html:is([lang="he"], [lang="en"]) .mobile-nav a svg {
-    width: 1em;
-    height: 1em;
+    width: 1.15em;
+    height: 1.15em;
 }
 
 html:is([lang="he"], [lang="en"]) .mobile-nav a {
@@ -2995,37 +3051,25 @@ html:is([lang="he"], [lang="en"]) .hero-cta-group .cta {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
     html:is([lang="he"], [lang="en"]) .hero-cta-group {
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        /*gap: 0.75rem;*/
-        padding-inline: 0;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        max-width: 320px;
+        margin-inline: auto;
+        gap: 0.85rem;
         margin-top: 1.75rem;
     }
 
-    /*html:is([lang="he"], [lang="en"]) .hero-cta-group .cta {
-        width: 10.5rem;
-        min-width: 10.5rem;
-        flex: 0 0 10.5rem;
-        padding: 0.8rem 1.35rem;
-        font-size: 0.95rem;
-    }*/
-}
-
-@media (max-width: 374px) {
-    html:is([lang="he"], [lang="en"]) .hero-cta-group {
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: auto;
-    }
-
     html:is([lang="he"], [lang="en"]) .hero-cta-group .cta {
-        width: 10.5rem;
-        min-width: 10.5rem;
-        flex: 0 0 10.5rem;
+        width: 100%;
+        min-width: 0;
+        flex: 1 1 auto;
+        min-height: 48px;
+        padding: 0.85rem 1.5rem;
+        font-size: 1rem;
+        box-sizing: border-box;
     }
 }
 
@@ -3203,14 +3247,85 @@ html:is([lang="he"], [lang="en"]) .footer-copy {
     }
 }
 
+#about {
+    position: relative;
+    z-index: 5;
+    overflow: visible;
+}
+
+.about {
+    overflow: visible;
+}
+
 .about-visual--plain {
     border: none;
     box-shadow: none;
     background: transparent;
+    overflow: visible !important;
+    position: relative;
+}
+
+.about-logo-wrapper {
+    position: relative;
+    display: block;
+    overflow: visible;
+}
+
+
+.about-logo-primary {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-xl);
+    z-index: 2;
 }
 
 .about-visual--plain .about-visual-image {
     object-fit: contain;
+}
+
+.about-logo-reflection {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transform: scaleY(-1);
+    transform-origin: center;
+    opacity: 0.45;
+    /* The mask flips with the image: its bottom becomes the reflection's top. */
+    mask-image: linear-gradient(to top, black, transparent 85%);
+    -webkit-mask-image: linear-gradient(to top, black, transparent 85%);
+    pointer-events: none;
+    filter: blur(0.75px) brightness(0.9);
+    z-index: 1;
+}
+
+.about-logo-reflection img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.about-logo-wrapper::after {
+    content: "";
+    position: absolute;
+    bottom: -100px;
+    left: -20%;
+    right: -20%;
+    height: 200px;
+    background: radial-gradient(
+        ellipse at 50% 20%,
+        color-mix(in oklch, var(--accent) 35%, transparent) 0%,
+        color-mix(in oklch, var(--accent) 15%, transparent) 40%,
+        transparent 75%
+    );
+    pointer-events: none;
+    filter: blur(24px);
+    z-index: 0;
 }
 
 html:is([lang="he"], [lang="en"]) .about-visual-image--dark {
