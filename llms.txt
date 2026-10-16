@@ -2,12 +2,12 @@
 
 > משרד משפחתי לעריכת דין, גישור, ביטוח ופיננסים. ניהול סיכונים משפטיים, ביטוחיים וכלכליים. Yael Druckman — advocate, certified mediator, and insurance agent.
 
-האתר זמין בעברית ובאנגלית. עמוד הבית בעברית: https://yaeldruckman.com/index.he.html
+האתר זמין בעברית ובאנגלית. עמוד הבית בעברית: https://yaeldruckman.com/
 
 ## עמודים / Pages
 
-- [עמוד הבית — עברית](https://yaeldruckman.com/index.he.html): שירותים, אודות, המלצות, מדיה וצור קשר.
-- [Home — English](https://yaeldruckman.com/): English version of the site.
+- [עמוד הבית — עברית](https://yaeldruckman.com/): שירותים, אודות, המלצות, מדיה וצור קשר.
+- [Home — English](https://yaeldruckman.com/en/): English version of the site.
 - [מדיניות פרטיות](https://yaeldruckman.com/privacy.he.html)
 - [הצהרת נגישות](https://yaeldruckman.com/accessibility.he.html)
 - [Privacy Policy](https://yaeldruckman.com/privacy.html)
@@ -15,7 +15,7 @@
 
 ## קשר / Contact
 
-- [צור קשר](https://yaeldruckman.com/index.he.html#contact): קביעת פגישה. איפה אני היום, לאן אני רוצה להגיע ואיך אני מגן על עצמי בדרך.
+- [צור קשר](https://yaeldruckman.com/#contact): קביעת פגישה. איפה אני היום, לאן אני רוצה להגיע ואיך אני מגן על עצמי בדרך.
 - טלפון: 058-6306460
 - וואטסאפ: https://wa.me/972586306460
 - דוא״ל: office@yaeldruckman.com

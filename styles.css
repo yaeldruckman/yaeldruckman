@@ -3284,48 +3284,8 @@ html:is([lang="he"], [lang="en"]) .footer-copy {
     object-fit: contain;
 }
 
-.about-logo-reflection {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    transform: scaleY(-1);
-    transform-origin: center;
-    opacity: 0.45;
-    /* The mask flips with the image: its bottom becomes the reflection's top. */
-    mask-image: linear-gradient(to top, black, transparent 85%);
-    -webkit-mask-image: linear-gradient(to top, black, transparent 85%);
-    pointer-events: none;
-    filter: blur(0.75px) brightness(0.9);
-    z-index: 1;
-}
-
-.about-logo-reflection img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.about-logo-wrapper::after {
-    content: "";
-    position: absolute;
-    bottom: -100px;
-    left: -20%;
-    right: -20%;
-    height: 200px;
-    background: radial-gradient(
-        ellipse at 50% 20%,
-        color-mix(in oklch, var(--accent) 35%, transparent) 0%,
-        color-mix(in oklch, var(--accent) 15%, transparent) 40%,
-        transparent 75%
-    );
-    pointer-events: none;
-    filter: blur(24px);
-    z-index: 0;
+.about-visual--plain::after {
+    content: none;
 }
 
 html:is([lang="he"], [lang="en"]) .about-visual-image--dark {
