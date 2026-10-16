@@ -109,7 +109,8 @@
 /* Both languages: one typeface + one type/space/tap scale. Breakpoints: 375 / 390 / 768 / 900 / 1200 / 1440 */
 html:is([lang="he"], [lang="en"]) {
     color-scheme: dark;
-    /* Varela Round ships a single 400 weight; stop browsers faking bold */
+    /* Varela Round ships a single 400 weight; stop browsers faking bold. */
+    font-synthesis: style;
     font-synthesis-weight: none;
     --font-heading: "Varela Round", sans-serif;
     --font-body: "Varela Round", sans-serif;
@@ -2858,6 +2859,8 @@ html:is([lang="he"], [lang="en"]) .logo-title {
     font-size: var(--nav-title-fs);
     line-height: 1.25;
     color: var(--text-heading);
+    letter-spacing: 0;
+    text-transform: none;
 }
 
 html:is([lang="he"], [lang="en"]) .hamburger {
@@ -2950,6 +2953,11 @@ html:is([lang="he"], [lang="en"]) .hero-subtitle {
     max-width: 36rem;
 }
 
+html:is([lang="he"], [lang="en"]) .section-label {
+    letter-spacing: 0.05em;
+    text-transform: none;
+}
+
 html:is([lang="he"], [lang="en"]) .hero-text .section-label {
     margin-bottom: 0;
 }
@@ -2967,8 +2975,14 @@ html:is([lang="he"], [lang="en"]) .hero h1 {
     margin-bottom: 0;
     font-size: var(--fs-3xl);
     font-style: italic;
+    letter-spacing: 0;
     line-height: 1.45;
     max-width: 36rem;
+}
+
+/* The Latin face has no true italics; avoid artificially slanted letterforms. */
+html[lang="en"] .hero h1 {
+    font-style: normal;
 }
 
 @media (max-width: 899px) {
@@ -3176,10 +3190,15 @@ html:is([lang="he"], [lang="en"]) #services .card h3 {
 html:is([lang="he"], [lang="en"]) h2,
 html:is([lang="he"], [lang="en"]) .section-title {
     font-size: var(--fs-2xl);
+    letter-spacing: 0;
 }
 
 html:is([lang="he"], [lang="en"]) h3 {
     font-size: var(--fs-xl);
+}
+
+html:is([lang="he"], [lang="en"]) .card h3 {
+    letter-spacing: 0;
 }
 
 html:is([lang="he"], [lang="en"]) .hero-description {
