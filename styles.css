@@ -3285,10 +3285,16 @@ html:is([lang="he"], [lang="en"]) .footer-copy {
     overflow: visible;
 }
 
+.about-visual--plain,
+.about-visual--plain .about-logo-primary {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: rgb(1, 1, 1) !important;
+    border-radius: 0 !important;
+}
+
 .about-visual--plain {
-    border: none;
-    box-shadow: none;
-    background: #000;
     overflow: visible !important;
     position: relative;
 }
@@ -3303,8 +3309,12 @@ html:is([lang="he"], [lang="en"]) .footer-copy {
 .about-logo-primary {
     display: block;
     position: relative;
-    overflow: hidden;
-    border-radius: var(--radius-xl);
+    overflow: visible;
+    border: none;
+    outline: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: rgb(1, 1, 1);
     z-index: 2;
 }
 
