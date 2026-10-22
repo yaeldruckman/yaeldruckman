@@ -1098,13 +1098,22 @@ html[dir="rtl"] .card h3 {
         gap: var(--space-xl);
     }
 
-    html:is([lang="he"], [lang="en"]) .about {
+    html[lang="he"] .about {
         direction: ltr;
         grid-template-columns: 1fr 2fr;
     }
 
-    html:is([lang="he"], [lang="en"]) .about-visual {
+    html[lang="en"] .about {
+        direction: ltr;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    html[lang="he"] .about-visual {
         order: -1;
+    }
+
+    html[lang="en"] .about-visual {
+        order: 1;
     }
 
     html:is([lang="he"], [lang="en"]) .about-content {
@@ -3279,7 +3288,7 @@ html:is([lang="he"], [lang="en"]) .footer-copy {
 .about-visual--plain {
     border: none;
     box-shadow: none;
-    background: transparent;
+    background: #000;
     overflow: visible !important;
     position: relative;
 }
